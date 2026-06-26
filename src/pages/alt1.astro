@@ -1,0 +1,17 @@
+---
+// Hero concept preview ALT1 — standalone (header + hero only), noindexed.
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import HeroA1 from '../components/HeroA1.astro';
+---
+
+<Base noindex title="Greenline HSE — hero concept 1">
+  <Header />
+  <main id="main">
+    <HeroA1 />
+  </main>
+</Base>
+
+<script>
+  import '../scripts/motion.js';
+</script>

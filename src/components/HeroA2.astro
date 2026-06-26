@@ -1,0 +1,98 @@
+---
+// ALT2 — The horizon: open sky (text) above, a cinematic land/built band below,
+// divided by one crisp Hi-Vis line that draws across on load. The brand's
+// rural↔built horizon idea made literal and structural.
+import { Image } from 'astro:assets';
+import land from '../assets/images/construction-flagship.jpg';
+---
+
+<section class="a2" id="top" data-hero>
+  <div class="a2__sky">
+    <div class="wrap a2__inner">
+      <p class="a2__eyebrow" data-reveal="up">Health, Safety &amp; Environmental</p>
+      <h1 class="a2__headline" data-reveal="up">Practical safety that works on the ground</h1>
+      <p class="a2__lede" data-reveal="up">
+        Senior advice for Australian construction, infrastructure and rural operations — delivered
+        direct.
+      </p>
+      <a class="btn btn--ghost a2__cta" href="#contact" data-magnetic data-reveal="up"
+        >Start a conversation <span class="btn__arrow" aria-hidden="true">→</span></a
+      >
+    </div>
+  </div>
+
+  <svg class="a2__line" viewBox="0 0 1440 2" preserveAspectRatio="none" aria-hidden="true">
+    <line data-hero-path x1="0" y1="1" x2="1440" y2="1" stroke-width="2.5"></line>
+  </svg>
+
+  <div class="a2__land">
+    <Image src={land} alt="A tower crane and steel frame against a clear blue sky" widths={[1000, 1600, 2200]} sizes="100vw" />
+  </div>
+</section>
+
+<style>
+  .a2 {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .a2__sky {
+    flex: 1 1 58%;
+    display: flex;
+    align-items: center;
+    background: var(--limewash);
+    padding-top: 5.5rem;
+  }
+  .a2__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+  }
+  .a2__eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--field-green);
+    margin: 0;
+  }
+  .a2__headline {
+    font-family: var(--font-display);
+    font-size: var(--step-hero);
+    line-height: 1.04;
+    color: var(--field-green);
+    max-width: 16ch;
+    margin: 0.25rem 0 0.4rem;
+  }
+  .a2__lede {
+    max-width: 44ch;
+    color: var(--bitumen);
+  }
+  .a2__cta {
+    margin-top: var(--space-s);
+    align-self: flex-start;
+  }
+  .a2__line {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 2.5px;
+    overflow: visible;
+  }
+  .a2__line line {
+    stroke: var(--hi-vis);
+  }
+  .a2__land {
+    flex: 0 0 40%;
+    position: relative;
+    overflow: hidden;
+  }
+  .a2__land :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+</style>

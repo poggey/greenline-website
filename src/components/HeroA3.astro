@@ -1,0 +1,84 @@
+---
+// ALT3 — Kinetic word-swap: a calm light hero where one word in the headline
+// cycles (safety / risk / compliance / culture) via a smooth GSAP swap.
+// Design-led, no image.
+---
+
+<section class="a3" id="top" data-hero>
+  <div class="wrap a3__inner">
+    <p class="a3__eyebrow" data-reveal="up">Greenline HSE</p>
+    <h1 class="a3__headline" data-reveal="up">
+      Practical
+      <span class="a3__swap-wrap"
+        ><span
+          class="a3__swap"
+          data-word-swap
+          data-words='["safety","risk","compliance","culture"]'
+          >safety</span
+        ></span
+      ><br />that works on the ground.
+    </h1>
+    <p class="a3__lede" data-reveal="up">
+      Senior HSE expertise for Australian construction, infrastructure and rural operations —
+      delivered direct.
+    </p>
+    <a class="btn a3__cta" href="#contact" data-magnetic data-reveal="up"
+      >Start a conversation <span class="btn__arrow" aria-hidden="true">→</span></a
+    >
+  </div>
+</section>
+
+<style>
+  .a3 {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    background: var(--limewash);
+    padding-top: 5.5rem;
+  }
+  .a3__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+  }
+  .a3__eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--field-green);
+    margin: 0;
+  }
+  .a3__headline {
+    font-family: var(--font-display);
+    font-weight: 380;
+    font-size: var(--step-hero);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    color: var(--field-green);
+    max-width: 18ch;
+    margin: 0;
+  }
+  /* clip the cycling word so it slides within a mask */
+  .a3__swap-wrap {
+    display: inline-flex;
+    overflow: hidden;
+    vertical-align: bottom;
+    padding-bottom: 0.12em;
+  }
+  .a3__swap {
+    display: inline-block;
+    font-style: italic;
+    color: var(--field-green);
+    border-bottom: 0.08em solid var(--hi-vis);
+  }
+  .a3__lede {
+    max-width: 44ch;
+    font-size: var(--step-1);
+    line-height: 1.5;
+    color: var(--bitumen);
+  }
+  .a3__cta {
+    align-self: flex-start;
+  }
+</style>

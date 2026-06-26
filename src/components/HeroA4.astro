@@ -1,0 +1,83 @@
+---
+// ALT4 — Oversized typographic statement: a drawing-register index, a huge
+// mixed solid/outline headline, supporting line + CTA. Bold, editorial,
+// architectural. Design-led, no image.
+---
+
+<section class="a4" id="top" data-hero>
+  <div class="wrap a4__inner">
+    <p class="a4__index" data-reveal="up"><span class="a4__num">01</span> — Greenline HSE</p>
+    <h1 class="a4__headline" data-reveal="up">
+      <span class="a4__solid">Practical</span> <span class="a4__outline">safety</span><br />
+      that works <span class="a4__outline">on the ground</span>.
+    </h1>
+    <div class="a4__row" data-reveal="up">
+      <p class="a4__lede">
+        Senior HSE expertise for Australian construction, infrastructure and rural operations —
+        delivered direct.
+      </p>
+      <a class="btn a4__cta" href="#contact" data-magnetic
+        >Start a conversation <span class="btn__arrow" aria-hidden="true">→</span></a
+      >
+    </div>
+  </div>
+</section>
+
+<style>
+  .a4 {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    background: var(--limewash);
+    padding-top: 6rem;
+  }
+  .a4__inner {
+    width: 100%;
+  }
+  .a4__index {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--field-green);
+    border-top: 1px solid var(--sage);
+    padding-top: var(--space-s);
+    margin: 0 0 var(--space-m);
+    display: flex;
+    gap: 0.85rem;
+  }
+  .a4__num {
+    color: var(--bitumen);
+  }
+  .a4__headline {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(2.8rem, 1rem + 7vw, 7rem);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    color: var(--field-green);
+    margin: 0;
+  }
+  .a4__outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--field-green);
+    font-style: italic;
+  }
+  .a4__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-m);
+    margin-top: var(--space-l);
+    border-top: 1px solid var(--sage);
+    padding-top: var(--space-m);
+  }
+  .a4__lede {
+    max-width: 40ch;
+    color: var(--bitumen);
+  }
+  .a4__cta {
+    flex: 0 0 auto;
+  }
+</style>
