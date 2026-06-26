@@ -1,0 +1,141 @@
+---
+// 1. HERO (§12.1) — drawing line + light dawn horizon.
+// Design-led, light. The Hi-Vis line and the land fill share ONE curve, so it
+// reads as a single clean horizon (§HERO note).
+---
+
+<section class="hero" id="top" data-hero>
+  <!-- Dawn-sky gradient: pale gold easing into soft blue (§HERO) -->
+  <div class="hero__sky" aria-hidden="true"></div>
+
+  <!-- One clean, straight horizon: the land fill sits beneath the drawn line,
+       clearly below the headline (§HERO — "settles into one clean horizon"). -->
+  <svg class="hero__horizon" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="hero-land" x1="0" y1="0" x2="0" y2="1">
+        <stop class="hero-land-top" offset="0"></stop>
+        <stop class="hero-land-bottom" offset="1"></stop>
+      </linearGradient>
+    </defs>
+    <path class="hero__fill" d="M0,3 H1440 V200 H0 Z"></path>
+    <path data-hero-path class="hero__stroke" d="M0,3 H1440" fill="none" stroke-width="2.5"></path>
+  </svg>
+
+  <div class="wrap hero__content">
+    <p class="eyebrow" data-reveal="up">Greenline HSE</p>
+    <h1 class="hero__headline" data-split>Practical safety that works on the ground</h1>
+    <p class="hero__positioning lede" data-reveal="up">
+      Practical Health, Safety &amp; Environmental expertise for Australian construction,
+      infrastructure and rural operations. Senior advice, delivered direct.
+    </p>
+    <div class="hero__actions" data-reveal="up">
+      <a class="btn" href="#contact" data-magnetic
+        >Start a conversation <span class="btn__arrow" aria-hidden="true">→</span></a
+      >
+    </div>
+  </div>
+
+  <a class="hero__scroll" href="#meet" aria-label="Scroll to meet Greenline">
+    <span>Scroll</span>
+    <span class="hero__scroll-line" aria-hidden="true"></span>
+  </a>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 6rem;
+    /* reserve the lower band for the horizon + land so content sits clearly
+       in the open sky above the line */
+    padding-bottom: 26vh;
+  }
+  .hero__sky {
+    position: absolute;
+    inset: 0;
+    /* luminous dawn gradient — themeable (§HERO) */
+    background: var(--hero-sky);
+    z-index: -3;
+  }
+  .hero__horizon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 22%;
+    z-index: -1;
+    overflow: visible;
+  }
+  .hero__fill {
+    fill: url(#hero-land);
+  }
+  .hero-land-top {
+    stop-color: var(--hero-land-top);
+  }
+  .hero-land-bottom {
+    stop-color: var(--hero-land-bottom);
+  }
+  .hero__stroke {
+    stroke: var(--hi-vis);
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    max-width: 60rem;
+  }
+  .hero__headline {
+    font-size: var(--step-hero);
+    margin: 0.75rem 0 1.75rem;
+    max-width: 15ch;
+  }
+  .hero__positioning {
+    max-width: 46ch;
+  }
+  .hero__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-m);
+    flex-wrap: wrap;
+    margin-top: var(--space-l);
+  }
+
+  .hero__scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 1.75rem;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    z-index: 2;
+  }
+  .hero__scroll-line {
+    width: 1px;
+    height: 38px;
+    background: linear-gradient(var(--sage), transparent);
+  }
+
+  @media (max-width: 600px) {
+    .hero {
+      padding-bottom: 20vh;
+    }
+    .hero__content {
+      max-width: none;
+    }
+    .hero__horizon {
+      height: 16%;
+    }
+  }
+</style>

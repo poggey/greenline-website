@@ -1,0 +1,123 @@
+---
+// Footer essentials (§14): ABN/business name, service area (Australia-wide),
+// a single contact email, and the tagline. Quietly complete.
+const year = 2026;
+---
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div class="site-footer__brand">
+      <span class="site-footer__word">greenline <span class="site-footer__hse">HSE</span></span>
+      <p class="site-footer__tag">Practical Solutions. Strong Relationships. Better Outcomes.</p>
+    </div>
+
+    <dl class="site-footer__meta">
+      <div>
+        <dt>Business</dt>
+        <dd>Greenline HSE · ABN [ ABN ]</dd>
+      </div>
+      <div>
+        <dt>Service area</dt>
+        <dd>Australia-wide</dd>
+      </div>
+      <div>
+        <dt>Email</dt>
+        <dd><a href="mailto:hello@greenlinehse.com.au">hello@greenlinehse.com.au</a></dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="wrap site-footer__base">
+    <p>© {year} Greenline HSE. Provided for general information; not legal or professional advice
+      for any specific situation.</p>
+    <a href="#top" class="site-footer__top">Back to top ↑</a>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--bitumen);
+    color: var(--paper-on-dark-dim);
+    padding-block: var(--space-l) var(--space-m);
+    font-size: var(--step--1);
+  }
+  .site-footer__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: var(--space-l);
+    padding-bottom: var(--space-l);
+    border-bottom: 1px solid rgba(243, 241, 228, 0.18);
+  }
+  .site-footer__word {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--paper-on-dark);
+  }
+  .site-footer__hse {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.28em;
+    color: var(--hi-vis);
+  }
+  .site-footer__tag {
+    margin-top: 0.5rem;
+    font-family: var(--font-mono);
+  }
+  .site-footer__meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-m);
+    margin: 0;
+  }
+  .site-footer__meta dt {
+    font-family: var(--font-mono);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--hi-vis);
+    margin-bottom: 0.4rem;
+  }
+  .site-footer__meta dd {
+    margin: 0;
+    color: var(--paper-on-dark);
+    font-family: var(--font-mono);
+  }
+  .site-footer__meta a {
+    color: var(--paper-on-dark);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .site-footer__meta a:hover {
+    border-bottom-color: var(--hi-vis);
+  }
+  .site-footer__base {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-m);
+    align-items: center;
+    margin-top: var(--space-m);
+    font-family: var(--font-mono);
+    flex-wrap: wrap;
+  }
+  .site-footer__base p {
+    max-width: 70ch;
+  }
+  .site-footer__top {
+    color: var(--paper-on-dark);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .site-footer__top:hover {
+    color: var(--hi-vis);
+  }
+
+  @media (max-width: 760px) {
+    .site-footer__inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-m);
+    }
+    .site-footer__meta {
+      grid-template-columns: 1fr;
+      gap: var(--space-s);
+    }
+  }
+</style>

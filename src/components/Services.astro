@@ -1,0 +1,177 @@
+---
+// 5. WHAT WE DO (§12.5) — the ten core services as line-icon cards.
+// Pinned horizontal scroll (§11.4): the list becomes a journey along the line.
+// Copy verbatim from Part I §5.
+import LineIcon from './LineIcon.astro';
+
+const services = [
+  {
+    icon: 'system',
+    title: 'Health & Safety Management Systems',
+    body: 'Development and review of practical systems that support compliance and get used.',
+  },
+  {
+    icon: 'risk',
+    title: 'Risk Assessments',
+    body: 'Identifying and managing workplace hazards through clear, usable risk assessment processes.',
+  },
+  {
+    icon: 'sop',
+    title: 'Standard Operating Procedures (SOPs)',
+    body: 'Easy-to-follow procedures for routine and high-risk activities, written in plain English.',
+  },
+  {
+    icon: 'audit',
+    title: 'Site Audits & Inspections',
+    body: 'Independent eyes on your site to verify compliance and surface improvement opportunities before an incident does.',
+  },
+  {
+    icon: 'contractor',
+    title: 'Contractor Management',
+    body: 'Prequalification, onboarding and ongoing management of subcontractors and suppliers.',
+  },
+  {
+    icon: 'investigation',
+    title: 'Incident Investigations',
+    body: 'Getting to genuine root cause, with practical corrective actions and lessons that stick.',
+  },
+  {
+    icon: 'compliance',
+    title: 'Compliance Reviews',
+    body: 'Measuring your operation against legislation, industry standards and your own expectations.',
+  },
+  {
+    icon: 'training',
+    title: 'Training & Inductions',
+    body: 'Induction materials, toolbox topics and workforce engagement that lands with the crew.',
+  },
+  {
+    icon: 'emergency',
+    title: 'Emergency Planning',
+    body: 'Emergency procedures and response arrangements you can actually execute under pressure.',
+  },
+  {
+    icon: 'leadership',
+    title: 'Leadership & Safety Culture',
+    body: 'Helping businesses build genuine safety cultures through leadership, communication and engagement.',
+  },
+];
+---
+
+<section class="services" id="services" aria-labelledby="services-h" data-services>
+  <div class="wrap services__head">
+    <p class="section-index">Our services</p>
+    <h2 id="services-h" class="services-title" data-split>What we do</h2>
+    <p class="lede" data-reveal="up">
+      Greenline HSE provides practical Health, Safety and Environmental support tailored to the
+      needs of each business — the full breadth of what a safety function needs to cover.
+    </p>
+  </div>
+
+  <!-- Pinned horizontal track (§11.4). Falls back to a wrapping grid when
+       motion is off or on narrow screens — handled in CSS + motion.js. -->
+  <div class="services-track-outer" data-track-outer>
+    <ul class="services-track" data-track>
+      {
+        services.map((s, i) => (
+          <li class="service-card">
+            <span class="service-card__num">{String(i + 1).padStart(2, '0')}</span>
+            <LineIcon name={s.icon} />
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+</section>
+
+<style>
+  /* The section fills the viewport and centres its content, so when it pins
+     the kicker + heading + lede stay on screen WITH the scrolling cards. */
+  .services {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-l);
+    padding-block: var(--space-l);
+  }
+  .services__head {
+    flex: 0 0 auto;
+  }
+  .services-title {
+    font-size: var(--step-3);
+    margin-bottom: var(--space-m);
+  }
+  .services__head .lede {
+    margin-bottom: 0;
+  }
+
+  .services-track-outer {
+    flex: 0 0 auto;
+    overflow: hidden;
+  }
+  .services-track {
+    list-style: none;
+    padding: 0 var(--gutter);
+    margin: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(260px, 320px);
+    gap: var(--space-m);
+  }
+  /* When motion is off / no JS, allow normal horizontal overflow scroll */
+  .services-track-outer:not([data-pinned]) {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--space-s);
+  }
+  .services-track-outer:not([data-pinned]) .service-card {
+    scroll-snap-align: start;
+  }
+
+  .service-card {
+    background: var(--cloud);
+    border: var(--hairline);
+    border-radius: var(--radius);
+    padding: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    /* sized to fit alongside the heading within one viewport */
+    height: clamp(220px, 38vh, 320px);
+    position: relative;
+  }
+  .service-card__num {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--sage);
+    letter-spacing: 0.12em;
+  }
+  .service-card h3 {
+    font-size: var(--step-1);
+    margin-top: auto;
+  }
+  .service-card p {
+    font-size: var(--step--1);
+    line-height: 1.5;
+    color: var(--bitumen);
+  }
+
+  /* On narrow screens the section is a normal scroll-snap row, not pinned */
+  @media (max-width: 900px) {
+    .services {
+      min-height: 0;
+      justify-content: flex-start;
+      padding-block: var(--space-xl);
+    }
+    .service-card {
+      height: auto;
+      min-height: 240px;
+    }
+  }
+</style>

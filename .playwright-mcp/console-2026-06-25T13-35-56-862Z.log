@@ -1,0 +1,98 @@
+[ 1609043ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:4321/@vite/client:1246
+[11570454ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:4321/@vite/client:1246
+[11570461ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:4321/:0
+[11571464ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:4321/:0
+[11572469ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:4321/:0
+[11573473ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:4321/:0
+[11574477ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:4321/:0
+[11575482ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:4321/:0
+[11576485ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:4321/:0
+[11957583ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11957963ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11958140ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11958340ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11958584ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11958789ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11958995ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11959192ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11959393ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11959643ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11959792ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11960000ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11960194ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11960396ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11960631ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11960802ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11961009ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11961207ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11961447ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11961660ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11961860ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11962068ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11962272ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11962469ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11962686ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11962878ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11963084ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11963292ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11963487ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11963691ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11963889ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11964107ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11964297ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11964501ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11964701ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11964929ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11965106ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11965304ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11965504ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11965717ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11965913ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11966122ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11966317ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11966540ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11966715ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11966922ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11967128ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11967321ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11967525ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11967728ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11967932ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11968134ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11968349ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11968541ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11968754ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11968963ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11969163ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11969364ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11969564ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11969761ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11969968ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11970166ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11970366ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11970570ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11970772ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11970978ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11971176ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11971381ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11971583ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11971782ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11971984ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11972190ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11972398ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11972612ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11972815ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11973024ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11973226ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11973459ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[11973618ms] [WARNING] GSAP target [data-reveal] not found. https://gsap.com @ http://localhost:4321/node_modules/.vite/deps/gsap.js?v=4232bedb:88
+[12395677ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:4321/@vite/client:1246
+[12395681ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:4321/:0
+[12396684ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:4321/:0
+[12397690ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:4321/:0
+[12398693ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:4321/:0
+[12428767ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:4321/@vite/client:1246
+[31248624ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:4321/@vite/client:1246
+[32286266ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:4321/@vite/client:1246
+[66607990ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:4321/@vite/client:1246
+[66607994ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:4321/:0

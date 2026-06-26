@@ -1,0 +1,177 @@
+---
+// 8. CONTACT (§12.8) — calm, no pop-ups, no urgency, no form. One clear CTA
+// that opens the visitor's own email client (mailto), plus direct details and
+// an Australia-wide note. The closing grounding green band where the Line
+// completes (§8 CLOSING). Copy verbatim from Part I §8.
+const email = 'hello@greenlinehse.com.au';
+const phone = '+61 000 000 000';
+const subject = encodeURIComponent('Starting a conversation — Greenline HSE');
+const body = encodeURIComponent(
+  "Hi Catriona,\n\nI'd like to start a conversation about a project or site:\n\n• What you're working on:\n• Where (state / region):\n• What you'd like help with:\n\nThanks,\n"
+);
+const mailto = `mailto:${email}?subject=${subject}&body=${body}`;
+---
+
+<section class="contact" id="contact" aria-labelledby="contact-h" data-contact>
+  <div class="wrap contact__inner">
+    <div class="contact__intro">
+      <p class="section-index section-index--light">Get in touch</p>
+      <h2 id="contact-h" class="contact__title" data-split>Let’s talk</h2>
+      <p class="contact__lede">
+        Whether you’re seeking support for a construction project, infrastructure works, or rural
+        and agricultural operations, Greenline HSE would be glad to discuss how we can help.
+      </p>
+      <p class="contact__copy">
+        There’s no obligation in a first conversation — just an experienced, straightforward
+        sounding board for whatever’s on your mind. If we’re the right fit, we’ll show you exactly
+        how we’d help. If we’re not, we’ll tell you that too.
+      </p>
+      <p class="contact__copy contact__copy--strong">
+        The first step is simple: get in touch for a complimentary, no-obligation conversation.
+      </p>
+    </div>
+
+    <!-- One calm CTA — opens the visitor's email client, pre-addressed -->
+    <div class="contact__cta">
+      <p class="contact__cta-kicker">No obligation. Just a first conversation.</p>
+      <a class="btn btn--hi contact__cta-btn" href={mailto} data-magnetic>
+        Book your initial conversation <span class="btn__arrow" aria-hidden="true">→</span>
+      </a>
+      <p class="contact__cta-note">Opens a pre-addressed email in your own mail app.</p>
+
+      <ul class="contact__direct">
+        <li>
+          <span class="contact__k">Email</span>
+          <a href={`mailto:${email}`}>{email}</a>
+        </li>
+        <li>
+          <span class="contact__k">Phone</span>
+          <a href={`tel:${phone.replace(/\s+/g, '')}`}>{phone}</a>
+        </li>
+        <li>
+          <span class="contact__k">Service area</span>
+          <span>Australia-wide</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    position: relative;
+    background: var(--field-green);
+    color: var(--paper-on-dark);
+    padding-block: var(--space-xl);
+    overflow: hidden;
+  }
+  .contact__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: var(--space-l);
+    align-items: center;
+    margin-top: var(--space-l);
+  }
+
+  .section-index--light {
+    color: var(--hi-vis);
+  }
+  .contact__title {
+    color: var(--paper-on-dark);
+    font-size: var(--step-4);
+    margin-bottom: var(--space-m);
+  }
+  .contact__lede {
+    font-size: var(--step-1);
+    line-height: 1.45;
+    max-width: 40ch;
+    color: var(--paper-on-dark);
+  }
+  .contact__copy {
+    margin-top: var(--space-m);
+    max-width: 48ch;
+    color: var(--paper-on-dark-dim);
+  }
+  .contact__copy--strong {
+    color: var(--paper-on-dark);
+    font-weight: 500;
+  }
+
+  /* CTA card */
+  .contact__cta {
+    background: rgba(252, 250, 243, 0.06);
+    border: 1px solid rgba(243, 241, 228, 0.2);
+    border-radius: var(--radius);
+    padding: clamp(1.75rem, 1rem + 2.5vw, 2.75rem);
+  }
+  .contact__cta-kicker {
+    font-family: var(--font-display);
+    font-size: var(--step-1);
+    color: var(--paper-on-dark);
+    line-height: 1.3;
+    margin-bottom: var(--space-m);
+  }
+  .contact__cta-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: var(--step-0);
+    padding-block: 1.1em;
+  }
+  .contact__cta-note {
+    margin-top: 0.85rem;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--paper-on-dark-dim);
+    text-align: center;
+  }
+
+  .contact__direct {
+    list-style: none;
+    padding: var(--space-l) 0 0;
+    margin: var(--space-l) 0 0;
+    border-top: 1px solid rgba(243, 241, 228, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+  }
+  .contact__direct li {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: var(--space-s);
+    align-items: baseline;
+  }
+  .contact__k {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--hi-vis);
+  }
+  .contact__direct a {
+    color: var(--paper-on-dark);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .contact__direct a:hover {
+    border-bottom-color: var(--hi-vis);
+  }
+
+  .btn--hi {
+    --btn-bg: var(--hi-vis);
+    --btn-fg: var(--bitumen);
+    font-weight: 700;
+  }
+  .btn--hi:hover {
+    background: var(--paper-on-dark);
+    border-color: var(--paper-on-dark);
+    color: var(--bitumen);
+  }
+
+  @media (max-width: 860px) {
+    .contact__inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-l);
+    }
+  }
+</style>

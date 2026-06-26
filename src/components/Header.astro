@@ -1,0 +1,209 @@
+---
+// Site header — logo mark + wordmark with the drawn set-out line (§10),
+// anchor nav only (§12).
+import LogoMark from './LogoMark.astro';
+const nav = [
+  { href: '#meet', label: 'Meet Greenline' },
+  { href: '#safety-reality', label: 'The reality' },
+  { href: '#services', label: 'What we do' },
+  { href: '#construction', label: 'Construction' },
+  { href: '#agriculture', label: 'Agriculture' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<header class="site-header" data-header>
+  <div class="wrap site-header__inner">
+    <a class="logo" href="#top" aria-label="Greenline HSE — home">
+      <span class="logo__mark"><LogoMark /></span>
+      <span class="logo__wrap">
+        <!-- Option A: a thin Hi-Vis set-out line runs through the wordmark -->
+        <svg class="logo__line" viewBox="0 0 200 24" aria-hidden="true" preserveAspectRatio="none">
+          <line data-logo-line x1="0" y1="12" x2="200" y2="12" stroke-width="2" stroke-linecap="round"
+          ></line>
+        </svg>
+        <span class="logo__word">greenline</span>
+        <span class="logo__hse">HSE</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        {nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle>
+      <span class="visually-hidden">Menu</span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" data-mobile-nav hidden>
+    <ul>
+      {nav.map((item) => <li><a href={item.href} data-mobile-link>{item.label}</a></li>)}
+    </ul>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 100;
+    background: rgba(247, 244, 234, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, background 0.3s ease;
+  }
+  .site-header[data-scrolled] {
+    border-bottom-color: var(--sage);
+  }
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-m);
+    min-height: 4.5rem;
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    padding-block: 0.4rem;
+  }
+  .logo__mark {
+    display: inline-flex;
+    width: 2.1rem;
+    height: 2.1rem;
+    flex: 0 0 auto;
+  }
+  .logo__wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.45rem;
+  }
+  .logo__line {
+    position: absolute;
+    left: -6px;
+    right: -6px;
+    bottom: 0.15em;
+    width: calc(100% + 12px);
+    height: 10px;
+    overflow: visible;
+  }
+  .logo__line line {
+    stroke: var(--hi-vis);
+  }
+  .logo__word {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 420;
+    letter-spacing: -0.02em;
+    color: var(--field-green);
+    line-height: 1;
+  }
+  .logo__hse {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--bitumen);
+  }
+
+  .site-nav {
+    margin-left: auto;
+  }
+  .site-nav ul {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.1rem, 2vw, 2rem);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .site-nav li {
+    flex: 0 0 auto;
+  }
+  .site-nav a {
+    display: inline-block;
+    white-space: nowrap;
+    font-family: var(--font-body);
+    font-size: 0.74rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--bitumen);
+    text-decoration: none;
+    padding-block: 0.25rem;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s ease, color 0.25s ease;
+  }
+  .site-nav a:hover {
+    color: var(--field-green);
+    border-bottom-color: var(--hi-vis);
+  }
+
+  .nav-toggle {
+    display: none;
+    margin-left: auto;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: 0;
+    padding: 0.6rem;
+    cursor: pointer;
+  }
+  .nav-toggle__bar {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--field-green);
+    transition: transform 0.3s var(--ease-out), opacity 0.3s ease;
+  }
+  .nav-toggle[aria-expanded='true'] .nav-toggle__bar:first-child {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-toggle[aria-expanded='true'] .nav-toggle__bar:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .mobile-nav {
+    background: var(--cloud);
+    border-top: 1px solid var(--sage);
+    border-bottom: 1px solid var(--sage);
+    padding: var(--space-s) var(--gutter) var(--space-m);
+  }
+  .mobile-nav[hidden] {
+    display: none;
+  }
+  .mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .mobile-nav a {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--bitumen);
+    text-decoration: none;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--sage-mist);
+  }
+  @media (max-width: 980px) {
+    .site-nav {
+      display: none;
+    }
+    .nav-toggle {
+      display: flex;
+    }
+  }
+</style>

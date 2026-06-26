@@ -1,0 +1,122 @@
+---
+// #DATA — Safety data band (dark). Full-bleed Bitumen, large warm off-white
+// numerals, one figure picked out in Hi-Vis, a single thin Hi-Vis baseline,
+// mono labels. Built in type — no photo (§2 INFOGRAPHIC note).
+const stats = [
+  { value: '188', count: 188, label: 'workers lost in 2024', accent: false },
+  { value: '~1 in 5', label: 'in construction', accent: false },
+  { value: '42%', count: 42, suffix: '%', label: 'of deaths involve vehicles', accent: true },
+  { value: '#2', label: 'killer: falls from height', accent: false, prefix: '#' },
+  { value: '146,700', count: 146700, label: 'serious claims a year', accent: false },
+];
+---
+
+<aside class="stat-band" data-stat-band aria-label="Key Australian work-safety figures, 2024">
+  <div class="stat-band__inner wrap">
+    <ul class="stat-band__list">
+      {
+        stats.map((s) => (
+          <li class:list={['stat', { 'stat--accent': s.accent }]}>
+            <span
+              class="stat__value"
+              data-count={s.count ?? undefined}
+              data-suffix={s.suffix ?? ''}
+              data-prefix={s.prefix ?? ''}
+            >
+              {s.value}
+            </span>
+            <span class="stat__label">{s.label}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</aside>
+
+<style>
+  .stat-band {
+    position: relative;
+    background: var(--bitumen);
+    color: var(--paper-on-dark);
+    /* sits close under the intro so the light + dark read as one section */
+    margin: var(--space-m) 0 var(--space-l);
+    padding-block: clamp(2.5rem, 4.5vw, 4rem);
+    /* clip-path wipe target (§11.6) — set via JS when motion is on */
+  }
+  .stat-band__list {
+    list-style: none;
+    margin: 0;
+    /* a single thin Hi-Vis rule threads across the top of the figures */
+    padding: 1.5rem 0 0;
+    border-top: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: clamp(1rem, 2vw, 2rem);
+    align-items: start;
+    position: relative;
+  }
+  .stat-band__list::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 2px;
+    background: var(--hi-vis);
+    transform-origin: left center;
+  }
+  /* baseline draws in when motion is on; full width otherwise */
+  :global(.js-motion) .stat-band__list::before {
+    transform: scaleX(0);
+    transition: transform 1s var(--ease-out);
+  }
+  :global(.js-motion) .stat-band__list.is-drawn::before {
+    transform: scaleX(1);
+  }
+  .stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+  .stat__value {
+    font-family: var(--font-display);
+    font-weight: 360;
+    /* sized to keep even "146,700" on a single line within its column */
+    font-size: clamp(1.7rem, 0.9rem + 2.6vw, 2.85rem);
+    line-height: 1;
+    color: var(--paper-on-dark);
+    letter-spacing: -0.015em;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .stat--accent .stat__value {
+    color: var(--hi-vis);
+  }
+  .stat__label {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.04em;
+    color: var(--paper-on-dark-dim);
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 900px) {
+    .stat-band__list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(2rem, 6vw, 3rem);
+    }
+    .stat-band__list::before {
+      display: none;
+    }
+    .stat:first-child {
+      grid-column: 1 / -1;
+    }
+  }
+  @media (max-width: 460px) {
+    .stat-band__list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

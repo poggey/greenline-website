@@ -1,0 +1,22 @@
+---
+// Clearly-labelled image / infographic placeholder (§13).
+// No invented imagery — these slots name the source prompt + aspect ratio
+// so the client can drop generated assets straight in.
+interface Props {
+  tag: string;
+  desc: string;
+  ratio?: string;
+  dark?: boolean;
+}
+const { tag, desc, ratio = '16 / 9', dark = false } = Astro.props;
+---
+
+<div
+  class:list={['placeholder', { 'placeholder--dark': dark }]}
+  style={`aspect-ratio:${ratio};`}
+  role="img"
+  aria-label={`Image placeholder — ${desc}`}
+>
+  <span class="placeholder__tag"><strong>◇</strong> {tag}</span>
+  <span class="placeholder__desc">{desc}</span>
+</div>

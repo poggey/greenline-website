@@ -1,0 +1,15 @@
+# build output
+dist/
+# dependencies
+node_modules/
+# generated types
+.astro/
+# environment
+.env
+.env.production
+# vercel
+.vercel
+# macOS
+.DS_Store
+# logs
+npm-debug.log*

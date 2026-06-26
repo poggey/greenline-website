@@ -1,0 +1,192 @@
+---
+// 4. MEET GREENLINE (§12.4) — credibility first: a mono spec-sheet ribbon
+// of credentials, then the Mayo-farm story and the boutique difference.
+// No headshot (low-profile launch). Copy verbatim from Part I §4.
+import { Image } from 'astro:assets';
+import mayoFarmland from '../assets/images/meet-mayo-farmland.jpg';
+
+const ribbon = [
+  { key: 'EXPERIENCE', lines: ['20+ years · Ireland & Australia'] },
+  {
+    key: 'EDUCATION',
+    lines: [
+      'BSc (Hons) Health & Safety Systems',
+      'Cert IV Environmental Management & Sustainability',
+    ],
+  },
+  { key: 'SECTORS', lines: ['Construction · Infrastructure · Health · Industrial · Agriculture'] },
+  { key: 'ALSO', lines: ['Various HSE training & auditing qualifications'] },
+];
+
+---
+
+<section class="section section--grid" id="meet" aria-labelledby="meet-h">
+  <div class="wrap">
+    <p class="section-index">Who we are</p>
+    <h2 id="meet-h" class="meet-title" data-split>Meet Greenline HSE — and why work with us</h2>
+
+    <!-- Mono spec-sheet credentials ribbon (§12.4) — no CV, no headshot -->
+    <dl class="ribbon" data-reveal="up" aria-label="Credentials">
+      {
+        ribbon.map((row) => (
+          <div class="ribbon__row">
+            <dt>{row.key}</dt>
+            <dd>{row.lines.map((line) => <span>{line}</span>)}</dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <div class="meet-grid">
+      <div class="meet-story" data-reveal="up">
+        <p class="meet-lead">
+          Greenline HSE began on a family farm in County Mayo — where founder Catriona Monaghan
+          learned the lesson that still drives the firm: <strong
+            >safety advice is worthless unless it fits the way people actually work.</strong
+          >
+        </p>
+        <p>
+          Twenty-plus years on — across hospital builds, rail and transport, commercial and
+          industrial projects in Ireland and Australia — that conviction hasn’t changed. Catriona
+          founded Greenline to give businesses what big consultancies often can’t: senior,
+          straightforward HSE support, delivered by the person you actually talk to.
+        </p>
+        <p>Get the trust and the operations right, and the compliance looks after itself.</p>
+      </div>
+
+      <!-- Place, not portrait (§4 VISUAL) — a sunlit image, no face -->
+      <figure class="meet-visual" data-reveal="up">
+        <Image
+          src={mayoFarmland}
+          alt="Sunlit green farmland divided by dry-stone walls under an open blue sky"
+          class="meet-image"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>
+          “From a farm in Mayo to construction sites across Australia — the same belief: keep it
+          practical, keep it human.”
+        </figcaption>
+      </figure>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .meet-title {
+    font-size: var(--step-3);
+    max-width: 20ch;
+    margin-bottom: var(--space-l);
+  }
+
+  /* Compact credentials strip — four cells, label over value */
+  .ribbon {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 0 var(--space-l);
+    background: var(--cloud);
+    border: var(--hairline);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .ribbon__row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: var(--space-m);
+    border-right: 1px solid var(--sage-mist);
+  }
+  .ribbon__row:last-child {
+    border-right: 0;
+  }
+  .ribbon dt {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    color: var(--field-green);
+  }
+  .ribbon dd {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    color: var(--bitumen);
+    font-size: var(--step-0);
+    line-height: 1.35;
+  }
+
+  .meet-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: var(--space-l);
+    align-items: start;
+  }
+  .meet-story {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    max-width: var(--measure);
+  }
+  .meet-lead {
+    font-family: var(--font-display);
+    font-size: var(--step-2);
+    line-height: 1.25;
+    color: var(--field-green);
+    letter-spacing: -0.01em;
+  }
+  .meet-lead strong {
+    font-weight: 500;
+  }
+  .meet-visual {
+    margin: 0;
+    position: sticky;
+    top: 6rem;
+  }
+  .meet-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius);
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+  }
+  .meet-visual figcaption {
+    margin-top: var(--space-s);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--field-green);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 860px) {
+    .meet-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-l);
+    }
+    .meet-visual {
+      position: static;
+    }
+    .ribbon {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .ribbon__row:nth-child(2n) {
+      border-right: 0;
+    }
+    .ribbon__row:nth-child(-n + 2) {
+      border-bottom: 1px solid var(--sage-mist);
+    }
+  }
+  @media (max-width: 480px) {
+    .ribbon {
+      grid-template-columns: 1fr;
+    }
+    .ribbon__row {
+      border-right: 0;
+      border-bottom: 1px solid var(--sage-mist);
+    }
+    .ribbon__row:last-child {
+      border-bottom: 0;
+    }
+  }
+</style>

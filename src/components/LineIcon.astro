@@ -1,0 +1,75 @@
+---
+// Custom thin-line icons (§10 graphic language) — matching the line motif,
+// single uniform stroke weight, no fills. These ARE the design (the line
+// doing the work), not generic icon-pack glyphs. A refined final set can be
+// generated from prompts #ICONS / #SECTORS and dropped in to replace these.
+interface Props {
+  name: string;
+  label?: string;
+}
+const { name, label } = Astro.props;
+
+// Each entry is the inner markup of a 0 0 48 48 viewBox, stroke = currentColor.
+const icons: Record<string, string> = {
+  // --- Services (#ICONS) ---
+  system:
+    '<circle cx="14" cy="14" r="4"/><circle cx="34" cy="14" r="4"/><circle cx="24" cy="34" r="4"/><path d="M16.8 16.8 21.5 30M31.2 16.8 26.5 30M18 14h12"/>',
+  risk: '<path d="M24 9 41 38H7L24 9Z"/><path d="M24 20v8"/><circle cx="24" cy="33" r="0.6"/>',
+  sop: '<rect x="13" y="8" width="22" height="32" rx="2"/><path d="M18 16h12M18 22h12M18 28h8"/>',
+  audit:
+    '<rect x="13" y="10" width="22" height="30" rx="2"/><rect x="19" y="7" width="10" height="6" rx="1.5"/><path d="M18 22l2.5 2.5L25 20M18 31l2.5 2.5L25 29"/>',
+  contractor:
+    '<circle cx="19" cy="18" r="5"/><path d="M10 38c0-6 4-10 9-10s9 4 9 10"/><path d="M31 22h7M31 28h7M31 34h5"/>',
+  investigation: '<circle cx="21" cy="21" r="11"/><path d="M29 29l9 9"/>',
+  compliance:
+    '<path d="M24 8 38 13v10c0 9-6 14-14 17-8-3-14-8-14-17V13L24 8Z"/><path d="M18 23l4 4 8-9"/>',
+  training:
+    '<path d="M24 12 8 19l16 7 16-7-16-7Z"/><path d="M14 22v8c0 2 5 4 10 4s10-2 10-4v-8"/><path d="M40 19v9"/>',
+  emergency:
+    '<circle cx="24" cy="24" r="15"/><path d="M24 15v10M24 30v.5"/><path d="M21 15h6" />',
+  leadership:
+    '<path d="M14 40V9"/><path d="M14 11h18l-4 5 4 5H14"/>',
+  // --- Sectors (#SECTORS) ---
+  hospital:
+    '<rect x="11" y="14" width="26" height="26" rx="1.5"/><path d="M24 19v10M19 24h10"/><path d="M11 14l13-6 13 6"/>',
+  train:
+    '<rect x="13" y="10" width="22" height="22" rx="4"/><path d="M13 22h22M19 16h10"/><circle cx="19" cy="27" r="1"/><circle cx="29" cy="27" r="1"/><path d="M16 38l4-6M32 38l-4-6"/>',
+  crane:
+    '<path d="M16 41V13"/><path d="M11 41h10"/><path d="M9 13h30"/><path d="M16 5 9 13M16 5 23 13"/><path d="M34 13v6"/><rect x="31" y="19" width="6" height="4"/>',
+  earthworks:
+    '<rect x="8" y="31" width="17" height="7" rx="3.5"/><path d="M13 31v-6h8v6"/><path d="M20 27l10-6 3 4-7 4"/><path d="M33 25l-1 7h7z"/>',
+  commercial:
+    '<rect x="14" y="9" width="20" height="31" rx="1"/><path d="M19 15h2M27 15h2M19 21h2M27 21h2M19 27h2M27 27h2M21 40v-6h6v6"/>',
+  house: '<path d="M10 24 24 11l14 13"/><path d="M14 22v18h20V22"/><path d="M21 40v-9h6v9"/>',
+  factory:
+    '<path d="M10 40V22l9 6V22l9 6V14h10v26H10Z"/><path d="M34 22h-3"/>',
+  aircraft:
+    '<path d="M24 8c2 0 3 4 3 10v6l11 8v3l-11-3v6l3 3v2l-6-2-6 2v-2l3-3v-6l-11 3v-3l11-8v-6c0-6 1-10 3-10Z"/>',
+};
+
+const inner = icons[name] ?? '';
+---
+
+<svg
+  class="line-icon"
+  viewBox="0 0 48 48"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.6"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  role={label ? 'img' : 'presentation'}
+  aria-label={label}
+  aria-hidden={label ? undefined : 'true'}
+  set:html={inner}
+>
+</svg>
+
+<style>
+  .line-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--field-green);
+    overflow: visible;
+  }
+</style>

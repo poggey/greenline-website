@@ -1,0 +1,492 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Greenline HSE — home" [ref=e5] [cursor=pointer]:
+        - /url: "#top"
+        - img [ref=e6]
+        - generic [ref=e7]: greenline
+        - generic [ref=e8]: HSE
+      - navigation "Primary" [ref=e9]:
+        - list [ref=e10]:
+          - listitem [ref=e11]:
+            - link "The reality" [ref=e12] [cursor=pointer]:
+              - /url: "#safety-reality"
+          - listitem [ref=e13]:
+            - link "Compliance gap" [ref=e14] [cursor=pointer]:
+              - /url: "#compliance-gap"
+          - listitem [ref=e15]:
+            - link "Meet Greenline" [ref=e16] [cursor=pointer]:
+              - /url: "#meet"
+          - listitem [ref=e17]:
+            - link "What we do" [ref=e18] [cursor=pointer]:
+              - /url: "#services"
+          - listitem [ref=e19]:
+            - link "Areas of work" [ref=e20] [cursor=pointer]:
+              - /url: "#areas"
+          - listitem [ref=e21]:
+            - link "Contact" [ref=e22] [cursor=pointer]:
+              - /url: "#contact"
+      - link "Start a conversation" [ref=e23] [cursor=pointer]:
+        - /url: "#contact"
+        - text: Start a conversation
+        - generic [ref=e24]: →
+  - generic:
+    - img
+  - main [ref=e25]:
+    - generic [ref=e26]:
+      - img [ref=e28]
+      - generic [ref=e31]:
+        - paragraph [ref=e32]: Greenline HSE
+        - heading "Practical safety that works on the ground" [level=1] [ref=e33]:
+          - generic [ref=e35]: Practical
+          - generic [ref=e37]: safety
+          - generic [ref=e39]: that
+          - generic [ref=e41]: works
+          - generic [ref=e43]: "on"
+          - generic [ref=e45]: the
+          - generic [ref=e47]: ground
+        - paragraph [ref=e48]: Practical Health, Safety & Environmental expertise for Australian construction, infrastructure and rural operations. Senior advice, delivered direct.
+        - generic [ref=e49]:
+          - link "Start a conversation" [ref=e50] [cursor=pointer]:
+            - /url: "#contact"
+            - text: Start a conversation
+            - generic [ref=e51]: →
+          - generic [ref=e52]: “Safety that works on the ground, not just on paper.”
+      - link "Scroll to the safety reality" [ref=e53] [cursor=pointer]:
+        - /url: "#safety-reality"
+        - generic [ref=e54]: Scroll
+    - region "The state of safety on Australian sites" [ref=e56]:
+      - generic [ref=e57]:
+        - paragraph [ref=e58]: 02 — The state of safety
+        - heading "The state of safety on Australian sites" [level=2] [ref=e59]:
+          - generic [ref=e60]:
+            - generic [ref=e61]: The
+            - generic [ref=e62]: state
+            - generic [ref=e63]: of
+            - generic [ref=e64]: safety
+          - generic [ref=e65]:
+            - generic [ref=e66]: "on"
+            - generic [ref=e67]: Australian
+            - generic [ref=e68]: sites
+        - paragraph [ref=e69]: Let’s start with the picture most safety documents skip past.
+        - generic [ref=e70]:
+          - paragraph [ref=e71]:
+            - text: In 2024,
+            - strong [ref=e72]: 188 Australian workers did not come home from work
+            - text: — each one a death from a traumatic, work-related injury. Construction accounted for
+            - strong [ref=e73]: 37 of those deaths (around one in five)
+            - text: ", sitting consistently among the small handful of industries that carry the heaviest toll."
+            - emphasis [ref=e74]: "(Source: Safe Work Australia, Key Work Health and Safety Statistics.)"
+          - paragraph [ref=e75]: "Two hazards dominate the construction story, and neither is exotic:"
+          - list [ref=e76]:
+            - listitem [ref=e77]:
+              - strong [ref=e78]: Falls from height.
+              - text: This remains one of the leading killers on Australian worksites, and construction carries the bulk of it — in a recent year, nearly
+              - strong [ref=e79]: half of all fall-from-height fatalities
+              - text: happened in our industry. Worryingly, the national fall-from-height death toll jumped sharply — up around
+              - strong [ref=e80]: 71% in a single year
+              - text: — a reminder that this is a live, present risk, not a solved problem.
+            - listitem [ref=e81]:
+              - strong [ref=e82]: Vehicles and moving plant.
+              - text: Across all industries, vehicle incidents are the single largest cause of worker death — roughly
+              - strong [ref=e83]: 42% of fatalities
+              - text: . On a busy site, the line between “traffic management plan” and “tragedy” is often a few metres and a moment’s inattention.
+          - complementary [ref=e84]:
+            - generic [ref=e85]: ◆ Did you know?
+            - paragraph [ref=e86]:
+              - text: Labourers, trades workers and machinery operators account for the overwhelming majority of fall-from-height deaths. The people most exposed are often the ones with the least say in how the work is set up — which is exactly why systems have to be designed
+              - emphasis [ref=e87]: with
+              - text: them, not
+              - emphasis [ref=e88]: at
+              - text: them.
+          - paragraph [ref=e89]:
+            - text: And the harm isn’t only physical. In 2023–24 there were roughly
+            - strong [ref=e90]: 146,700 serious workers’ compensation claims
+            - text: — each one a person off work for a week or more. The fastest-growing category is
+            - strong [ref=e91]: psychological injury
+            - text: . Mental health conditions now make up over one in ten serious claims, and they keep people away from work around
+            - strong [ref=e92]: five times longer
+            - text: than the average physical injury. Psychosocial hazards are no longer a “soft” issue — under model WHS laws they are a regulated duty.
+      - complementary "Key Australian work-safety figures, 2024" [ref=e93]:
+        - list [ref=e95]:
+          - listitem [ref=e96]:
+            - generic [ref=e97]: "188"
+            - generic [ref=e98]: workers lost in 2024
+          - listitem [ref=e99]:
+            - generic [ref=e100]: ~1 in 5
+            - generic [ref=e101]: in construction
+          - listitem [ref=e102]:
+            - generic [ref=e103]: 42%
+            - generic [ref=e104]: of deaths involve vehicles
+          - listitem [ref=e105]:
+            - generic [ref=e106]: "#2"
+            - generic [ref=e107]: "killer: falls from height"
+          - listitem [ref=e108]:
+            - generic [ref=e109]: 146,700
+            - generic [ref=e110]: serious claims a year
+      - paragraph [ref=e112]:
+        - text: "The encouraging news: the long-term trend is down. Australia’s worker fatality rate has fallen by roughly a quarter over the past decade and compares well internationally. That progress didn’t come from luck or from thicker manuals. It came from businesses treating safety as something they"
+        - emphasis [ref=e113]: do
+        - text: ", every day, rather than something they"
+        - emphasis [ref=e114]: file
+        - text: .
+    - region "Why good intentions aren’t enough" [ref=e115]:
+      - generic [ref=e116]:
+        - generic [ref=e117]:
+          - paragraph [ref=e118]: 03 — The compliance gap
+          - heading "Why good intentions aren’t enough" [level=2] [ref=e119]:
+            - generic [ref=e120]:
+              - generic [ref=e121]: Why
+              - generic [ref=e122]: good
+            - generic [ref=e124]: intentions
+            - generic [ref=e125]:
+              - generic [ref=e126]: aren’t
+              - generic [ref=e127]: enough
+        - generic [ref=e128]:
+          - paragraph [ref=e129]: Most businesses we meet are not careless. They have policies. They have a folder — sometimes an entire shelf — of documents. And yet the risk persists.
+          - paragraph [ref=e130]:
+            - text: Why? Because there is a difference between
+            - strong [ref=e131]: having a system
+            - text: and
+            - strong [ref=e132]: having a system people actually use.
+          - paragraph [ref=e133]: "We call the gap between the two “shelf-ware”: safety management systems written to satisfy an audit, full of language no one on site speaks, describing a way of working that doesn’t match how the job is really done. Shelf-ware passes the prequalification check and then gathers dust. When something goes wrong, it offers no protection — to the worker, or to the directors who signed it off."
+          - paragraph [ref=e134]:
+            - text: "The other failure mode is the opposite extreme:"
+            - strong [ref=e135]: over-engineering.
+            - text: A small contractor handed a 200-page system built for a tier-one principal will quietly ignore most of it, because complying fully would mean stopping work. Too much process fails for the same reason as too little — it doesn’t fit the operation.
+          - paragraph [ref=e136]:
+            - text: The goal is neither maximum paperwork nor minimum effort. It is
+            - strong [ref=e137]: fit-for-purpose
+            - text: ": the right controls, written in plain language, sized to the business, owned by the people doing the work."
+          - complementary [ref=e138]:
+            - generic [ref=e139]: ◆ A quick test
+            - paragraph [ref=e140]: Pick any procedure in your safety system and ask a worker on site to explain it in their own words. If they can, it’s a control. If they can’t — or didn’t know it existed — it’s paperwork. The aim of every Greenline engagement is to turn the second kind into the first.
+    - region "Meet Greenline HSE — and why work with us" [ref=e141]:
+      - generic [ref=e142]:
+        - paragraph [ref=e143]: 04 — Meet Greenline HSE
+        - heading "Meet Greenline HSE — and why work with us" [level=2] [ref=e144]:
+          - generic [ref=e145]:
+            - generic [ref=e146]: Meet
+            - generic [ref=e147]: Greenline
+            - generic [ref=e148]: HSE
+            - generic [ref=e149]: —
+          - generic [ref=e150]:
+            - generic [ref=e151]: and
+            - generic [ref=e152]: why
+            - generic [ref=e153]: work
+            - generic [ref=e154]: with
+            - generic [ref=e155]: us
+        - generic "Credentials" [ref=e156]:
+          - generic [ref=e157]:
+            - term [ref=e158]: EXPERIENCE
+            - definition [ref=e159]:
+              - generic [ref=e160]: 20+ years · Ireland & Australia
+          - generic [ref=e161]:
+            - term [ref=e162]: EDUCATION
+            - definition [ref=e163]:
+              - generic [ref=e164]: BSc (Hons) Health & Safety Systems
+              - generic [ref=e165]: Cert IV Environmental Management & Sustainability
+          - generic [ref=e166]:
+            - term [ref=e167]: SECTORS
+            - definition [ref=e168]:
+              - generic [ref=e169]: Construction · Infrastructure · Health · Industrial
+          - generic [ref=e170]:
+            - term [ref=e171]: ALSO
+            - definition [ref=e172]:
+              - generic [ref=e173]: Various HSE training & auditing qualifications
+        - generic [ref=e174]:
+          - generic [ref=e175]:
+            - paragraph [ref=e176]: Greenline HSE didn’t begin in a boardroom. It began on a family farm in County Mayo, on the west coast of Ireland.
+            - paragraph [ref=e177]:
+              - text: "Founder Catriona Monaghan grew up there, on land where the work was demanding, the weather rarely cooperated, and machinery, livestock and long days were simply part of life. A farm is one of the most dangerous workplaces there is — and it teaches you something that no qualification can:"
+              - strong [ref=e178]: safety advice is worthless unless it fits the way people actually work.
+              - text: A control that slows the job down, or insults the intelligence of the person doing it, gets quietly abandoned. A control that makes sense gets kept.
+            - paragraph [ref=e179]: That lesson — practical, people-first, no theatre — has shaped more than twenty years of work across Australia and Ireland, on hospital builds, rail and transport infrastructure, commercial and residential developments, industrial facilities and rural operations alike.
+            - paragraph [ref=e180]:
+              - text: "It is also why Greenline exists. Catriona founded the firm to offer businesses something the big consultancies often can’t: senior, straightforward HSE support, tailored to the individual business, delivered by the person you actually talk to. We believe effective safety is about far more than compliance. It is about"
+              - strong [ref=e181]: building trust, understanding operations, and delivering solutions that work in the real world.
+              - text: Get those right and the compliance looks after itself.
+          - 'figure "“From a farm in Mayo to construction sites across Australia — the same belief: keep it practical, keep it human.”" [ref=e182]':
+            - generic [ref=e183]:
+              - img "Image placeholder — Bright still life of the trade — white hard hat on rolled site drawings, leather notebook & pencil, clean daylight, no people." [ref=e184]:
+                - generic [ref=e185]:
+                  - strong [ref=e186]: ◇
+                  - text: "Image · Prompt #3"
+                - generic [ref=e187]: Bright still life of the trade — white hard hat on rolled site drawings, leather notebook & pencil, clean daylight, no people.
+              - img "Image placeholder — Sunlit west-of-Ireland farmland, dry-stone walls dividing vivid green fields, open blue sky." [ref=e188]:
+                - generic [ref=e189]:
+                  - strong [ref=e190]: ◇
+                  - text: "Image · Prompt #4"
+                - generic [ref=e191]: Sunlit west-of-Ireland farmland, dry-stone walls dividing vivid green fields, open blue sky.
+            - generic [ref=e192]: "“From a farm in Mayo to construction sites across Australia — the same belief: keep it practical, keep it human.”"
+        - heading "What that means when you work with Greenline" [level=3] [ref=e193]
+        - list [ref=e194]:
+          - listitem [ref=e195]:
+            - heading "The principal, not a placeholder." [level=4] [ref=e196]
+            - paragraph [ref=e197]: At a big firm, the senior expert wins the work and a junior delivers it. With Greenline, the person who scopes your job is the person who does it — more than twenty years of cross-sector experience in the room every time, not on the letterhead.
+          - listitem [ref=e198]:
+            - heading "Fit-for-purpose, never shelf-ware." [level=4] [ref=e199]
+            - paragraph [ref=e200]: No generic system with your logo dropped on top. Every deliverable is sized to your operation and written so the crew can read it. If you don’t need something, we won’t sell it to you.
+          - listitem [ref=e201]:
+            - heading "Independent and senior." [level=4] [ref=e202]
+            - paragraph [ref=e203]: An external set of experienced eyes sees what familiarity hides — and, having worked across healthcare, rail, commercial, industrial and rural settings, recognises the near-miss that’s about to become an incident long before it shows up in a report.
+          - listitem [ref=e204]:
+            - heading "Plain English, not fear and jargon." [level=4] [ref=e205]
+            - paragraph [ref=e206]: We explain the why in words people understand, so good practice outlives the engagement.
+          - listitem [ref=e207]:
+            - heading "Relationships over transactions." [level=4] [ref=e208]
+            - paragraph [ref=e209]: We’re small enough to be genuinely responsive and flexible, and we’re in it for the long-term partnership — not the next invoice. When you call, you reach someone who already knows your site.
+        - complementary [ref=e210]:
+          - generic [ref=e211]: ◆ In one line
+          - paragraph [ref=e212]:
+            - text: A big firm sells you
+            - emphasis [ref=e213]: a system
+            - text: . A template sells you
+            - emphasis [ref=e214]: a document
+            - text: . Greenline gives you
+            - emphasis [ref=e215]: a safer operation
+            - text: — and stays close enough to make sure it stays that way.
+    - region "What we do" [ref=e216]:
+      - generic [ref=e217]:
+        - paragraph [ref=e218]: 05 — What we do
+        - heading "What we do" [level=2] [ref=e219]:
+          - generic [ref=e220]:
+            - generic [ref=e221]: What
+            - generic [ref=e222]: we
+            - generic [ref=e223]: do
+        - paragraph [ref=e224]: Greenline HSE provides practical Health, Safety and Environmental support tailored to the needs of each business. Our work spans the full lifecycle of a project — and the full breadth of what a safety function needs to cover.
+      - list [ref=e227]:
+        - listitem [ref=e228]:
+          - generic [ref=e229]: "01"
+          - img [ref=e230]
+          - heading "Health & Safety Management Systems" [level=3] [ref=e235]
+          - paragraph [ref=e236]: Development and review of practical systems that support compliance and get used.
+        - listitem [ref=e237]:
+          - generic [ref=e238]: "02"
+          - img [ref=e239]
+          - heading "Risk Assessments" [level=3] [ref=e242]
+          - paragraph [ref=e243]: Identifying and managing workplace hazards through clear, usable risk assessment processes.
+        - listitem [ref=e244]:
+          - generic [ref=e245]: "03"
+          - img [ref=e246]
+          - heading "Standard Operating Procedures (SOPs)" [level=3] [ref=e249]
+          - paragraph [ref=e250]: Easy-to-follow procedures for routine and high-risk activities, written in plain English.
+        - listitem [ref=e251]:
+          - generic [ref=e252]: "04"
+          - img [ref=e253]
+          - heading "Site Audits & Inspections" [level=3] [ref=e257]
+          - paragraph [ref=e258]: Independent eyes on your site to verify compliance and surface improvement opportunities before an incident does.
+        - listitem [ref=e259]:
+          - generic [ref=e260]: "05"
+          - img [ref=e261]
+          - heading "Contractor Management" [level=3] [ref=e265]
+          - paragraph [ref=e266]: Prequalification, onboarding and ongoing management of subcontractors and suppliers.
+        - listitem [ref=e267]:
+          - generic [ref=e268]: "06"
+          - img [ref=e269]
+          - heading "Incident Investigations" [level=3] [ref=e272]
+          - paragraph [ref=e273]: Getting to genuine root cause, with practical corrective actions and lessons that stick.
+        - listitem [ref=e274]:
+          - generic [ref=e275]: "07"
+          - img [ref=e276]
+          - heading "Compliance Reviews" [level=3] [ref=e279]
+          - paragraph [ref=e280]: Measuring your operation against legislation, industry standards and your own expectations.
+        - listitem [ref=e281]:
+          - generic [ref=e282]: "08"
+          - img [ref=e283]
+          - heading "Training & Inductions" [level=3] [ref=e286]
+          - paragraph [ref=e287]: Induction materials, toolbox topics and workforce engagement that lands with the crew.
+        - listitem [ref=e288]:
+          - generic [ref=e289]: "09"
+          - img [ref=e290]
+          - heading "Emergency Planning" [level=3] [ref=e292]
+          - paragraph [ref=e293]: Emergency procedures and response arrangements you can actually execute under pressure.
+        - listitem [ref=e294]:
+          - generic [ref=e295]: "10"
+          - img [ref=e296]
+          - heading "Leadership & Safety Culture" [level=3] [ref=e298]
+          - paragraph [ref=e299]: Helping businesses build genuine safety cultures through leadership, communication and engagement.
+      - paragraph [ref=e300]:
+        - text: ◇ Custom thin-line icon set — final art per prompt
+        - strong [ref=e301]: "#ICONS"
+        - text: .
+    - 'region "Two areas of work: construction and agriculture" [ref=e302]':
+      - generic [ref=e303]:
+        - paragraph [ref=e304]: 06 — Two areas of work
+        - 'heading "Two areas of work: construction and agriculture" [level=2] [ref=e305]':
+          - generic [ref=e306]:
+            - generic [ref=e307]: Two
+            - generic [ref=e308]: areas
+            - generic [ref=e309]: of
+            - generic [ref=e310]: "work:"
+          - generic [ref=e311]:
+            - generic [ref=e312]: construction
+            - generic [ref=e313]: and
+            - generic [ref=e314]: agriculture
+        - paragraph [ref=e315]: Catriona works across two distinct fields. Construction and infrastructure is the heart of the practice; agriculture and rural is where it all began and where it keeps a permanent, smaller place.
+      - generic [ref=e316]:
+        - generic [ref=e317]:
+          - paragraph [ref=e318]: The focus
+          - heading "Construction & Infrastructure" [level=3] [ref=e319]
+        - generic [ref=e320]:
+          - paragraph [ref=e321]: "This is where Greenline does its deepest work, supporting projects through every phase of delivery — from early planning and enabling works through to handover. We work shoulder to shoulder with project teams, contractors and stakeholders to manage risk, meet compliance obligations and keep people safe. The construction-specific risks are exactly the ones in Section 2: falls from height, and plant and traffic."
+          - paragraph [ref=e322]: Sector experience includes healthcare and hospital projects, rail and transport infrastructure, commercial construction, residential developments, industrial facilities, demolition and enabling works, civil engineering and infrastructure, and aviation and airport infrastructure.
+      - img "Image placeholder — Visual high point — full-bleed, low upward angle of a tower crane and exposed steel frame against a bright clear blue sky, crisp morning sun, sense of scale and optimism." [ref=e324]:
+        - generic [ref=e325]:
+          - strong [ref=e326]: ◇
+          - text: "Flagship image · Prompt #5"
+        - generic [ref=e327]: Visual high point — full-bleed, low upward angle of a tower crane and exposed steel frame against a bright clear blue sky, crisp morning sun, sense of scale and optimism.
+      - generic [ref=e328]:
+        - paragraph [ref=e329]:
+          - text: Sector range — thin-line icon set per prompt
+          - strong [ref=e330]: "#SECTORS"
+        - list [ref=e331]:
+          - listitem [ref=e332]:
+            - img [ref=e333]
+            - generic [ref=e337]: Healthcare & hospital
+          - listitem [ref=e338]:
+            - img [ref=e339]
+            - generic [ref=e345]: Rail & transport
+          - listitem [ref=e346]:
+            - img [ref=e347]
+            - generic [ref=e351]: Commercial construction
+          - listitem [ref=e352]:
+            - img [ref=e353]
+            - generic [ref=e358]: Demolition & enabling
+          - listitem [ref=e359]:
+            - img [ref=e360]
+            - generic [ref=e363]: Industrial facilities
+          - listitem [ref=e364]:
+            - img [ref=e365]
+            - generic [ref=e369]: Residential developments
+          - listitem [ref=e370]:
+            - img [ref=e371]
+            - generic [ref=e373]: Civil & infrastructure
+          - listitem [ref=e374]:
+            - img [ref=e375]
+            - generic [ref=e377]: Aviation & airport
+      - generic [ref=e378]:
+        - generic [ref=e379]:
+          - paragraph [ref=e380]: The roots
+          - heading "Agriculture & Rural" [level=3] [ref=e381]
+        - generic [ref=e382]:
+          - generic [ref=e383]:
+            - paragraph [ref=e384]:
+              - text: "Greenline began on a family farm, and rural Australia holds a permanent place in how Catriona works. It’s also sobering territory:"
+              - strong [ref=e385]:
+                - text: agriculture, forestry and fishing carries the highest workplace fatality
+                - emphasis [ref=e386]: rate
+                - text: of any Australian industry
+              - text: — around
+              - strong [ref=e387]: 13.7 deaths per 100,000 workers
+              - text: ", several times the national average."
+            - paragraph [ref=e388]: Rural operations are often a workplace, a home and a family legacy all at once, frequently run lean and far from help, so safety systems built for a city office or a tier-one site simply don’t translate. Greenline tailors practical support to livestock, cropping and mixed-farming enterprises and agricultural contractors — covering machinery and equipment, chemical management, emergency planning, SOPs and risk assessments — to protect people and the next generation.
+          - complementary "Agriculture fatality rate" [ref=e389]:
+            - generic [ref=e390]: "13.7"
+            - generic [ref=e391]: deaths per 100,000 workers — the highest rate of any Australian industry
+            - img "Image placeholder — Modest secondary image — Australian farm paddock in warm golden-hour light, a small tractor low in frame, vast bright sky." [ref=e392]:
+              - generic [ref=e393]:
+                - strong [ref=e394]: ◇
+                - text: "Secondary image · Prompt #7"
+              - generic [ref=e395]: Modest secondary image — Australian farm paddock in warm golden-hour light, a small tractor low in frame, vast bright sky.
+    - region "Safety as a business advantage" [ref=e396]:
+      - generic [ref=e397]:
+        - paragraph [ref=e398]: 07 — The bottom line
+        - heading "Safety as a business advantage" [level=2] [ref=e399]:
+          - generic [ref=e400]:
+            - generic [ref=e401]: Safety
+            - generic [ref=e402]: as
+            - generic [ref=e403]: a
+            - generic [ref=e404]: business
+            - generic [ref=e405]: advantage
+        - paragraph [ref=e406]: Safety is sometimes framed as a cost centre — a tax on getting the job done. The evidence says the opposite.
+        - list "National economic impact of eliminating work-related injury and illness" [ref=e407]:
+          - listitem [ref=e408]:
+            - generic [ref=e409]: $28.6B
+            - generic [ref=e410]: larger national economy
+          - listitem [ref=e411]:
+            - generic [ref=e412]: 185,500
+            - generic [ref=e413]: more full-time jobs
+          - listitem [ref=e414]:
+            - generic [ref=e415]: 1.3%
+            - generic [ref=e416]: average wage uplift
+        - generic [ref=e417]:
+          - paragraph [ref=e418]:
+            - text: Safe Work Australia’s research found that if work-related injury and illness were eliminated, the national economy would be around
+            - strong [ref=e419]: $28.6 billion larger
+            - text: ", with roughly"
+            - strong [ref=e420]: 185,500 more full-time jobs
+            - text: and an average wage uplift of about
+            - strong [ref=e421]: 1.3%
+            - text: ". At the level of a single business, the logic is the same: incidents cause delays, rework, insurance pain, reputational damage, lost tenders and devastated people. Prevention is almost always cheaper than the alternative."
+          - paragraph [ref=e422]:
+            - text: There’s a commercial edge, too. Strong, demonstrable HSE performance increasingly
+            - emphasis [ref=e423]: wins work
+            - text: — it’s a prequalification gate on major projects and a genuine differentiator in competitive tenders. Done well, safety isn’t what slows you down. It’s part of what lets you compete.
+          - complementary [ref=e424]:
+            - generic [ref=e425]: ◆ The short version
+            - paragraph [ref=e426]: Fewer incidents → fewer delays, lower premiums, better tender scores, and people who go home each night. Practical safety pays for itself.
+    - region "Let’s talk" [ref=e427]:
+      - img [ref=e428]
+      - generic [ref=e430]:
+        - generic [ref=e431]:
+          - paragraph [ref=e432]: 08 — Let’s talk
+          - heading "Let’s talk" [level=2] [ref=e433]:
+            - generic [ref=e434]:
+              - generic [ref=e435]: Let’s
+              - generic [ref=e436]: talk
+          - paragraph [ref=e437]: Whether you’re seeking support for a construction project, infrastructure works, or rural and agricultural operations, Greenline HSE would be glad to discuss how we can help.
+          - paragraph [ref=e438]: There’s no obligation in a first conversation — just an experienced, straightforward sounding board for whatever’s on your mind. If we’re the right fit, we’ll show you exactly how we’d help. If we’re not, we’ll tell you that too.
+          - paragraph [ref=e439]: "The first step is simple: get in touch for a complimentary, no-obligation conversation."
+          - list [ref=e440]:
+            - listitem [ref=e441]:
+              - generic [ref=e442]: Email
+              - link "hello@greenlinehse.com.au" [ref=e443] [cursor=pointer]:
+                - /url: mailto:hello@greenlinehse.com.au
+            - listitem [ref=e444]:
+              - generic [ref=e445]: Phone
+              - link "[ Phone ]" [ref=e446] [cursor=pointer]:
+                - /url: tel:+61000000000
+            - listitem [ref=e447]:
+              - generic [ref=e448]: Service area
+              - generic [ref=e449]: Australia-wide
+        - generic [ref=e450]:
+          - generic [ref=e451]:
+            - generic [ref=e452]: Name
+            - textbox "Name" [ref=e453]
+          - generic [ref=e454]:
+            - generic [ref=e455]: Email
+            - textbox "Email" [ref=e456]
+          - generic [ref=e457]:
+            - generic [ref=e458]: A brief message
+            - textbox "A brief message" [ref=e459]
+          - button "Book your initial conversation" [ref=e460] [cursor=pointer]:
+            - text: Book your initial conversation
+            - generic [ref=e461]: →
+          - paragraph [ref=e462]: No obligation. We’ll reply personally — no automated funnel, no follow-up spam.
+      - paragraph [ref=e463]:
+        - strong [ref=e464]: Greenline HSE
+        - text: — Practical Solutions. Strong Relationships. Better Outcomes.
+  - contentinfo [ref=e465]:
+    - generic [ref=e466]:
+      - generic [ref=e467]:
+        - generic [ref=e468]: greenline HSE
+        - paragraph [ref=e469]: Practical Solutions. Strong Relationships. Better Outcomes.
+      - generic [ref=e470]:
+        - generic [ref=e471]:
+          - term [ref=e472]: Business
+          - definition [ref=e473]: Greenline HSE · ABN [ ABN ]
+        - generic [ref=e474]:
+          - term [ref=e475]: Service area
+          - definition [ref=e476]: Australia-wide
+        - generic [ref=e477]:
+          - term [ref=e478]: Email
+          - definition [ref=e479]:
+            - link "hello@greenlinehse.com.au" [ref=e480] [cursor=pointer]:
+              - /url: mailto:hello@greenlinehse.com.au
+    - generic [ref=e481]:
+      - paragraph [ref=e482]: © 2026 Greenline HSE. Provided for general information; not legal or professional advice for any specific situation.
+      - link "Back to top ↑" [ref=e483] [cursor=pointer]:
+        - /url: "#top"

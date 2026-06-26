@@ -1,0 +1,52 @@
+---
+// 2. THE SAFETY REALITY (§12.2) — the one deliberately dark, high-contrast
+// section (§2 / #DATA). Copy verbatim from Part I §2.
+import StatBand from './StatBand.astro';
+---
+
+<section class="section section--grid" id="safety-reality" aria-labelledby="safety-reality-h">
+  <div class="wrap">
+    <p class="section-index">The reality</p>
+    <h2 id="safety-reality-h" class="section-title" data-split>
+      The state of safety on Australian sites
+    </h2>
+    <p class="lede" data-reveal="up">
+      The picture most safety documents skip past. Construction sits among the industries carrying
+      the heaviest toll — and the numbers are the reason this work matters.
+    </p>
+  </div>
+
+  <!-- The dark moment — full-bleed Bitumen data band (#DATA). The numerals carry
+       the figures; their labels are the brief explanation. -->
+  <StatBand />
+
+  <div class="wrap">
+    <aside class="callout safety-callout" data-reveal="up">
+      <span class="callout__label">◆ Did you know?</span>
+      <p>
+        Labourers, trades workers and machinery operators account for the overwhelming majority of
+        fall-from-height deaths. The people most exposed are often the ones with the least say in how
+        the work is set up — which is exactly why systems have to be designed <em>with</em> them, not
+        <em>at</em> them.
+      </p>
+    </aside>
+    <p class="safety-source">Source: Safe Work Australia, Key Work Health &amp; Safety Statistics.</p>
+  </div>
+</section>
+
+<style>
+  .section-title {
+    font-size: var(--step-3);
+    max-width: 18ch;
+    margin-bottom: var(--space-m);
+  }
+  .safety-callout {
+    max-width: 64ch;
+  }
+  .safety-source {
+    margin-top: var(--space-m);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--sage);
+  }
+</style>

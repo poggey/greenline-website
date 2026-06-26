@@ -1,0 +1,47 @@
+---
+// The through-line (§9 big idea) — the signature Line, expressed as a quiet
+// scroll-progress rail flush to the left edge: a faint full-height track with
+// a Hi-Vis fill that draws downward as you scroll. Reads as a deliberate
+// feature, never overlapping content. Decorative; hidden from assistive tech
+// and on narrow screens.
+---
+
+<div class="through-line" aria-hidden="true" data-through-line>
+  <span class="through-line__track"></span>
+  <span class="through-line__fill" data-through-fill></span>
+</div>
+
+<style>
+  .through-line {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    z-index: 40;
+    pointer-events: none;
+  }
+  .through-line__track {
+    position: absolute;
+    inset: 0;
+    background: var(--sage);
+    opacity: 0.22;
+  }
+  .through-line__fill {
+    position: absolute;
+    inset: 0;
+    background: var(--hi-vis);
+    transform: scaleY(0);
+    transform-origin: top center;
+  }
+  /* No-JS / reduced-motion fallback: show a quiet static rail (no fill jump) */
+  :global(.js-motion) .through-line__fill {
+    transform: scaleY(var(--scroll-progress, 0));
+  }
+
+  @media (max-width: 1100px) {
+    .through-line {
+      display: none;
+    }
+  }
+</style>
