@@ -17,11 +17,6 @@ const nav = [
     <a class="logo" href="#top" aria-label="Greenline HSE — home">
       <span class="logo__mark"><LogoMark /></span>
       <span class="logo__wrap">
-        <!-- Option A: a thin Hi-Vis set-out line runs through the wordmark -->
-        <svg class="logo__line" viewBox="0 0 200 24" aria-hidden="true" preserveAspectRatio="none">
-          <line data-logo-line x1="0" y1="12" x2="200" y2="12" stroke-width="2" stroke-linecap="round"
-          ></line>
-        </svg>
         <span class="logo__word">greenline</span>
         <span class="logo__hse">HSE</span>
       </span>
@@ -80,24 +75,12 @@ const nav = [
     width: 2.1rem;
     height: 2.1rem;
     flex: 0 0 auto;
+    color: var(--field-green);
   }
   .logo__wrap {
-    position: relative;
     display: inline-flex;
     align-items: baseline;
     gap: 0.45rem;
-  }
-  .logo__line {
-    position: absolute;
-    left: -6px;
-    right: -6px;
-    bottom: 0.15em;
-    width: calc(100% + 12px);
-    height: 10px;
-    overflow: visible;
-  }
-  .logo__line line {
-    stroke: var(--hi-vis);
   }
   .logo__word {
     font-family: var(--font-display);
@@ -166,10 +149,10 @@ const nav = [
     transition: transform 0.3s var(--ease-out), opacity 0.3s ease;
   }
   .nav-toggle[aria-expanded='true'] .nav-toggle__bar:first-child {
-    transform: translateY(7px) rotate(45deg);
+    transform: translateY(3.5px) rotate(45deg);
   }
   .nav-toggle[aria-expanded='true'] .nav-toggle__bar:last-child {
-    transform: translateY(-7px) rotate(-45deg);
+    transform: translateY(-3.5px) rotate(-45deg);
   }
 
   .mobile-nav {

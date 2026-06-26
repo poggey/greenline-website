@@ -10,6 +10,7 @@ const body = encodeURIComponent(
   "Hi Catriona,\n\nI'd like to start a conversation about a project or site:\n\n• What you're working on:\n• Where (state / region):\n• What you'd like help with:\n\nThanks,\n"
 );
 const mailto = `mailto:${email}?subject=${subject}&body=${body}`;
+import LogoMark from './LogoMark.astro';
 ---
 
 <section class="contact" id="contact" aria-labelledby="contact-h" data-contact>
@@ -20,11 +21,6 @@ const mailto = `mailto:${email}?subject=${subject}&body=${body}`;
       <p class="contact__lede">
         Whether you’re seeking support for a construction project, infrastructure works, or rural
         and agricultural operations, Greenline HSE would be glad to discuss how we can help.
-      </p>
-      <p class="contact__copy">
-        There’s no obligation in a first conversation — just an experienced, straightforward
-        sounding board for whatever’s on your mind. If we’re the right fit, we’ll show you exactly
-        how we’d help. If we’re not, we’ll tell you that too.
       </p>
       <p class="contact__copy contact__copy--strong">
         The first step is simple: get in touch for a complimentary, no-obligation conversation.
@@ -55,6 +51,15 @@ const mailto = `mailto:${email}?subject=${subject}&body=${body}`;
       </ul>
     </div>
   </div>
+
+  <!-- Closing GSAP moment (§8 / §10): the signature line draws across as you
+       scroll in and resolves into the Greenline mark. -->
+  <div class="wrap contact__resolve" aria-hidden="true">
+    <svg class="contact__resolve-line" viewBox="0 0 1000 2" preserveAspectRatio="none">
+      <line data-contact-draw x1="0" y1="1" x2="1000" y2="1" stroke-width="2"></line>
+    </svg>
+    <span class="contact__resolve-mark" data-contact-mark><LogoMark /></span>
+  </div>
 </section>
 
 <style>
@@ -72,6 +77,33 @@ const mailto = `mailto:${email}?subject=${subject}&body=${body}`;
     gap: var(--space-l);
     align-items: center;
     margin-top: var(--space-l);
+  }
+
+  /* Closing flourish — line resolves into the mark */
+  .contact__resolve {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: var(--space-xl);
+  }
+  .contact__resolve-line {
+    flex: 1;
+    height: 2px;
+    overflow: visible;
+  }
+  .contact__resolve-line line {
+    stroke: var(--hi-vis);
+  }
+  .contact__resolve-mark {
+    flex: 0 0 auto;
+    width: 2.75rem;
+    height: 2.75rem;
+    color: var(--paper-on-dark);
+  }
+  /* Hidden only when motion will animate it in; visible otherwise */
+  :global(.js-motion) .contact__resolve-mark {
+    opacity: 0;
+    transform: scale(0.6);
   }
 
   .section-index--light {
@@ -137,7 +169,7 @@ const mailto = `mailto:${email}?subject=${subject}&body=${body}`;
   }
   .contact__direct li {
     display: grid;
-    grid-template-columns: 110px 1fr;
+    grid-template-columns: 110px minmax(0, 1fr);
     gap: var(--space-s);
     align-items: baseline;
   }
@@ -147,6 +179,11 @@ const mailto = `mailto:${email}?subject=${subject}&body=${body}`;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--hi-vis);
+  }
+  .contact__direct a,
+  .contact__direct li > span:last-child {
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
   .contact__direct a {
     color: var(--paper-on-dark);

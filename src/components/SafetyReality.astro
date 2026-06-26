@@ -1,19 +1,31 @@
 ---
 // 2. THE SAFETY REALITY (§12.2) — the one deliberately dark, high-contrast
-// section (§2 / #DATA). Copy verbatim from Part I §2.
+// section (§2 / #DATA). The stats stay type-led; a bright, hopeful, anonymous
+// site image sits beside the intro to humanise the section (not over the data).
+import { Image } from 'astro:assets';
+import safetyReality from '../assets/images/safety-reality.jpg';
 import StatBand from './StatBand.astro';
 ---
 
 <section class="section section--grid" id="safety-reality" aria-labelledby="safety-reality-h">
-  <div class="wrap">
-    <p class="section-index">The reality</p>
-    <h2 id="safety-reality-h" class="section-title" data-split>
-      The state of safety on Australian sites
-    </h2>
-    <p class="lede" data-reveal="up">
-      The picture most safety documents skip past. Construction sits among the industries carrying
-      the heaviest toll — and the numbers are the reason this work matters.
-    </p>
+  <div class="wrap safety-intro">
+    <div class="safety-intro__text">
+      <p class="section-index">The reality</p>
+      <h2 id="safety-reality-h" class="section-title" data-split>
+        The state of safety on Australian sites
+      </h2>
+      <p class="lede" data-reveal="up">
+        The picture most safety documents skip past. Construction sits among the industries carrying
+        the heaviest toll — and the numbers are the reason this work matters.
+      </p>
+    </div>
+    <Image
+      src={safetyReality}
+      alt="A lone hi-vis worker walking away across a sunlit early-morning construction site"
+      class="safety-image"
+      loading="lazy"
+      decoding="async"
+    />
   </div>
 
   <!-- The dark moment — full-bleed Bitumen data band (#DATA). The numerals carry
@@ -21,27 +33,34 @@ import StatBand from './StatBand.astro';
   <StatBand />
 
   <div class="wrap">
-    <aside class="callout safety-callout" data-reveal="up">
-      <span class="callout__label">◆ Did you know?</span>
-      <p>
-        Labourers, trades workers and machinery operators account for the overwhelming majority of
-        fall-from-height deaths. The people most exposed are often the ones with the least say in how
-        the work is set up — which is exactly why systems have to be designed <em>with</em> them, not
-        <em>at</em> them.
-      </p>
-    </aside>
     <p class="safety-source">Source: Safe Work Australia, Key Work Health &amp; Safety Statistics.</p>
   </div>
 </section>
 
 <style>
+  .safety-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: var(--space-l);
+    align-items: center;
+  }
   .section-title {
     font-size: var(--step-3);
     max-width: 18ch;
     margin-bottom: var(--space-m);
   }
-  .safety-callout {
-    max-width: 64ch;
+  .safety-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius);
+  }
+  @media (max-width: 760px) {
+    .safety-intro {
+      grid-template-columns: 1fr;
+    }
   }
   .safety-source {
     margin-top: var(--space-m);

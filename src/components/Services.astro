@@ -123,15 +123,22 @@ const services = [
     grid-auto-columns: minmax(260px, 320px);
     gap: var(--space-m);
   }
-  /* When motion is off / no JS, allow normal horizontal overflow scroll */
+  /* When motion is off / no JS, allow normal horizontal overflow scroll.
+     scroll-padding keeps a gutter on the left (and snap respects it); the
+     track's own right padding provides the gutter at the far right. */
   .services-track-outer:not([data-pinned]) {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
     -webkit-overflow-scrolling: touch;
     padding-bottom: var(--space-s);
   }
   .services-track-outer:not([data-pinned]) .service-card {
     scroll-snap-align: start;
+  }
+  .services-track-outer:not([data-pinned]) .service-card:last-child {
+    /* guarantees a trailing gutter is reachable at the end of the scroll */
+    scroll-snap-align: end;
   }
 
   .service-card {

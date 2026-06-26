@@ -180,13 +180,6 @@ function initMotion() {
           scrollTrigger: { trigger: '[data-hero]', start: 'top top', end: 'bottom top', scrub: true },
         });
       }
-      // logo set-out line draw on load
-      const logoLine = document.querySelector('[data-logo-line]');
-      if (logoLine) {
-        setDash(logoLine);
-        gsap.to(logoLine, { strokeDashoffset: 0, duration: 1.2, ease: 'power2.out', delay: 0.4 });
-      }
-
       // --- 6. clip-path wipe for the dark stat band ---
       const band = document.querySelector('[data-stat-band]');
       if (band) {
@@ -237,9 +230,15 @@ function initMotion() {
       const track = document.querySelector('[data-track]');
       if (isDesktop && servicesSection && trackOuter && track) {
         trackOuter.setAttribute('data-pinned', '');
-        // distance = how far the track must travel so the last card's right
-        // edge lands at the viewport edge.
-        const getDistance = () => Math.max(0, track.scrollWidth - trackOuter.clientWidth);
+        const cards = track.children;
+        const lastCard = cards[cards.length - 1];
+        // Stop so the last card's right edge lands one gutter in from the
+        // viewport edge (a bit of padding on the right), not flush against it.
+        const getDistance = () => {
+          const gutter = parseFloat(getComputedStyle(track).paddingRight) || 0;
+          const cardRight = lastCard.offsetLeft + lastCard.offsetWidth;
+          return Math.max(0, cardRight + gutter - trackOuter.clientWidth);
+        };
         gsap.to(track, {
           x: () => -getDistance(),
           ease: 'none',
@@ -268,15 +267,18 @@ function initMotion() {
         );
       });
 
-      // --- contact line draws when the closing band enters ---
-      const contactPath = document.querySelector('[data-contact-path]');
-      if (contactPath) {
-        setDash(contactPath);
-        gsap.to(contactPath, {
-          strokeDashoffset: 0,
-          ease: 'power2.out',
-          scrollTrigger: { trigger: '[data-contact]', start: 'top 70%', end: 'top 20%', scrub: 0.8 },
+      // --- closing flourish: the line draws across and resolves into the mark ---
+      const resolveLine = document.querySelector('[data-contact-draw]');
+      const resolveMark = document.querySelector('[data-contact-mark]');
+      if (resolveLine) {
+        setDash(resolveLine);
+        const tl = gsap.timeline({
+          scrollTrigger: { trigger: '[data-contact]', start: 'top 75%', end: 'top 30%', scrub: 0.8 },
         });
+        tl.to(resolveLine, { strokeDashoffset: 0, ease: 'none' });
+        if (resolveMark) {
+          tl.to(resolveMark, { opacity: 1, scale: 1, ease: 'back.out(1.6)' }, '>-0.15');
+        }
       }
 
       // --- 7. magnetic CTAs (desktop, fine pointer) ---
@@ -312,9 +314,10 @@ function initMotion() {
   mm.add('(prefers-reduced-motion: reduce)', () => {
     document.documentElement.classList.remove('js-motion');
     // draw all lines instantly (no animation), reveal all content
-    document.querySelectorAll('[data-hero-path], [data-logo-line]')
+    document.querySelectorAll('[data-hero-path], [data-contact-draw]')
       .forEach((el) => gsap.set(el, { strokeDasharray: 'none', strokeDashoffset: 0 }));
-    // progress rail sits empty (quiet static track) when motion is off
+    // closing mark sits resolved; progress rail sits empty when motion is off
+    gsap.set('[data-contact-mark]', { opacity: 1, scale: 1 });
     gsap.set('[data-reveal]', { opacity: 1, y: 0 });
     // fill in final stat values without counting
     document.querySelectorAll('[data-count]').forEach((el) => {
