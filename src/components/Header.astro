@@ -28,8 +28,13 @@ const nav = [
       </ul>
     </nav>
 
-    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle>
-      <span class="visually-hidden">Menu</span>
+    <button
+      class="nav-toggle"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      aria-label="Menu"
+      data-nav-toggle
+    >
       <span class="nav-toggle__bar"></span>
       <span class="nav-toggle__bar"></span>
     </button>
@@ -133,26 +138,38 @@ const nav = [
 
   .nav-toggle {
     display: none;
+    position: relative;
+    width: 44px;
+    height: 44px;
     margin-left: auto;
-    flex-direction: column;
-    gap: 5px;
     background: none;
     border: 0;
-    padding: 0.6rem;
+    padding: 0;
     cursor: pointer;
   }
+  /* bars absolutely centred so the open state is a perfect X */
   .nav-toggle__bar {
-    display: block;
-    width: 26px;
+    position: absolute;
+    left: 9px;
+    right: 9px;
     height: 2px;
     background: var(--field-green);
-    transition: transform 0.3s var(--ease-out), opacity 0.3s ease;
+    transition: top 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+  }
+  .nav-toggle__bar:first-child {
+    top: 19px;
+  }
+  .nav-toggle__bar:last-child {
+    top: 25px;
+  }
+  .nav-toggle[aria-expanded='true'] .nav-toggle__bar {
+    top: 22px;
   }
   .nav-toggle[aria-expanded='true'] .nav-toggle__bar:first-child {
-    transform: translateY(3.5px) rotate(45deg);
+    transform: rotate(45deg);
   }
   .nav-toggle[aria-expanded='true'] .nav-toggle__bar:last-child {
-    transform: translateY(-3.5px) rotate(-45deg);
+    transform: rotate(-45deg);
   }
 
   .mobile-nav {
@@ -186,7 +203,7 @@ const nav = [
       display: none;
     }
     .nav-toggle {
-      display: flex;
+      display: block;
     }
   }
 </style>
