@@ -14,6 +14,15 @@ import LogoMark from './LogoMark.astro';
 ---
 
 <section class="contact" id="contact" aria-labelledby="contact-h" data-contact>
+  <!-- Closing GSAP moment (§8 / §10): the signature line draws across the top
+       of the section as you scroll in, and resolves into the Greenline mark. -->
+  <div class="wrap contact__resolve" aria-hidden="true">
+    <svg class="contact__resolve-line" viewBox="0 0 1000 2" preserveAspectRatio="none">
+      <line data-contact-draw x1="0" y1="1" x2="1000" y2="1" stroke-width="2"></line>
+    </svg>
+    <span class="contact__resolve-mark" data-contact-mark><LogoMark /></span>
+  </div>
+
   <div class="wrap contact__inner">
     <div class="contact__intro">
       <p class="section-index section-index--light">Get in touch</p>
@@ -51,15 +60,6 @@ import LogoMark from './LogoMark.astro';
       </ul>
     </div>
   </div>
-
-  <!-- Closing GSAP moment (§8 / §10): the signature line draws across as you
-       scroll in and resolves into the Greenline mark. -->
-  <div class="wrap contact__resolve" aria-hidden="true">
-    <svg class="contact__resolve-line" viewBox="0 0 1000 2" preserveAspectRatio="none">
-      <line data-contact-draw x1="0" y1="1" x2="1000" y2="1" stroke-width="2"></line>
-    </svg>
-    <span class="contact__resolve-mark" data-contact-mark><LogoMark /></span>
-  </div>
 </section>
 
 <style>
@@ -76,15 +76,14 @@ import LogoMark from './LogoMark.astro';
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     gap: var(--space-l);
     align-items: center;
-    margin-top: var(--space-l);
   }
 
-  /* Closing flourish — line resolves into the mark */
+  /* Closing flourish at the top — line draws across and resolves into the mark */
   .contact__resolve {
     display: flex;
     align-items: center;
     gap: 1.25rem;
-    margin-top: var(--space-xl);
+    margin-bottom: var(--space-xl);
   }
   .contact__resolve-line {
     flex: 1;
