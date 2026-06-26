@@ -1,26 +1,34 @@
 ---
-// 6. TWO AREAS OF WORK (§12.6) — Construction & Infrastructure (primary, the
-// visual high point) and Agriculture & Rural (a smaller, sincere note).
-// One cohesive palette; the two areas are distinguished by content & layout,
-// NOT a separate colour theme (§10). Copy verbatim from Part I §6.
+// 6. TWO SECTORS (§12.6) — Construction & Infrastructure and Agriculture &
+// Rural, presented as two balanced, parallel cards: the firm works equally
+// across both. One cohesive palette.
 import { Image } from 'astro:assets';
 import constructionFlagship from '../assets/images/construction-flagship.jpg';
 import agriculturePaddock from '../assets/images/agriculture-paddock.jpg';
-import LineIcon from './LineIcon.astro';
 
-const sectors = [
-  { icon: 'hospital', label: 'Healthcare & hospital' },
-  { icon: 'train', label: 'Rail & transport' },
-  { icon: 'crane', label: 'Commercial construction' },
-  { icon: 'earthworks', label: 'Demolition & enabling' },
-  { icon: 'commercial', label: 'Industrial facilities' },
-  { icon: 'house', label: 'Residential developments' },
-  { icon: 'factory', label: 'Civil & infrastructure' },
-  { icon: 'aircraft', label: 'Aviation & airport' },
+const sectorCards = [
+  {
+    id: 'construction',
+    img: constructionFlagship,
+    alt: 'A tower crane and steel frame against a clear blue sky',
+    eyebrow: 'On site',
+    title: 'Construction & Infrastructure',
+    body: 'Support through every phase of delivery — from planning and enabling works to handover — managing the risks that matter most: falls from height, and plant and traffic.',
+    covers: 'Healthcare · Rail & transport · Commercial · Residential · Industrial · Demolition · Civil · Aviation',
+  },
+  {
+    id: 'agriculture',
+    img: agriculturePaddock,
+    alt: 'An Australian farm paddock in golden-hour light',
+    eyebrow: 'On the land',
+    title: 'Agriculture & Rural',
+    body: 'HSE that fits how rural work runs — machinery, chemicals, emergency planning, SOPs and risk assessments. Agriculture carries the highest fatality rate of any Australian industry, so the support has to be real.',
+    covers: 'Livestock · Cropping · Mixed farming · Agricultural contractors',
+  },
 ];
 ---
 
-<section class="section section--grid" id="areas" aria-labelledby="areas-h">
+<section class="section" id="areas" aria-labelledby="areas-h">
   <div class="wrap">
     <p class="section-index">Where we work</p>
     <h2 id="areas-h" class="areas-title" data-split>Two sectors, one practical approach</h2>
@@ -29,86 +37,32 @@ const sectors = [
       &amp; rural. Each gets the same senior, fit-for-purpose support, tailored to how the work is
       actually done.
     </p>
-  </div>
 
-  <!-- Construction & Infrastructure — the focus / visual high point -->
-  <div class="wrap area area--primary" id="construction">
-    <div class="area__head">
-      <p class="eyebrow">On site</p>
-      <h3 class="area__title">Construction &amp; Infrastructure</h3>
-    </div>
-    <div class="area__body" data-reveal="up">
-      <p>
-        Greenline supports construction and infrastructure projects through every phase of delivery
-        — from planning and enabling works to handover — managing risk and keeping people safe. The
-        risks are the ones in the figures above: falls from height, and plant and traffic.
-      </p>
-    </div>
-  </div>
-
-  <!-- Construction flagship image (§6 VISUAL, prompt #5) with frosted-glass panel -->
-  <div class="wrap">
-    <figure class="flagship">
-      <Image
-        src={constructionFlagship}
-        alt="A tower crane and steel frame seen from below against a clear blue sky"
-        class="area-image area-image--flagship"
-        loading="lazy"
-        decoding="async"
-      />
-      <figcaption class="flagship__panel">
-        <span class="flagship__eyebrow">The risks we manage</span>
-        <p class="flagship__text">
-          Falls from height. Plant and traffic. Managed across every phase of delivery — from
-          enabling works to handover.
-        </p>
-      </figcaption>
-    </figure>
-  </div>
-
-  <!-- Sector range as a tidy thin-line icon grid (§SECTORS) rather than photos -->
-  <div class="wrap">
-    <ul class="sectors-grid">
+    <div class="areas-grid">
       {
-        sectors.map((s) => (
-          <li class="sector" data-reveal="up">
-            <LineIcon name={s.icon} />
-            <span>{s.label}</span>
-          </li>
+        sectorCards.map((s) => (
+          <article class="sector" id={s.id} data-reveal="up">
+            <figure class="sector__media">
+              <Image
+                src={s.img}
+                alt={s.alt}
+                class="sector__img"
+                widths={[480, 800]}
+                sizes="(max-width: 760px) 100vw, 50vw"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="sector__panel">
+                <span class="sector__eyebrow">{s.eyebrow}</span>
+                <h3 class="sector__title">{s.title}</h3>
+              </figcaption>
+            </figure>
+            <p class="sector__body">{s.body}</p>
+            <p class="sector__covers"><span class="sector__covers-k">Covers</span> {s.covers}</p>
+          </article>
         ))
       }
-    </ul>
-  </div>
-
-  <!-- Agriculture & Rural — an active sector the firm serves -->
-  <div class="wrap area area--secondary" id="agriculture">
-    <div class="area__head">
-      <p class="eyebrow">On the land</p>
-      <h3 class="area__title">Agriculture &amp; Rural</h3>
     </div>
-    <div class="agri-grid">
-      <div class="area__body" data-reveal="up">
-        <p>
-          Greenline supports farms, livestock, cropping and mixed-farming operations and
-          agricultural contractors with HSE that fits how rural work actually runs — covering
-          machinery and equipment, chemical management, emergency planning, SOPs and risk
-          assessments. Rural operations run lean and far from help, so systems built for a city
-          office don’t translate.
-        </p>
-      </div>
-      <aside class="rural-stat" data-reveal="up" aria-label="Agriculture fatality rate">
-        <span class="rural-stat__value" data-count="13.7" data-decimals="1">13.7</span>
-        <span class="rural-stat__label">deaths per 100,000 workers — the highest rate of any
-          Australian industry</span>
-      </aside>
-    </div>
-    <Image
-      src={agriculturePaddock}
-      alt="An Australian farm paddock in golden-hour light with a small vehicle low in the frame"
-      class="area-image area-image--agri"
-      loading="lazy"
-      decoding="async"
-    />
   </div>
 </section>
 
@@ -119,157 +73,85 @@ const sectors = [
     margin-bottom: var(--space-m);
   }
 
-  .area {
-    margin-top: var(--space-l);
+  .areas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-l);
+    margin-top: var(--space-xl);
   }
-  .area__head {
-    border-top: 1px solid var(--sage);
-    padding-top: var(--space-s);
-    margin-bottom: var(--space-m);
-  }
-  .area__head .eyebrow {
-    display: block;
-    margin-bottom: var(--space-s);
-  }
-  .area__title {
-    font-size: var(--step-3);
-    color: var(--field-green);
-  }
-  .area__body {
+  .sector {
     display: flex;
     flex-direction: column;
     gap: var(--space-m);
-    max-width: var(--measure);
+    scroll-margin-top: 6rem;
   }
-  .area-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: var(--radius);
-    object-fit: cover;
-  }
-  .area-image--flagship {
-    aspect-ratio: 16 / 9;
-  }
-
-  /* Frosted-glass panel over the flagship image (glassmorphism) */
-  .flagship {
+  .sector__media {
     position: relative;
-    margin: var(--space-l) 0 0;
-  }
-  .flagship__panel {
-    position: absolute;
-    left: clamp(1rem, 3vw, 2.5rem);
-    bottom: clamp(1rem, 3vw, 2.5rem);
-    max-width: min(32rem, 72%);
-    padding: clamp(1rem, 2vw, 1.6rem) clamp(1.25rem, 2.5vw, 2rem);
-    background: rgba(247, 244, 234, 0.55);
-    backdrop-filter: blur(16px) saturate(125%);
-    -webkit-backdrop-filter: blur(16px) saturate(125%);
-    border: 1px solid rgba(252, 250, 243, 0.6);
+    margin: 0;
     border-radius: var(--radius);
-    box-shadow: 0 12px 44px rgba(24, 39, 29, 0.18);
+    overflow: hidden;
   }
-  /* Solid fallback where backdrop-filter is unsupported */
+  .sector__img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
+  /* matching frosted-glass label on each image */
+  .sector__panel {
+    position: absolute;
+    left: clamp(1rem, 2.5vw, 1.5rem);
+    right: clamp(1rem, 2.5vw, 1.5rem);
+    bottom: clamp(1rem, 2.5vw, 1.5rem);
+    padding: clamp(0.9rem, 1.5vw, 1.25rem) clamp(1.1rem, 2vw, 1.5rem);
+    background: rgba(247, 244, 234, 0.6);
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    border: 1px solid rgba(252, 250, 243, 0.55);
+    border-radius: var(--radius);
+  }
   @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-    .flagship__panel {
-      background: rgba(247, 244, 234, 0.94);
+    .sector__panel {
+      background: rgba(247, 244, 234, 0.95);
     }
   }
-  .flagship__eyebrow {
+  .sector__eyebrow {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     font-family: var(--font-mono);
     font-size: var(--step--1);
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--field-green);
   }
-  .flagship__text {
+  .sector__title {
     font-family: var(--font-display);
-    font-size: var(--step-1);
-    line-height: 1.25;
-    color: var(--bitumen);
-  }
-
-  @media (max-width: 600px) {
-    .flagship__panel {
-      position: static;
-      max-width: none;
-      margin-top: var(--space-s);
-      background: var(--cloud);
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
-      box-shadow: none;
-      border-color: var(--sage);
-    }
-  }
-
-  .sectors-grid {
-    list-style: none;
-    padding: 0;
-    margin: var(--space-l) 0 0;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-top: var(--hairline);
-    border-left: var(--hairline);
-  }
-  .sector {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.85rem;
-    padding: var(--space-m) var(--space-s);
-    border-right: var(--hairline);
-    border-bottom: var(--hairline);
-  }
-  .sector span {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--bitumen);
-    line-height: 1.4;
-  }
-
-  .agri-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-    gap: var(--space-l);
-    align-items: start;
-    margin-bottom: var(--space-l);
-  }
-  .rural-stat {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-  .rural-stat__value {
-    font-family: var(--font-display);
-    font-size: var(--step-4);
+    font-size: var(--step-2);
+    line-height: 1.05;
     color: var(--field-green);
-    line-height: 1;
-    font-variant-numeric: tabular-nums;
+    margin: 0;
   }
-  .rural-stat__label {
+  .sector__body {
+    color: var(--bitumen);
+    max-width: 46ch;
+  }
+  .sector__covers {
     font-family: var(--font-mono);
     font-size: var(--step--1);
+    line-height: 1.6;
     color: var(--bitumen);
-    line-height: 1.5;
   }
-  /* full-width landscape, mirroring the construction flagship */
-  .area-image--agri {
-    aspect-ratio: 21 / 9;
+  .sector__covers-k {
+    color: var(--sage);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
   }
 
-  @media (max-width: 860px) {
-    .sectors-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .agri-grid {
+  @media (max-width: 760px) {
+    .areas-grid {
       grid-template-columns: 1fr;
-      gap: var(--space-l);
     }
   }
 </style>
