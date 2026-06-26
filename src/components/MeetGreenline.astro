@@ -25,18 +25,6 @@ const ribbon = [
     <p class="section-index">Who we are</p>
     <h2 id="meet-h" class="meet-title" data-split>Meet Greenline HSE — and why work with us</h2>
 
-    <!-- Mono spec-sheet credentials ribbon (§12.4) — no CV, no headshot -->
-    <dl class="ribbon" data-reveal="up" aria-label="Credentials">
-      {
-        ribbon.map((row) => (
-          <div class="ribbon__row">
-            <dt>{row.key}</dt>
-            <dd>{row.lines.map((line) => <span>{line}</span>)}</dd>
-          </div>
-        ))
-      }
-    </dl>
-
     <div class="meet-grid">
       <div class="meet-story" data-reveal="up">
         <p class="meet-lead">
@@ -70,6 +58,18 @@ const ribbon = [
       </figure>
     </div>
 
+    <!-- Quiet supporting credentials strip (the firm's track record) -->
+    <p class="ribbon-kicker">The experience behind the firm</p>
+    <dl class="ribbon" data-reveal="up" aria-label="Credentials">
+      {
+        ribbon.map((row) => (
+          <div class="ribbon__row">
+            <dt>{row.key}</dt>
+            <dd>{row.lines.map((line) => <span>{line}</span>)}</dd>
+          </div>
+        ))
+      }
+    </dl>
   </div>
 </section>
 
@@ -80,40 +80,42 @@ const ribbon = [
     margin-bottom: var(--space-l);
   }
 
-  /* Compact credentials strip — four cells, label over value */
+  /* Quiet supporting credentials strip — sits below the story, low-key */
+  .ribbon-kicker {
+    margin: var(--space-xl) 0 var(--space-s);
+    padding-top: var(--space-m);
+    border-top: 1px solid var(--sage);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sage);
+  }
   .ribbon {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    margin: 0 0 var(--space-l);
-    background: var(--cloud);
-    border: var(--hairline);
-    border-radius: var(--radius);
-    overflow: hidden;
+    gap: var(--space-m);
+    margin: 0;
   }
   .ribbon__row {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
-    padding: var(--space-m);
-    border-right: 1px solid var(--sage-mist);
-  }
-  .ribbon__row:last-child {
-    border-right: 0;
+    gap: 0.4rem;
   }
   .ribbon dt {
     font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-size: 0.66rem;
     letter-spacing: 0.16em;
-    color: var(--field-green);
+    color: var(--sage);
   }
   .ribbon dd {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.25rem;
     color: var(--bitumen);
-    font-size: var(--step-0);
-    line-height: 1.35;
+    font-size: var(--step--1);
+    line-height: 1.4;
   }
 
   .meet-grid {
@@ -169,24 +171,12 @@ const ribbon = [
     }
     .ribbon {
       grid-template-columns: repeat(2, 1fr);
-    }
-    .ribbon__row:nth-child(2n) {
-      border-right: 0;
-    }
-    .ribbon__row:nth-child(-n + 2) {
-      border-bottom: 1px solid var(--sage-mist);
+      gap: var(--space-m) var(--space-l);
     }
   }
   @media (max-width: 480px) {
     .ribbon {
       grid-template-columns: 1fr;
-    }
-    .ribbon__row {
-      border-right: 0;
-      border-bottom: 1px solid var(--sage-mist);
-    }
-    .ribbon__row:last-child {
-      border-bottom: 0;
     }
   }
 </style>
