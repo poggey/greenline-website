@@ -137,13 +137,16 @@
 
   .hero__scroll {
     position: absolute;
-    left: 50%;
-    bottom: 1.75rem;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* fill the lower gradient/land band and centre the hint within it */
+    height: 22%;
     z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     text-decoration: none;
     font-family: var(--font-mono);
