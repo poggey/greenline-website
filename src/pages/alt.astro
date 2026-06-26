@@ -1,0 +1,35 @@
+---
+// EXPERIMENT (/alt) — identical to the live site, but the hero has NO
+// gradient sky / drawn horizon line (plain word-swap hero) for comparison.
+// Noindexed so it won't affect SEO.
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import ThroughLine from '../components/ThroughLine.astro';
+import HeroPlain from '../components/HeroPlain.astro';
+import MeetGreenline from '../components/MeetGreenline.astro';
+import SafetyReality from '../components/SafetyReality.astro';
+import Services from '../components/Services.astro';
+import AreasOfWork from '../components/AreasOfWork.astro';
+import BusinessCase from '../components/BusinessCase.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base noindex title="Greenline HSE — hero (plain) concept">
+  <Header />
+  <ThroughLine />
+  <main id="main">
+    <HeroPlain />
+    <MeetGreenline />
+    <SafetyReality />
+    <Services />
+    <AreasOfWork />
+    <BusinessCase />
+    <Contact />
+  </main>
+  <Footer />
+</Base>
+
+<script>
+  import '../scripts/motion.js';
+</script>
