@@ -4,16 +4,14 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
-  theme?: 'alt';
+  noindex?: boolean;
 }
 
 const {
   title = 'Greenline HSE — Practical Health, Safety & Environmental Expertise',
   description = 'Practical Health, Safety & Environmental expertise for Australian construction, infrastructure and rural operations. Senior advice, delivered direct.',
-  theme,
+  noindex = false,
 } = Astro.props;
-
-const themeColor = theme === 'alt' ? '#213a5c' : '#2D5A3D';
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = new URL('/og-image.png', Astro.site).href;
@@ -82,7 +80,7 @@ const schema = {
 ---
 
 <!doctype html>
-<html lang="en-AU" data-theme={theme}>
+<html lang="en-AU">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -92,7 +90,7 @@ const schema = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    {theme === 'alt' && <meta name="robots" content="noindex, nofollow" />}
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- Open Graph / Twitter cards (§14) -->
     <meta property="og:type" content="website" />
@@ -107,7 +105,7 @@ const schema = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <meta name="theme-color" content={themeColor} />
+    <meta name="theme-color" content="#2D5A3D" />
 
     <!-- Fonts (§10): Fraunces (display) + Hanken Grotesk (body & labels) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

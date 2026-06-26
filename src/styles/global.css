@@ -57,28 +57,6 @@
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* =================================================================
-   EXPERIMENTAL ALT THEME — "Harbour": deep navy + warm marigold accent
-   on cool-warm paper. Applied via <html data-theme="alt"> on /alt only;
-   the default green scheme on / is untouched. Same roles, new colours.
-   ================================================================= */
-[data-theme='alt'] {
-  --limewash: #f1efe8; /* primary canvas */
-  --cloud: #faf8f3; /* lifted panels / cards */
-  --sage-mist: #e6ebf1; /* soft tint band (cool) */
-  --field-green: #213a5c; /* primary brand — deep navy */
-  --sage: #9aa7b5; /* hairlines, quiet UI — slate */
-  --bitumen: #14202e; /* ink + deliberate dark sections */
-  --hi-vis: #e6a02f; /* signature accent — warm marigold */
-
-  --paper-on-dark: #f1eee4;
-  --paper-on-dark-dim: rgba(241, 238, 228, 0.64);
-
-  --hero-sky: linear-gradient(180deg, #fbf3e3 0%, #f3f1ea 36%, #eceff3 64%, #e3ebf3 100%);
-  --hero-land-top: #e6ebf1;
-  --hero-land-bottom: #d4dde7;
-}
-
 /* ---- Reset ---- */
 *,
 *::before,
