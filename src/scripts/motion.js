@@ -17,6 +17,9 @@ try {
   /* fall back to whole-headline reveal */
 }
 
+// Shared so the back-to-top button can scroll smoothly when motion is on.
+let lenis = null;
+
 gsap.registerPlugin(ScrollTrigger);
 if (SplitText) gsap.registerPlugin(SplitText);
 
@@ -41,15 +44,27 @@ const formatNumber = (n, decimals) => {
    1. UI behaviour — always on (not motion-dependent)
    ================================================================= */
 function initUI() {
-  // Header: shadow/border once scrolled
   const header = document.querySelector('[data-header]');
+  const toTop = document.querySelector('[data-to-top]');
   const onScroll = () => {
-    if (!header) return;
-    if (window.scrollY > 20) header.setAttribute('data-scrolled', '');
-    else header.removeAttribute('data-scrolled');
+    // Header: shadow/border once scrolled
+    if (header) {
+      if (window.scrollY > 20) header.setAttribute('data-scrolled', '');
+      else header.removeAttribute('data-scrolled');
+    }
+    // Back-to-top: reveal after the user is past the first screen
+    if (toTop) toTop.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.6);
   };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Back-to-top: smooth via Lenis when motion is on, native otherwise
+  if (toTop) {
+    toTop.addEventListener('click', () => {
+      if (lenis) lenis.scrollTo(0, { duration: 1 });
+      else window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   // Mobile nav toggle
   const toggle = document.querySelector('[data-nav-toggle]');
@@ -74,18 +89,22 @@ function initUI() {
 function initMotion() {
   const mm = gsap.matchMedia();
 
-  /* ---------- FULL MOTION ---------- */
+  /* ---------- FULL MOTION ----------
+     Both conditions bake in `prefers-reduced-motion: no-preference`, so this
+     callback runs ONLY when motion is allowed (and `isDesktop` just branches
+     desktop-only behaviour like the pin/cursor). Under reduced motion neither
+     query matches, so no Lenis / no scroll animation is created. */
   mm.add(
     {
-      motion: '(prefers-reduced-motion: no-preference)',
-      isDesktop: '(min-width: 901px)',
+      isDesktop: '(min-width: 901px) and (prefers-reduced-motion: no-preference)',
+      isMobile: '(max-width: 900px) and (prefers-reduced-motion: no-preference)',
     },
     (ctx) => {
       const { isDesktop } = ctx.conditions;
       document.documentElement.classList.add('js-motion');
 
       // Lenis smooth scroll, driven by GSAP ticker
-      const lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 1 });
+      lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 1 });
       lenis.on('scroll', ScrollTrigger.update);
       const tick = (time) => lenis.raf(time * 1000);
       gsap.ticker.add(tick);
@@ -304,6 +323,7 @@ function initMotion() {
         // cleanup when this media query no longer matches
         gsap.ticker.remove(tick);
         lenis.destroy();
+        lenis = null;
         document.documentElement.classList.remove('js-motion');
         if (trackOuter) trackOuter.removeAttribute('data-pinned');
       };
