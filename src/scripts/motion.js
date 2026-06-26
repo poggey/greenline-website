@@ -175,17 +175,19 @@ function initMotion() {
           words = [];
         }
         if (words.length > 1) {
+          // First word is already in the HTML and visible immediately; the
+          // timeline only starts swapping after the initial hold.
           const tl = gsap.timeline({ repeat: -1 });
           words.forEach((_, i) => {
             const next = words[(i + 1) % words.length];
-            tl.to(swap, { yPercent: -110, opacity: 0, duration: 0.35, ease: 'power2.in', delay: 1.8 });
+            tl.to(swap, { yPercent: -45, opacity: 0, duration: 0.32, ease: 'power2.in', delay: 1.8 });
             tl.add(() => {
               swap.textContent = next;
             });
             tl.fromTo(
               swap,
-              { yPercent: 110, opacity: 0 },
-              { yPercent: 0, opacity: 1, duration: 0.45, ease: 'power2.out' }
+              { yPercent: 45, opacity: 0 },
+              { yPercent: 0, opacity: 1, duration: 0.42, ease: 'power2.out', immediateRender: false }
             );
           });
         }
