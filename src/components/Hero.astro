@@ -42,6 +42,11 @@
       >Start a conversation <span class="btn__arrow" aria-hidden="true">→</span></a
     >
   </div>
+
+  <a class="hero__scroll" href="#meet" aria-label="Scroll to meet Greenline">
+    <span>Scroll</span>
+    <span class="hero__scroll-line" aria-hidden="true"></span>
+  </a>
 </section>
 
 <style>
@@ -130,12 +135,38 @@
     align-self: flex-start;
   }
 
+  .hero__scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 1.75rem;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+  }
+  .hero__scroll-line {
+    width: 1px;
+    height: 38px;
+    background: linear-gradient(var(--sage), transparent);
+  }
+
   @media (max-width: 600px) {
     .hero {
       padding-bottom: 20vh;
     }
     .hero__horizon {
       height: 16%;
+    }
+    .hero__scroll {
+      display: none;
     }
   }
 </style>
