@@ -165,6 +165,26 @@ function initMotion() {
         });
       });
 
+      // --- editorial gallery hero (alt): cards rise in, then gently parallax ---
+      const galleryCards = gsap.utils.toArray('[data-card]');
+      if (galleryCards.length) {
+        gsap.from(galleryCards, {
+          yPercent: 22,
+          opacity: 0,
+          duration: 1,
+          ease: 'power3.out',
+          stagger: 0.09,
+          delay: 0.25,
+        });
+        galleryCards.forEach((c, i) => {
+          gsap.to(c, {
+            yPercent: -6 - (i % 2 === 0 ? 0 : 6),
+            ease: 'none',
+            scrollTrigger: { trigger: '[data-hero-gallery]', start: 'top 80%', end: 'bottom top', scrub: true },
+          });
+        });
+      }
+
       // --- 1. The through-line: a progress rail that fills with scroll ---
       const throughFill = document.querySelector('[data-through-fill]');
       if (throughFill) {
