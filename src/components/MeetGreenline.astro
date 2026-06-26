@@ -120,7 +120,9 @@ const ribbon = [
     display: grid;
     grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
     gap: var(--space-l);
-    align-items: start;
+    /* stretch so the image fills the column and its caption lines up with
+       the bottom of the text on the left */
+    align-items: stretch;
   }
   .meet-story {
     display: flex;
@@ -140,16 +142,18 @@ const ribbon = [
   }
   .meet-visual {
     margin: 0;
-    position: sticky;
-    top: 6rem;
+    display: flex;
+    flex-direction: column;
   }
   .meet-image {
     width: 100%;
-    height: auto;
+    /* basis 0 so the image fills the height set by the text column,
+       rather than its (large) intrinsic height driving the row taller */
+    flex: 1 1 0;
+    min-height: 0;
     display: block;
     border-radius: var(--radius);
     object-fit: cover;
-    aspect-ratio: 4 / 3;
   }
   .meet-visual figcaption {
     margin-top: var(--space-s);
@@ -164,8 +168,10 @@ const ribbon = [
       grid-template-columns: 1fr;
       gap: var(--space-l);
     }
-    .meet-visual {
-      position: static;
+    /* stacked: no stretch to fill, so give the image a natural ratio */
+    .meet-image {
+      flex: none;
+      aspect-ratio: 4 / 3;
     }
     .ribbon {
       grid-template-columns: repeat(2, 1fr);
