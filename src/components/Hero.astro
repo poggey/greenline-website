@@ -44,7 +44,7 @@
   </div>
 
   <a class="hero__scroll" href="#meet" aria-label="Scroll to meet Greenline">
-    <span>Scroll</span>
+    <span class="hero__scroll-label">Scroll</span>
     <span class="hero__scroll-line" aria-hidden="true"></span>
   </a>
 </section>
@@ -153,6 +153,12 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--sage);
+  }
+  /* text-indent offsets the trailing letter-spacing so the label's glyphs
+     centre on the same axis as the line below */
+  .hero__scroll-label {
+    display: inline-block;
+    text-indent: 0.2em;
   }
   .hero__scroll-line {
     width: 1px;
