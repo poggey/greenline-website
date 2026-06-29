@@ -83,6 +83,43 @@ function initUI() {
   }
 }
 
+/* -----------------------------------------------------------------
+   Services prev/next arrows — replace the old numbered cards.
+   Works in both modes: when the section is pinned (desktop, motion on)
+   horizontal travel is mapped 1:1 to vertical scroll, so we nudge the page;
+   otherwise the track is a normal overflow-x row, so we scrollBy on it.
+   ----------------------------------------------------------------- */
+function initServicesArrows() {
+  const trackOuter = document.querySelector('[data-track-outer]');
+  const track = document.querySelector('[data-track]');
+  const prev = document.querySelector('[data-services-prev]');
+  const next = document.querySelector('[data-services-next]');
+  if (!trackOuter || !track || !prev || !next) return;
+
+  // One card plus the column gap — how far a single arrow press travels.
+  const step = () => {
+    const card = track.children[0];
+    if (!card) return 320;
+    const styles = getComputedStyle(track);
+    const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+    return card.offsetWidth + gap;
+  };
+
+  const go = (dir) => {
+    if (trackOuter.hasAttribute('data-pinned')) {
+      // Pinned desktop: advance the page; the ScrollTrigger scrub moves the track.
+      const target = window.scrollY + dir * step();
+      if (lenis) lenis.scrollTo(target, { duration: 0.6 });
+      else window.scrollTo({ top: target, behavior: 'smooth' });
+    } else {
+      trackOuter.scrollBy({ left: dir * step(), behavior: 'smooth' });
+    }
+  };
+
+  prev.addEventListener('click', () => go(-1));
+  next.addEventListener('click', () => go(1));
+}
+
 /* =================================================================
    2. Motion — wrapped in matchMedia (§11 non-negotiable)
    ================================================================= */
@@ -399,4 +436,5 @@ function initMotion() {
 
 /* ----------------------------------------------------------------- */
 initUI();
+initServicesArrows();
 initMotion();

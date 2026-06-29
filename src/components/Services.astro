@@ -4,56 +4,68 @@
 // Copy verbatim from Part I §5.
 import LineIcon from './LineIcon.astro';
 
+// Bodies are kept to a similar, short length so every card reads neatly at
+// the same fixed height (see .service-card height in the styles below).
 const services = [
   {
     icon: 'system',
     title: 'Health & Safety Management Systems',
-    body: 'Development and review of practical systems that support compliance and get used.',
+    body: 'Practical systems that support compliance — and actually get used.',
   },
   {
     icon: 'risk',
     title: 'Risk Assessments',
-    body: 'Identifying and managing workplace hazards through clear, usable risk assessment processes.',
+    body: 'Identifying and managing workplace hazards through clear, usable processes.',
   },
   {
     icon: 'sop',
     title: 'Standard Operating Procedures (SOPs)',
-    body: 'Easy-to-follow procedures for routine and high-risk activities, written in plain English.',
+    body: 'Easy-to-follow procedures for routine and high-risk tasks, in plain English.',
   },
   {
     icon: 'audit',
     title: 'Site Audits & Inspections',
-    body: 'Independent eyes on your site to verify compliance and surface improvement opportunities before an incident does.',
+    body: 'Independent eyes on site to verify compliance and catch issues early.',
   },
   {
     icon: 'contractor',
     title: 'Contractor Management',
-    body: 'Prequalification, onboarding and ongoing management of subcontractors and suppliers.',
+    body: 'Prequalification, onboarding and ongoing management of subcontractors.',
   },
   {
     icon: 'investigation',
     title: 'Incident Investigations',
-    body: 'Getting to genuine root cause, with practical corrective actions and lessons that stick.',
+    body: 'Genuine root cause, with corrective actions and lessons that stick.',
   },
   {
     icon: 'compliance',
     title: 'Compliance Reviews',
-    body: 'Measuring your operation against legislation, industry standards and your own expectations.',
+    body: 'Measuring your operation against legislation, standards and expectations.',
   },
   {
     icon: 'training',
     title: 'Training & Inductions',
-    body: 'Induction materials, toolbox topics and workforce engagement that lands with the crew.',
+    body: 'Inductions, toolbox topics and engagement that land with the crew.',
   },
   {
     icon: 'emergency',
     title: 'Emergency Planning',
-    body: 'Emergency procedures and response arrangements you can actually execute under pressure.',
+    body: 'Response arrangements you can actually execute under pressure.',
   },
   {
     icon: 'leadership',
     title: 'Leadership & Safety Culture',
-    body: 'Helping businesses build genuine safety cultures through leadership, communication and engagement.',
+    body: 'Building genuine safety cultures through leadership and engagement.',
+  },
+  {
+    icon: 'psychosocial',
+    title: 'Psychosocial Risk Management',
+    body: 'Identifying and managing psychosocial hazards for healthier workplaces.',
+  },
+  {
+    icon: 'environment',
+    title: 'Environmental Management',
+    body: 'Environmental compliance, risk and sustainable solutions for your operations.',
   },
 ];
 ---
@@ -64,8 +76,20 @@ const services = [
     <h2 id="services-h" class="services-title" data-split>What we do</h2>
     <p class="lede" data-reveal="up">
       Greenline HSE provides practical Health, Safety and Environmental support tailored to the
-      needs of each business — the full breadth of what a safety function needs to cover.
+      needs of each business — the full breadth of what a HSE function needs to cover.
     </p>
+    <div class="services__controls" data-services-controls>
+      <button class="services__arrow" type="button" data-services-prev aria-label="Previous services">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 5l-7 7 7 7"></path>
+        </svg>
+      </button>
+      <button class="services__arrow" type="button" data-services-next aria-label="Next services">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
   </div>
 
   <!-- Pinned horizontal track (§11.4). Falls back to a wrapping grid when
@@ -73,9 +97,8 @@ const services = [
   <div class="services-track-outer" data-track-outer>
     <ul class="services-track" data-track>
       {
-        services.map((s, i) => (
+        services.map((s) => (
           <li class="service-card">
-            <span class="service-card__num">{String(i + 1).padStart(2, '0')}</span>
             <LineIcon name={s.icon} />
             <h3>{s.title}</h3>
             <p>{s.body}</p>
@@ -108,6 +131,40 @@ const services = [
   }
   .services__head .lede {
     margin-bottom: 0;
+  }
+  /* Prev / next arrows — the navigation affordance that replaces the numbered
+     cards. They drive the horizontal track (see motion.js initServicesArrows). */
+  .services__controls {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: var(--space-m);
+  }
+  .services__arrow {
+    width: 2.75rem;
+    height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--hairline);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--field-green);
+    cursor: pointer;
+    transition: border-color 0.2s var(--ease-out), background 0.2s var(--ease-out),
+      color 0.2s var(--ease-out);
+  }
+  .services__arrow svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .services__arrow:hover {
+    border-color: var(--hi-vis);
+    background: var(--hi-vis);
+    color: var(--bitumen);
+  }
+  .services__arrow:focus-visible {
+    outline: 2px solid var(--hi-vis);
+    outline-offset: 2px;
   }
 
   .services-track-outer {
@@ -153,12 +210,6 @@ const services = [
     height: clamp(220px, 38vh, 320px);
     position: relative;
   }
-  .service-card__num {
-    font-family: var(--font-mono);
-    font-size: var(--step--1);
-    color: var(--sage);
-    letter-spacing: 0.12em;
-  }
   .service-card h3 {
     font-size: var(--step-1);
     margin-top: auto;
@@ -177,8 +228,8 @@ const services = [
       padding-block: var(--space-xl);
     }
     .service-card {
-      height: auto;
-      min-height: 240px;
+      /* fixed (not auto) so every card matches in the mobile scroll row too */
+      height: 260px;
     }
   }
 </style>

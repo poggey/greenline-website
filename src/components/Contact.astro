@@ -3,8 +3,9 @@
 // that opens the visitor's own email client (mailto), plus direct details and
 // an Australia-wide note. The closing grounding green band where the Line
 // completes (§8 CLOSING). Copy verbatim from Part I §8.
-const email = 'hello@greenlinehse.com.au';
-const phone = '+61 000 000 000';
+const email = 'catriona@greenlinehse.com.au';
+const phone = '+61 420 883 581';
+const abn = '81 509 673 918';
 const subject = encodeURIComponent('Starting a conversation — Greenline HSE');
 const body = encodeURIComponent(
   "Hi Catriona,\n\nI'd like to start a conversation about a project or site:\n\n• What you're working on:\n• Where (state / region):\n• What you'd like help with:\n\nThanks,\n"
@@ -38,9 +39,9 @@ import LogoMark from './LogoMark.astro';
 
     <!-- One calm CTA — opens the visitor's email client, pre-addressed -->
     <div class="contact__cta">
-      <p class="contact__cta-kicker">No obligation. Just a first conversation.</p>
+      <p class="contact__cta-kicker">No obligation. Just a conversation.</p>
       <a class="btn btn--hi contact__cta-btn" href={mailto} data-magnetic>
-        Book your initial conversation <span class="btn__arrow" aria-hidden="true">→</span>
+        Get in touch <span class="btn__arrow" aria-hidden="true">→</span>
       </a>
       <p class="contact__cta-note">Opens a pre-addressed email in your own mail app.</p>
 
@@ -56,6 +57,10 @@ import LogoMark from './LogoMark.astro';
         <li>
           <span class="contact__k">Service area</span>
           <span>Australia-wide</span>
+        </li>
+        <li>
+          <span class="contact__k">ABN</span>
+          <span>{abn}</span>
         </li>
       </ul>
     </div>

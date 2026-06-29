@@ -3,11 +3,10 @@
 // numerals, one figure picked out in Hi-Vis, a single thin Hi-Vis baseline,
 // mono labels. Built in type — no photo (§2 INFOGRAPHIC note).
 const stats = [
-  { value: '188', count: 188, label: 'workers lost in 2024', accent: false },
-  { value: '~1 in 5', label: 'in construction', accent: false },
-  { value: '42%', count: 42, suffix: '%', label: 'of deaths involve vehicles', accent: true },
-  { value: '#2', label: 'killer: falls from height', accent: false, prefix: '#' },
-  { value: '146,700', count: 146700, label: 'serious claims a year', accent: false },
+  { value: '188', count: 188, label: 'workers lost in 2024', accent: true },
+  { value: '37', count: 37, label: 'construction worker fatalities (2024)', accent: false },
+  { value: '44', count: 44, label: 'agriculture, forestry & fishing worker fatalities (2024)', accent: false },
+  { value: '146,700', count: 146700, label: 'serious workers’ compensation claims each year', accent: false },
 ];
 ---
 
@@ -50,7 +49,7 @@ const stats = [
     padding: 1.5rem 0 0;
     border-top: 0;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: clamp(1rem, 2vw, 2rem);
     align-items: start;
     position: relative;

@@ -24,7 +24,14 @@
   --hero-land-bottom: #dce7d8;
 
   /* ---- Typography (§10) ---- */
-  --font-display: 'Fraunces', 'Newsreader', Georgia, 'Times New Roman', serif;
+  /* Previous display face (kept for easy revert): 'Fraunces' — the
+     distinctive lowercase 'f' read as too quirky in places. Newsreader is a
+     variable serif (so the 380/360 display weights still resolve smoothly)
+     with more conventional letterforms.
+       Revert: swap the line below back to
+       --font-display: 'Fraunces', 'Newsreader', Georgia, 'Times New Roman', serif;
+       and restore the Fraunces family in Base.astro's Google Fonts link. */
+  --font-display: 'Newsreader', 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-body: 'Hanken Grotesk', 'Mona Sans', system-ui, -apple-system, sans-serif;
   /* The brief's "mono" voice is used only for tracked-out labels/indices.
      Per client direction, no typewriter/monospace look anywhere — these use
