@@ -1,25 +1,26 @@
 ---
-// 1. HERO (§12.1) — light, design-led. Dawn-gradient sky with a land plane
-// below, divided by the signature Hi-Vis horizon line that draws on load.
-// The headline cycles one word (safety / risk / compliance / culture) via a
-// smooth GSAP fade-swap; reduced motion shows the first word, static.
+// 1. HERO (§12.1) — full-bleed sector photograph showing the HSE advisor with
+// a construction worker and a farmer, so both sectors read instantly. A
+// CSS scrim (anchored to the container's left edge, not baked into the photo)
+// carries the text, so legibility holds at every crop and still works if the
+// image is later swapped for a version without the baked-in green gradient.
+// The headline keeps its kinetic word-swap (safety / risk / compliance / culture).
+import { Image } from 'astro:assets';
+import heroImage from '../assets/images/greenline-hse-sector-hero-v2.png';
 ---
 
 <section class="hero" id="top" data-hero>
-  <!-- Dawn-sky gradient (§HERO) -->
-  <div class="hero__sky" aria-hidden="true"></div>
-
-  <!-- One clean, straight horizon: land fill below, Hi-Vis line drawn on load -->
-  <svg class="hero__horizon" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
-    <defs>
-      <linearGradient id="hero-land" x1="0" y1="0" x2="0" y2="1">
-        <stop class="hero-land-top" offset="0"></stop>
-        <stop class="hero-land-bottom" offset="1"></stop>
-      </linearGradient>
-    </defs>
-    <path class="hero__fill" d="M0,3 H1440 V200 H0 Z"></path>
-    <path data-hero-path class="hero__stroke" d="M0,3 H1440" fill="none" stroke-width="2.5"></path>
-  </svg>
+  <Image
+    class="hero__img"
+    src={heroImage}
+    alt="A Greenline HSE advisor reviewing a tablet on site with a construction worker and a farmer, an active construction site behind them on one side and a working farm on the other"
+    widths={[768, 1280, 1836]}
+    sizes="100vw"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+  />
+  <div class="hero__scrim" aria-hidden="true"></div>
 
   <div class="wrap hero__content">
     <p class="hero__eyebrow">Greenline HSE</p>
@@ -57,36 +58,33 @@
     align-items: center;
     overflow: hidden;
     padding-top: 6rem;
-    /* reserve the lower band for the horizon + land */
-    padding-bottom: 26vh;
+    padding-bottom: 6rem;
+    isolation: isolate;
   }
-  .hero__sky {
+  /* full-bleed photograph */
+  .hero__img {
     position: absolute;
     inset: 0;
-    background: var(--hero-sky);
-    z-index: -3;
-  }
-  .hero__horizon {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
     width: 100%;
-    height: 22%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -2;
+  }
+  /* legibility scrim — strongest at the left where the text sits, fading to
+     reveal the photograph on the right. Anchored to the container, so it does
+     not depend on any gradient being baked into the image. */
+  .hero__scrim {
+    position: absolute;
+    inset: 0;
     z-index: -1;
-    overflow: visible;
-  }
-  .hero__fill {
-    fill: url(#hero-land);
-  }
-  .hero-land-top {
-    stop-color: var(--hero-land-top);
-  }
-  .hero-land-bottom {
-    stop-color: var(--hero-land-bottom);
-  }
-  .hero__stroke {
-    stroke: var(--hi-vis);
+    background: linear-gradient(
+      95deg,
+      rgba(24, 39, 29, 0.86) 0%,
+      rgba(24, 39, 29, 0.64) 26%,
+      rgba(24, 39, 29, 0.3) 47%,
+      rgba(24, 39, 29, 0) 66%
+    );
   }
 
   .hero__content {
@@ -101,18 +99,21 @@
     font-size: var(--step--1);
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--field-green);
+    color: var(--hi-vis);
     margin: 0;
   }
   .hero__headline {
     font-family: var(--font-display);
     font-weight: 380;
-    font-size: var(--step-hero);
-    line-height: 1.12;
+    /* Smaller than the old photo-less hero so the words sit within the dark
+       scrim on the left and don't sprawl across the people in the photo. */
+    font-size: clamp(2.1rem, 1.3rem + 2.4vw, 3.75rem);
+    line-height: 1.14;
     letter-spacing: -0.015em;
-    color: var(--field-green);
-    max-width: 18ch;
+    color: var(--paper-on-dark);
+    max-width: 15ch;
     margin: 0;
+    text-shadow: 0 1px 24px rgba(24, 39, 29, 0.35);
   }
   /* cycling word — fade-swaps in place; no clip, so nothing is cut off */
   .hero__swap-wrap {
@@ -121,7 +122,7 @@
   .hero__swap {
     display: inline-block;
     font-style: italic;
-    color: var(--field-green);
+    color: var(--paper-on-dark);
     border-bottom: 0.08em solid var(--hi-vis);
     padding: 0 0.04em 0.04em;
   }
@@ -129,19 +130,27 @@
     max-width: 44ch;
     font-size: var(--step-1);
     line-height: 1.5;
-    color: var(--bitumen);
+    color: var(--paper-on-dark);
+    text-shadow: 0 1px 18px rgba(24, 39, 29, 0.4);
   }
+  /* key CTA picked out in Hi-Vis so it pops off the photograph */
   .hero__cta {
     align-self: flex-start;
+    --btn-bg: var(--hi-vis);
+    --btn-fg: var(--bitumen);
+    font-weight: 700;
+  }
+  .hero__cta:hover {
+    background: var(--paper-on-dark);
+    border-color: var(--paper-on-dark);
+    color: var(--bitumen);
   }
 
   .hero__scroll {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
-    /* fill the lower gradient/land band and centre the hint within it */
-    height: 22%;
+    bottom: 1.5rem;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -153,7 +162,7 @@
     font-size: 0.66rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--sage);
+    color: var(--paper-on-dark-dim);
   }
   /* text-indent offsets the trailing letter-spacing so the label's glyphs
      centre on the same axis as the line below */
@@ -164,15 +173,18 @@
   .hero__scroll-line {
     width: 1px;
     height: 38px;
-    background: linear-gradient(var(--sage), transparent);
+    background: linear-gradient(var(--paper-on-dark-dim), transparent);
   }
 
+  /* On narrow screens the photo crops to a busy centre, so the scrim becomes a
+     fuller vertical wash to keep the text crisp. */
   @media (max-width: 600px) {
-    .hero {
-      padding-bottom: 20vh;
-    }
-    .hero__horizon {
-      height: 16%;
+    .hero__scrim {
+      background: linear-gradient(
+        180deg,
+        rgba(24, 39, 29, 0.55) 0%,
+        rgba(24, 39, 29, 0.7) 100%
+      );
     }
     .hero__scroll {
       display: none;

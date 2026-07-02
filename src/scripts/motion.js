@@ -318,7 +318,7 @@ function initMotion() {
       });
 
       // --- thin Hi-Vis baselines under stat groups draw in (CSS scaleX) ---
-      gsap.utils.toArray('.stat-band__list, .bc-stats').forEach((grp) => {
+      gsap.utils.toArray('.stat-band__list').forEach((grp) => {
         ScrollTrigger.create({
           trigger: grp,
           start: 'top 80%',

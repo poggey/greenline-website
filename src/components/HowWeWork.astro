@@ -1,0 +1,198 @@
+---
+// 7. HOW WE WORK — the client journey as five numbered cards that step down
+// the page in a staircase (echoing the "engagement model" reference), each with
+// a subtle hover lift. Replaces the old "Safety as a business advantage" band.
+// Numbered chips straddle the top-left of each card in the drawing-register
+// style; the Hi-Vis numeral ties them to the site's line motif.
+const steps = [
+  {
+    title: 'Initial Consultation',
+    body: 'A complimentary, no-obligation conversation to understand your operation and where support is needed.',
+  },
+  {
+    title: 'Review & Gap Assessment',
+    body: 'A close look at your sites, systems and how work really happens — measured against what’s required.',
+  },
+  {
+    title: 'Practical Action Plan',
+    body: 'Prioritised, plain-English actions across critical risks, quick wins and longer-term improvements.',
+  },
+  {
+    title: 'Implementation & Support',
+    body: 'Building or refining the systems, training and controls you need, delivered in sensible stages.',
+  },
+  {
+    title: 'Ongoing Partnership',
+    body: 'Staying on hand as your operation evolves, so safety keeps working long after handover.',
+  },
+];
+---
+
+<section class="section howwework" id="approach" aria-labelledby="howwework-h">
+  <div class="wrap">
+    <p class="section-index">How we work</p>
+    <h2 id="howwework-h" class="howwework__title" data-split>
+      A clear path — from first conversation to lasting partnership.
+    </h2>
+    <p class="lede" data-reveal="up">
+      Every engagement follows the same simple, senior-led path. No jargon, no surprises — just
+      practical steps that build safety into how your business actually runs.
+    </p>
+
+    <ol class="steps" aria-label="Our five-step client journey">
+      {
+        steps.map((s, i) => (
+          <li class="step" style={`--i:${i}`} data-reveal="up">
+            <span class="step__num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="step__title">{s.title}</h3>
+            <p class="step__body">{s.body}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  /* Soft field of irregular vertical columns (echoing the reference), in the
+     Greenline palette — muted sages, creams and a warm tan hint. Kept pale so
+     the white cards still read clearly on top. */
+  .howwework {
+    background: linear-gradient(180deg, #eef1e6 0%, #e7ecdd 100%);
+    overflow: hidden;
+  }
+  .howwework::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.85;
+    background: linear-gradient(
+      90deg,
+      #edf1e4 0%,
+      #edf1e4 6%,
+      #e6ecdb 6%,
+      #e6ecdb 13%,
+      #f3f0e6 13%,
+      #f3f0e6 18%,
+      #e3e7d4 18%,
+      #e3e7d4 28%,
+      #eef1e6 28%,
+      #eef1e6 35%,
+      #ece6d6 35%,
+      #ece6d6 43%,
+      #e7edde 43%,
+      #e7edde 51%,
+      #e2e6d3 51%,
+      #e2e6d3 57%,
+      #f1efe4 57%,
+      #f1efe4 65%,
+      #e8eddd 65%,
+      #e8eddd 72%,
+      #ece6d6 72%,
+      #ece6d6 80%,
+      #eaf0e7 80%,
+      #eaf0e7 87%,
+      #f2f0e6 87%,
+      #f2f0e6 94%,
+      #e5e9d8 94%,
+      #e5e9d8 100%
+    );
+    /* feather the hard column edges just slightly for a softer, printed feel */
+    filter: blur(0.5px);
+  }
+  /* content sits above the striped field */
+  .howwework > .wrap {
+    position: relative;
+    z-index: 1;
+  }
+
+  .howwework__title {
+    font-size: var(--step-3);
+    max-width: 22ch;
+    margin-bottom: var(--space-m);
+  }
+  .howwework .lede {
+    margin-bottom: var(--space-xl);
+  }
+
+  /* Five columns that each step DOWN the page — the staircase. align-items:start
+     lets the per-card top offset (calc from --i) do the sloping. */
+  .steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: clamp(0.75rem, 1.4vw, 1.5rem);
+    align-items: start;
+  }
+  .step {
+    position: relative;
+    margin-top: calc(var(--i) * clamp(1rem, 2.6vw, 2.75rem));
+    /* soft sheen, lighter at top-left — matches the reference cards */
+    background: linear-gradient(150deg, #ffffff 0%, #f4f3ea 100%);
+    border: 1px solid rgba(139, 168, 142, 0.4);
+    border-radius: var(--radius);
+    padding: clamp(1.5rem, 1rem + 1vw, 2rem) clamp(1.25rem, 1rem + 0.8vw, 1.75rem)
+      clamp(1.25rem, 1rem + 0.8vw, 1.75rem);
+    box-shadow: 0 6px 16px -10px rgba(24, 39, 29, 0.25);
+    transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out),
+      border-color 0.3s var(--ease-out);
+  }
+  .step:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 36px -12px rgba(24, 39, 29, 0.32);
+    border-color: var(--sage);
+  }
+  /* numbered chip straddling the top-left corner */
+  .step__num {
+    position: absolute;
+    top: 0;
+    left: clamp(1.25rem, 1rem + 0.8vw, 1.75rem);
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.1rem;
+    height: 2.1rem;
+    padding: 0 0.5rem;
+    background: var(--field-green);
+    color: var(--hi-vis);
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+  }
+  .step__title {
+    font-size: var(--step-1);
+    color: var(--field-green);
+    margin: 0.75rem 0 0.6rem;
+  }
+  .step__body {
+    font-size: var(--step--1);
+    line-height: 1.55;
+    color: var(--bitumen);
+    margin: 0;
+  }
+
+  /* Below the 5-up staircase, drop to a 2-column layout, then a single column.
+     The staircase offset is removed so stacked cards align cleanly. */
+  @media (max-width: 1024px) {
+    .steps {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-l) var(--space-m);
+    }
+    .step {
+      margin-top: 0;
+    }
+  }
+  @media (max-width: 560px) {
+    .steps {
+      grid-template-columns: 1fr;
+      gap: var(--space-l);
+    }
+  }
+</style>
