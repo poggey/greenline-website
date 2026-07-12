@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greenline HSE — Practical safety that works on the ground</title>
+<meta name="description" content="Senior Health, Safety and Environmental expertise across construction, infrastructure and agriculture — delivered direct. Australia-wide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,400;9..144,500;9..144,600&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg">
+</head>
+<body>
+
+<!-- Greenline HSE logo mark (from brand) -->
+<svg style="display:none" aria-hidden="true"><symbol id="glLogo" viewBox="-4.05 -1.75 195 195"><g fill="currentColor" stroke="none"><g transform="translate(0,201) scale(0.1,-0.1)"><path d="M807 1900 c-281 -51 -507 -219 -623 -465 -60 -126 -75 -190 -81 -340 -6 -156 14 -257 77 -391 51 -110 77 -147 99 -139 57 22 234 67 331 84 369 65 700 60 1043 -13 59 -12 104 -19 100 -16 -16 15 -171 59 -273 79 -188 36 -252 42 -501 48 -260 6 -396 -3 -589 -38 -58 -10 -108 -19 -111 -19 -10 0 -57 111 -76 181 -13 47 -18 99 -18 199 1 126 3 142 33 230 18 52 52 127 74 165 50 84 180 217 260 264 368 215 829 110 1062 -243 92 -139 131 -257 146 -441 8 -99 8 -98 5 35 -4 175 -35 291 -113 418 -120 199 -293 327 -522 388 -67 18 -257 26 -323 14z"/><path d="M1338 1500 c-21 -15 -82 -47 -135 -70 -174 -76 -260 -145 -313 -250 -38 -75 -67 -240 -42 -240 4 0 20 24 35 54 39 74 126 167 210 227 39 27 73 49 77 49 4 0 -32 -39 -80 -88 -95 -96 -149 -172 -191 -272 -37 -86 -37 -90 9 -83 236 34 401 174 457 388 19 71 32 275 19 297 -8 13 -15 11 -46 -12z"/><path d="M490 1197 c0 -164 96 -292 253 -335 36 -10 38 -10 31 11 -13 44 -44 95 -90 153 l-48 59 44 -36 c25 -20 60 -55 78 -78 l32 -43 0 39 c-1 89 -60 159 -183 216 -39 18 -78 41 -86 50 -23 29 -31 19 -31 -36z"/><path d="M1110 630 c-237 -23 -462 -68 -644 -129 -59 -20 -109 -40 -109 -46 -2 -21 142 -129 228 -171 128 -63 224 -85 365 -85 209 0 360 56 537 200 50 40 128 130 120 138 -4 3 -34 -20 -69 -52 -84 -77 -134 -110 -233 -156 -119 -56 -211 -73 -365 -66 -101 4 -140 10 -205 32 -92 31 -135 52 -135 64 0 9 150 81 248 118 210 79 469 132 647 133 53 0 76 3 69 10 -14 14 -336 21 -454 10z"/></g></g></symbol></svg>
+
+<!-- scroll progress line -->
+<div class="progress-line" aria-hidden="true"><span id="progressFill"></span></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="nav-logo" href="#top" aria-label="Greenline HSE — home">
+    <svg viewBox="-4.05 -1.75 195 195" class="logo-mark" aria-hidden="true"><use href="#glLogo"/></svg>
+    <span>greenline<em>&nbsp;HSE</em></span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#meet">Meet Greenline</a>
+    <a href="#reality">The reality</a>
+    <a href="#services">What we do</a>
+    <a href="#sectors">Sectors</a>
+    <a href="#process">How it works</a>
+  </nav>
+  <a href="#contact" class="btn btn-small nav-cta" data-magnetic>Start a conversation</a>
+  <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<!-- mobile menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <nav aria-label="Mobile">
+    <a href="#meet">Meet Greenline</a>
+    <a href="#reality">The reality</a>
+    <a href="#services">What we do</a>
+    <a href="#sectors">Sectors</a>
+    <a href="#process">How it works</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <a href="mailto:catriona@greenlinehse.com.au">catriona@greenlinehse.com.au</a>
+    <a href="tel:+61420883581">+61 420 883 581</a>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow reveal"><span class="eyebrow-dot"></span>Senior HSE consultancy · Australia-wide</p>
+      <h1 class="hero-title">
+        <span class="line"><span class="w">Practical</span> <span class="w">safety</span></span>
+        <span class="line"><span class="w">that</span> <span class="w w-accent">works<svg class="underline-swash" viewBox="0 0 220 34" aria-hidden="true"><path d="M6 26 C60 8, 150 6, 214 18" fill="none" stroke="var(--orange)" stroke-width="7" stroke-linecap="round"/></svg></span></span>
+        <span class="line"><span class="w">on</span> <span class="w">the</span> <span class="w">ground.</span></span>
+      </h1>
+      <p class="hero-sub reveal">Senior Health, Safety and Environmental expertise across construction, infrastructure and agriculture — delivered direct.</p>
+      <div class="hero-actions reveal">
+        <a href="#contact" class="btn btn-green" data-magnetic>Start a conversation
+          <svg viewBox="0 0 24 24" class="btn-arrow" aria-hidden="true"><path d="M4 12h14m-6-7 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-side">
+      <div class="hero-badge spin-slow" aria-hidden="true">
+        <svg viewBox="0 0 120 120">
+          <defs><path id="circPath" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+          <text><textPath href="#circPath">PRACTICAL · HUMAN · SENIOR · DIRECT · PRACTICAL · HUMAN ·</textPath></text>
+        </svg>
+        <svg class="hero-badge-mark" viewBox="0 0 40 40"><path d="M6 28 Q17 8 34 16" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== THE LIVING GROUND — interactive farm-to-site panorama ===== -->
+  <div class="scene" id="scene">
+    <svg class="scene-svg" viewBox="0 0 1600 420" preserveAspectRatio="xMidYMax meet" aria-label="Illustrated panorama: a farm and a construction site joined by green hills, with safety checkpoints marked">
+
+      <!-- ---------- BACK: sky ---------- -->
+      <g class="layer layer-back">
+        <circle class="sun" cx="1210" cy="88" r="40" fill="var(--orange)" opacity=".9"/>
+        <circle class="sun-ring" cx="1210" cy="88" r="54" fill="none" stroke="var(--orange)" stroke-width="2" opacity=".3"/>
+        <g class="cloud cloud-1" fill="var(--cream)">
+          <ellipse cx="180" cy="84" rx="36" ry="16"/><ellipse cx="210" cy="90" rx="26" ry="13"/><ellipse cx="152" cy="92" rx="24" ry="12"/>
+        </g>
+        <g class="cloud cloud-2" fill="var(--cream)">
+          <ellipse cx="760" cy="58" rx="30" ry="13"/><ellipse cx="786" cy="64" rx="22" ry="11"/><ellipse cx="737" cy="65" rx="20" ry="10"/>
+        </g>
+        <g class="cloud cloud-3" fill="var(--cream)">
+          <ellipse cx="1400" cy="98" rx="32" ry="14"/><ellipse cx="1428" cy="104" rx="23" ry="11"/><ellipse cx="1375" cy="105" rx="21" ry="10"/>
+        </g>
+        <g class="birds" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" opacity=".55">
+          <path d="M520,112 q6,-7 12,0 q6,-7 12,0"/>
+          <path d="M568,98 q5,-6 10,0 q5,-6 10,0"/>
+        </g>
+        <path fill="#DCE7D4" d="M0,392 C100,340 220,306 380,312 C540,318 640,296 800,302 C960,308 1080,288 1240,296 C1380,303 1500,330 1600,392 L1600,420 L0,420 Z"/>
+      </g>
+
+      <!-- ---------- MID: the working ground ---------- -->
+      <g class="layer layer-mid">
+        <path fill="#9DBE8D" d="M0,390 C80,352 180,334 320,338 C470,342 560,330 700,334 C860,339 960,328 1120,332 C1280,336 1440,348 1600,390 L1600,420 L0,420 Z"/>
+
+        <!-- silo -->
+        <path d="M246,246 A24,22 0 0 1 294,246 Z" fill="var(--cream)" stroke="var(--green-deep)" stroke-width="3"/>
+        <rect x="246" y="246" width="48" height="110" fill="var(--cream)" stroke="var(--green-deep)" stroke-width="3"/>
+        <path d="M246,276 h48 M246,306 h48 M246,336 h48" stroke="var(--green-deep)" stroke-width="2" opacity=".5"/>
+
+        <!-- barn -->
+        <rect x="320" y="296" width="130" height="60" fill="var(--cream)" stroke="var(--green-deep)" stroke-width="3"/>
+        <polygon points="308,298 332,262 385,244 438,262 462,298" fill="var(--green)" stroke="var(--green-deep)" stroke-width="3" stroke-linejoin="round"/>
+        <rect x="367" y="316" width="36" height="40" fill="var(--green-deep)"/>
+        <path d="M367,316 l36,40 M403,316 l-36,40" stroke="var(--cream)" stroke-width="2.5"/>
+
+        <!-- fence -->
+        <g stroke="var(--green-deep)" stroke-width="3.5" stroke-linecap="round">
+          <path d="M472,334 V356 M506,334 V356 M540,334 V356"/>
+          <path d="M464,340 H548 M464,349 H548" stroke-width="2.5"/>
+        </g>
+
+        <!-- windmill -->
+        <g stroke="var(--green-deep)" fill="none" stroke-width="3.5" stroke-linecap="round">
+          <path d="M548,356 L560,206 M572,356 L560,206 M552,320 h18"/>
+        </g>
+        <g class="mill-wheel">
+          <circle cx="560" cy="192" r="19" fill="none" stroke="var(--green-deep)" stroke-width="3"/>
+          <path d="M560,173 V211 M541,192 H579 M547,179 L573,205 M573,179 L547,205" stroke="var(--green-deep)" stroke-width="2.5"/>
+        </g>
+        <circle cx="560" cy="192" r="4.5" fill="var(--orange)"/>
+
+        <!-- gate between the two worlds -->
+        <g stroke="var(--green-deep)" stroke-width="3.5" stroke-linecap="round" fill="none">
+          <rect x="790" y="324" width="9" height="32" fill="var(--green-deep)"/>
+          <rect x="846" y="324" width="9" height="32" fill="var(--green-deep)"/>
+          <path d="M799,332 H846 M799,341 H846 M799,350 H846 M799,350 L846,332"/>
+        </g>
+
+        <!-- building frame -->
+        <g stroke="var(--green-deep)" stroke-width="6" stroke-linecap="round">
+          <path d="M980,356 V204 M1040,356 V204 M1100,356 V204 M1160,356 V204"/>
+          <path d="M976,204 H1164 M976,256 H1164 M976,308 H1164" stroke-width="5"/>
+          <path d="M980,308 L1040,256 M1160,256 L1100,204" stroke-width="3.5"/>
+        </g>
+        <!-- workers -->
+        <g class="worker">
+          <path d="M1060,187 a7,7 0 0 1 14 0 Z" fill="var(--orange)"/>
+          <circle cx="1067" cy="192" r="4.5" fill="var(--cream)" stroke="var(--green-deep)" stroke-width="1.5"/>
+          <rect x="1062" y="197" width="10" height="14" rx="3" fill="var(--green-deep)"/>
+        </g>
+        <g class="worker">
+          <path d="M1123,291 a7,7 0 0 1 14 0 Z" fill="var(--orange)"/>
+          <circle cx="1130" cy="296" r="4.5" fill="var(--cream)" stroke="var(--green-deep)" stroke-width="1.5"/>
+          <rect x="1125" y="301" width="10" height="14" rx="3" fill="var(--green-deep)"/>
+        </g>
+
+        <!-- tower crane -->
+        <g stroke="var(--orange)" fill="none" stroke-width="4" stroke-linecap="round">
+          <path d="M1252,356 V116 M1276,356 V116"/>
+          <path d="M1252,336 L1276,316 M1276,336 L1252,316 M1252,296 L1276,276 M1276,296 L1252,276 M1252,256 L1276,236 M1276,256 L1252,236 M1252,216 L1276,196 M1276,216 L1252,196 M1252,176 L1276,156 M1276,176 L1252,156" stroke-width="2.5"/>
+        </g>
+        <rect x="1238" y="114" width="52" height="26" rx="4" fill="var(--orange)"/>
+        <rect x="1244" y="120" width="14" height="10" rx="2" fill="var(--green-deep)" opacity=".55"/>
+        <g stroke="var(--orange)" fill="none" stroke-linecap="round">
+          <path d="M1252,114 L1264,90 L1276,114" stroke-width="4"/>
+          <path d="M1238,126 H1048 M1238,138 H1048" stroke-width="4"/>
+          <path d="M1048,126 L1068,138 M1068,126 L1088,138 M1088,126 L1108,138 M1108,126 L1128,138 M1128,126 L1148,138 M1148,126 L1168,138 M1168,126 L1188,138 M1188,126 L1208,138 M1208,126 L1228,138" stroke-width="2"/>
+          <path d="M1290,126 L1372,130 M1290,138 L1372,138" stroke-width="4"/>
+          <path d="M1264,90 L1090,122 M1264,90 L1352,126" stroke-width="2"/>
+        </g>
+        <rect x="1350" y="128" width="28" height="22" rx="3" fill="var(--green-deep)"/>
+        <rect x="1200" y="136" width="20" height="9" rx="2" fill="var(--green-deep)"/>
+        <!-- lifting load -->
+        <g class="crane-load">
+          <path d="M1210,145 V232" stroke="var(--green-deep)" stroke-width="2.5"/>
+          <path d="M1210,232 q-7,8 0,14 q8,-2 4,-10" fill="none" stroke="var(--green-deep)" stroke-width="3" stroke-linecap="round"/>
+          <rect x="1178" y="246" width="64" height="12" rx="2" fill="var(--green-deep)"/>
+          <path d="M1178,252 h64" stroke="var(--cream)" stroke-width="2" opacity=".5"/>
+        </g>
+      </g>
+
+      <!-- ---------- FRONT: foreground ---------- -->
+      <g class="layer layer-front">
+        <path fill="var(--green)" d="M0,380 C120,364 240,354 400,358 C560,362 660,350 800,354 C940,358 1060,350 1220,356 C1360,361 1500,372 1600,380 L1600,420 L0,420 Z"/>
+
+        <!-- tractor -->
+        <g class="tractor">
+          <g transform="translate(0,370)">
+            <rect x="-42" y="-44" width="54" height="18" rx="5" fill="var(--green-deep)"/>
+            <rect x="10" y="-38" width="32" height="12" rx="4" fill="var(--green-deep)"/>
+            <rect x="-38" y="-66" width="28" height="26" rx="4" fill="none" stroke="var(--green-deep)" stroke-width="4"/>
+            <rect x="6" y="-56" width="5" height="14" fill="var(--green-deep)"/>
+            <circle class="beacon" cx="-24" cy="-70" r="4.5" fill="var(--orange)"/>
+            <g class="t-wheel">
+              <circle cx="-22" cy="-17" r="17" fill="var(--green-deep)"/>
+              <circle cx="-22" cy="-17" r="7" fill="var(--cream)"/>
+              <path d="M-22,-32 V-2 M-37,-17 H-7" stroke="var(--cream)" stroke-width="2.5" opacity=".6"/>
+            </g>
+            <g class="t-wheel">
+              <circle cx="26" cy="-11" r="11" fill="var(--green-deep)"/>
+              <circle cx="26" cy="-11" r="4.5" fill="var(--cream)"/>
+              <path d="M26,-21 V-1 M16,-11 H36" stroke="var(--cream)" stroke-width="2" opacity=".6"/>
+            </g>
+          </g>
+        </g>
+
+        <!-- wheat tufts -->
+        <g class="wheat-row">
+          <g class="wheat-pos" transform="translate(92,376)"><g class="wheat">
+            <path d="M0,0 C-2,-12 -5,-22 -8,-30 M0,0 C0,-14 1,-26 2,-36 M0,0 C3,-10 7,-19 11,-26" fill="none" stroke="#D9A94B" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="-8" cy="-32" r="3.5" fill="#D9A94B"/><circle cx="2" cy="-38" r="3.5" fill="#D9A94B"/><circle cx="11" cy="-28" r="3.5" fill="#D9A94B"/>
+          </g></g>
+          <g class="wheat-pos" transform="translate(140,380)"><g class="wheat">
+            <path d="M0,0 C-2,-11 -4,-20 -7,-27 M0,0 C0,-13 1,-24 2,-33 M0,0 C3,-9 6,-17 10,-23" fill="none" stroke="#D9A94B" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="-7" cy="-29" r="3.2" fill="#D9A94B"/><circle cx="2" cy="-35" r="3.2" fill="#D9A94B"/><circle cx="10" cy="-25" r="3.2" fill="#D9A94B"/>
+          </g></g>
+          <g class="wheat-pos" transform="translate(186,377)"><g class="wheat">
+            <path d="M0,0 C-2,-12 -5,-22 -8,-30 M0,0 C0,-14 1,-26 2,-36 M0,0 C3,-10 7,-19 11,-26" fill="none" stroke="#D9A94B" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="-8" cy="-32" r="3.5" fill="#D9A94B"/><circle cx="2" cy="-38" r="3.5" fill="#D9A94B"/><circle cx="11" cy="-28" r="3.5" fill="#D9A94B"/>
+          </g></g>
+          <g class="wheat-pos" transform="translate(680,372)"><g class="wheat">
+            <path d="M0,0 C-2,-11 -4,-20 -7,-27 M0,0 C0,-13 1,-24 2,-33 M0,0 C3,-9 6,-17 10,-23" fill="none" stroke="#D9A94B" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="-7" cy="-29" r="3.2" fill="#D9A94B"/><circle cx="2" cy="-35" r="3.2" fill="#D9A94B"/><circle cx="10" cy="-25" r="3.2" fill="#D9A94B"/>
+          </g></g>
+        </g>
+      </g>
+
+      <!-- ---------- HOTSPOTS ---------- -->
+      <g class="layer-hs">
+        <g class="hs" tabindex="0" role="button" data-title="Machinery safety" data-text="Guards fitted, kit serviced — machinery that's safe to run." aria-label="Machinery safety: guards fitted, kit serviced — machinery that's safe to run.">
+          <circle class="hs-hit" cx="596" cy="170" r="24"/>
+          <circle class="hs-ring" cx="596" cy="170" r="13"/>
+          <circle class="hs-dot" cx="596" cy="170" r="9"/>
+          <path class="hs-plus" d="M592,170 h8 M596,166 v8"/>
+        </g>
+        <g class="hs" tabindex="0" role="button" data-title="Chemical storage" data-text="Locked, labelled and inventoried — chemicals handled properly." aria-label="Chemical storage: locked, labelled and inventoried — chemicals handled properly.">
+          <circle class="hs-hit" cx="385" cy="268" r="24"/>
+          <circle class="hs-ring" cx="385" cy="268" r="13"/>
+          <circle class="hs-dot" cx="385" cy="268" r="9"/>
+          <path class="hs-plus" d="M381,268 h8 M385,264 v8"/>
+        </g>
+        <g class="hs" tabindex="0" role="button" data-title="One green line" data-text="The same practical standards, from the farm gate to the site gate." aria-label="One green line: the same practical standards, from the farm gate to the site gate.">
+          <circle class="hs-hit" cx="822" cy="306" r="24"/>
+          <circle class="hs-ring" cx="822" cy="306" r="13"/>
+          <circle class="hs-dot" cx="822" cy="306" r="9"/>
+          <path class="hs-plus" d="M818,306 h8 M822,302 v8"/>
+        </g>
+        <g class="hs" tabindex="0" role="button" data-title="Inducted crew" data-text="Hard hats on, toolbox talks done — everyone knows the plan." aria-label="Inducted crew: hard hats on, toolbox talks done — everyone knows the plan.">
+          <circle class="hs-hit" cx="1066" cy="162" r="24"/>
+          <circle class="hs-ring" cx="1066" cy="162" r="13"/>
+          <circle class="hs-dot" cx="1066" cy="162" r="9"/>
+          <path class="hs-plus" d="M1062,162 h8 M1066,158 v8"/>
+        </g>
+        <g class="hs" tabindex="0" role="button" data-title="Lift planning" data-text="Every lift assessed, loads secured, exclusion zones set." aria-label="Lift planning: every lift assessed, loads secured, exclusion zones set.">
+          <circle class="hs-hit" cx="1210" cy="205" r="24"/>
+          <circle class="hs-ring" cx="1210" cy="205" r="13"/>
+          <circle class="hs-dot" cx="1210" cy="205" r="9"/>
+          <path class="hs-plus" d="M1206,205 h8 M1210,201 v8"/>
+        </g>
+      </g>
+    </svg>
+
+    <div class="scene-tip" id="sceneTip" role="status" hidden>
+      <strong id="tipTitle"></strong><span id="tipText"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Construction</span><i>✦</i><span>Infrastructure</span><i>✦</i><span>Agriculture</span><i>✦</i><span>Rural</span><i>✦</i><span>Healthcare</span><i>✦</i><span>Rail &amp; Transport</span><i>✦</i><span>Industrial</span><i>✦</i>
+    <span>Construction</span><i>✦</i><span>Infrastructure</span><i>✦</i><span>Agriculture</span><i>✦</i><span>Rural</span><i>✦</i><span>Healthcare</span><i>✦</i><span>Rail &amp; Transport</span><i>✦</i><span>Industrial</span><i>✦</i>
+  </div>
+</div>
+
+<!-- ============ MEET GREENLINE ============ -->
+<section class="meet" id="meet">
+  <div class="section-head reveal">
+    <p class="eyebrow"><span class="eyebrow-dot"></span>Who we are</p>
+    <h2>Meet Greenline&nbsp;HSE</h2>
+  </div>
+
+  <div class="meet-grid">
+    <div class="meet-copy">
+      <p class="meet-lede reveal">Greenline runs on one belief: <mark class="hl">safety advice is worthless unless it fits the way people actually work.</mark></p>
+      <p class="reveal">Twenty-plus years across construction, infrastructure, healthcare and rural work in Ireland and Australia back that up. We give businesses what big consultancies often can't: senior, straightforward HSE support, delivered by the person you actually talk to.</p>
+      <p class="reveal">Get the trust and the operations right, and <strong>compliance looks after itself</strong>.</p>
+
+      <!-- Mayo → Australia journey graphic -->
+      <div class="journey reveal" role="img" aria-label="From a farm in Mayo, Ireland to construction sites across Australia">
+        <svg viewBox="0 0 560 150" class="journey-svg">
+          <path id="journeyPath" d="M40 44 C180 -8, 380 120, 520 84" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-dasharray="2 9" stroke-linecap="round"/>
+          <circle cx="40" cy="44" r="6" fill="var(--green)"/>
+          <circle cx="520" cy="84" r="6" fill="var(--orange)"/>
+          <circle class="journey-dot" r="5" fill="var(--orange)"/>
+          <text x="40" y="76" class="journey-label">Farm in Mayo, IE</text>
+          <text x="520" y="116" class="journey-label" text-anchor="end">Sites across Australia</text>
+        </svg>
+        <p class="journey-quote">“From a farm in Mayo to construction sites across Australia — the same belief: <em>keep it practical, keep it human.</em>”</p>
+      </div>
+    </div>
+
+    <aside class="meet-panel reveal" aria-label="Experience and qualifications">
+      <div class="meet-panel-grain" aria-hidden="true"></div>
+      <div class="meet-panel-head">
+        <span class="meet-panel-num"><span data-count="20" data-suffix="+">0+</span></span>
+        <span class="meet-panel-cap">Years on the ground<br>Ireland &amp; Australia</span>
+      </div>
+      <ul class="creds">
+        <li>
+          <span class="cred-k">Education</span>
+          <span class="cred-v">BSc (Hons) Health &amp; Safety Systems · Cert IV Environmental Management &amp; Sustainability</span>
+        </li>
+        <li>
+          <span class="cred-k">Sectors</span>
+          <span class="cred-v">Construction · Infrastructure · Health · Industrial · Agriculture</span>
+        </li>
+        <li>
+          <span class="cred-k">Plus</span>
+          <span class="cred-v">Various HSE training &amp; auditing qualifications</span>
+        </li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ THE REALITY ============ -->
+<section class="reality" id="reality">
+  <div class="reality-grain" aria-hidden="true"></div>
+  <div class="reality-inner">
+    <div class="section-head section-head-light reveal">
+      <p class="eyebrow eyebrow-light"><span class="eyebrow-dot eyebrow-dot-orange"></span>The reality</p>
+      <h2>The state of health &amp; safety in&nbsp;Australia</h2>
+      <p class="section-sub">The picture most safety documents skip past. Construction and agriculture sit among the industries carrying the heaviest toll — and the numbers are the reason this work matters.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat reveal">
+        <span class="stat-num"><span data-count="188">0</span></span>
+        <span class="stat-rule"><i style="--w:100%"></i></span>
+        <span class="stat-label">workers lost in 2024</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-num"><span data-count="37">0</span></span>
+        <span class="stat-rule"><i style="--w:34%"></i></span>
+        <span class="stat-label">construction worker fatalities <em>(2024)</em></span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-num"><span data-count="44">0</span></span>
+        <span class="stat-rule"><i style="--w:41%"></i></span>
+        <span class="stat-label">agriculture, forestry &amp; fishing worker fatalities <em>(2024)</em></span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-num"><span data-count="146700">0</span></span>
+        <span class="stat-rule"><i style="--w:100%"></i></span>
+        <span class="stat-label">serious workers' compensation claims each year</span>
+      </div>
+    </div>
+
+    <p class="stat-source reveal">Source: Safe Work Australia — Key Work Health &amp; Safety Statistics</p>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="section-head reveal">
+    <p class="eyebrow"><span class="eyebrow-dot"></span>What we do</p>
+    <h2>The full breadth of a<br><span class="serif-i">working</span> HSE function</h2>
+    <p class="section-sub">Greenline HSE provides practical Health, Safety and Environmental support tailored to the needs of each business — the full breadth of what a HSE function needs to cover. <span class="hint-tap">Tap a service to expand.</span></p>
+  </div>
+
+  <div class="svc-list" id="svcList">
+
+    <button class="svc" aria-expanded="false">
+      <span class="svc-row">
+        <span class="svc-num">01</span>
+        <span class="svc-name">HSE Management Systems</span>
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="draw" d="M6 8h20v18H6z M6 14h20 M11 19h6 M11 23h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="svc-plus" aria-hidden="true"></span>
+      </span>
+      <span class="svc-body"><span>Practical systems that support compliance — and actually get used.</span></span>
+    </button>
+
+    <button class="svc" aria-expanded="false">
+      <span class="svc-row">
+        <span class="svc-num">02</span>
+        <span class="svc-name">Risk Assessments</span>
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="draw" d="M16 5 29 27H3z M16 13v7 M16 23.5v.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="svc-plus" aria-hidden="true"></span>
+      </span>
+      <span class="svc-body"><span>Identifying and managing workplace hazards through clear, usable processes.</span></span>
+    </button>
+
+    <button class="svc" aria-expanded="false">
+      <span class="svc-row">
+        <span class="svc-num">03</span>
+        <span class="svc-name">Standard Operating Procedures</span>
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="draw" d="M9 4h14v24H9z M13 10h6 M13 15h8 M13 20h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="svc-plus" aria-hidden="true"></span>
+      </span>
+      <span class="svc-body"><span>Easy-to-follow procedures for routine and high-risk tasks, in plain English.</span></span>
+    </button>
+
+    <button class="svc" aria-expanded="false">
+      <span class="svc-row">
+        <span class="svc-num">04</span>
+        <span class="svc-name">Site Audits &amp; Inspections</span>
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="draw" d="M14 22a8 8 0 1 1 0-16 8 8 0 0 1 0 16z M20 20l8 8 M10.5 14l2.5 2.5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="svc-plus" aria-hidden="true"></span>
+      </span>
+      <span class="svc-body"><span>Independent eyes on site to verify compliance and catch issues early.</span></span>
+    </button>
+
+    <button class="svc" aria-expanded="false">
+      <span class="svc-row">
+        <span class="svc-num">05</span>
+        <span class="svc-name">Contractor Management</span>
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="draw" d="M11 14a4 4 0 1 0 0-8 4 4 0 0 0 0 8z M3 27c0-5 3.5-8 8-8s8 3 8 8 M22 10a4 4 0 0 1 0 8 M24 19c3 .8 5 3.5 5 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="svc-plus" aria-hidden="true"></span>
+      </span>
+      <span class="svc-body"><span>Prequalification, onboarding and ongoing management of subcontractors.</span></span>
+    </button>
+
+    <button class="svc" aria-expanded="false">
+      <span class="svc-row">
+        <span class="svc-num">06</span>
+        <span class="svc-name">Incident Investigations</span>
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="draw" d="M5 27V7 M5 22c5-6 9 3 14-2s5-8 8-9 M5 27h22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="svc-plus" aria-hidden="true"></span>
+      </span>
+      <span class="svc-body"><span>Genuine root cause, with corrective actions and lessons that stick.</span></span>
+    </button>
+
+    <button class="svc" aria-expanded="false">
+      <span class="svc-row">
+        <span class="svc-num">07</span>
+        <span class="svc-name">Compliance Reviews</span>
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="draw" d="M16 4l10 4v7c0 6.5-4 11-10 13-6-2-10-6.5-10-13V8z M11.5 15.5l3 3 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="svc-plus" aria-hidden="true"></span>
+      </span>
+      <span class="svc-body"><span>Measuring your operation against legislation, standards and expectations.</span></span>
+    </button>
+
+    <button class="svc" aria-expanded="false">
+      <span class="svc-row">
+        <span class="svc-num">08</span>
+        <span class="svc-name">Training &amp; Inductions</span>
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="draw" d="M16 6 3 12l13 6 13-6z M8 15v7c0 2 4 4 8 4s8-2 8-4v-7 M29 12v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="svc-plus" aria-hidden="true"></span>
+      </span>
+      <span class="svc-body"><span>Inductions, toolbox topics and engagement that land with the crew.</span></span>
+    </button>
+
+    <button class="svc" aria-expanded="false">
+      <span class="svc-row">
+        <span class="svc-num">09</span>
+        <span class="svc-name">Emergency Planning</span>
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="draw" d="M18 3 8 18h7l-2 11L26 13h-8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="svc-plus" aria-hidden="true"></span>
+      </span>
+      <span class="svc-body"><span>Response arrangements you can actually execute under pressure.</span></span>
+    </button>
+
+    <button class="svc" aria-expanded="false">
+      <span class="svc-row">
+        <span class="svc-num">10</span>
+        <span class="svc-name">Leadership &amp; Safety Culture</span>
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="draw" d="M16 13a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9z M6 28c0-6 4.5-9.5 10-9.5S26 22 26 28 M16 4v-2 M25 7l1.5-1.5 M7 7 5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="svc-plus" aria-hidden="true"></span>
+      </span>
+      <span class="svc-body"><span>Building genuine safety cultures through leadership and engagement.</span></span>
+    </button>
+
+    <button class="svc" aria-expanded="false">
+      <span class="svc-row">
+        <span class="svc-num">11</span>
+        <span class="svc-name">Psychosocial Risk Management</span>
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="draw" d="M11 26v-4C7 20 5 16.5 5 13a9 9 0 0 1 18-1c2 1 3 2.5 3 4.5S24 20 22 20v6 M13 12a3.5 3.5 0 0 1 7 0c0 2.5-3.5 2.5-3.5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="svc-plus" aria-hidden="true"></span>
+      </span>
+      <span class="svc-body"><span>Identifying and managing psychosocial hazards for healthier workplaces.</span></span>
+    </button>
+
+    <button class="svc" aria-expanded="false">
+      <span class="svc-row">
+        <span class="svc-num">12</span>
+        <span class="svc-name">Environmental Management</span>
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="draw" d="M26 5C14 5 6 11 6 21c0 3 1 5 1 5s1-8 11-12c-7 5-9 12-9 12s2 1 5 1c10 0 12-12 12-22z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="svc-plus" aria-hidden="true"></span>
+      </span>
+      <span class="svc-body"><span>Environmental compliance, risk and sustainable solutions for your operations.</span></span>
+    </button>
+
+  </div>
+</section>
+
+<!-- ============ SECTORS ============ -->
+<section class="sectors" id="sectors">
+  <div class="section-head reveal">
+    <p class="eyebrow"><span class="eyebrow-dot"></span>Where we work</p>
+    <h2>Two sectors, <span class="serif-i">one</span> practical approach</h2>
+    <p class="section-sub">Greenline HSE works across two sectors — construction &amp; infrastructure, and agriculture &amp; rural. Each gets the same senior, fit-for-purpose support, tailored to how the work is actually done.</p>
+  </div>
+
+  <div class="sector-panels reveal">
+    <article class="panel panel-construction" tabindex="0">
+      <div class="panel-media img-ph" data-img="sector-construction"><img src="images/sector-construction.jpg" alt="Modern construction site with a tower crane and two workers at dusk"><span class="img-ph-label">IMAGE · construction site</span></div>
+      <div class="panel-scrim" aria-hidden="true"></div>
+      <div class="panel-content">
+        <span class="chip chip-orange">On site</span>
+        <h3>Construction &amp;<br>Infrastructure</h3>
+        <p>Practical Health, Safety and Environmental support from planning through to project completion, helping manage critical risks, strengthen compliance and deliver better project outcomes.</p>
+        <ul class="panel-tags">
+          <li>Healthcare</li><li>Rail &amp; transport</li><li>Commercial</li><li>Industrial</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="panel panel-agriculture" tabindex="0">
+      <div class="panel-media img-ph" data-img="sector-agriculture"><img src="images/sector-agriculture.jpg" alt="Farmer opening a paddock gate for cattle at sunrise"><span class="img-ph-label">IMAGE · farm / rural</span></div>
+      <div class="panel-scrim" aria-hidden="true"></div>
+      <div class="panel-content">
+        <span class="chip chip-green">On the land</span>
+        <h3>Agriculture &amp;<br>Rural</h3>
+        <p>Practical Health, Safety and Environmental solutions designed for farms, contractors and rural businesses, keeping compliance simple, practical and tailored to the way rural operations really work.</p>
+        <ul class="panel-tags">
+          <li>Machinery</li><li>Cropping</li><li>Livestock</li><li>Chemicals</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="process" id="process">
+  <div class="section-head reveal">
+    <p class="eyebrow"><span class="eyebrow-dot"></span>How it works</p>
+    <h2>A clear path — from first conversation to <span class="serif-i">lasting</span> partnership</h2>
+    <p class="section-sub">Every engagement follows the same simple, senior-led path. No jargon, no surprises — just practical steps that build safety into how your business actually runs.</p>
+  </div>
+
+  <div class="steps" id="steps">
+    <div class="steps-line" aria-hidden="true"><span id="stepsFill"></span></div>
+
+    <div class="step">
+      <div class="step-node" aria-hidden="true"><span>1</span></div>
+      <div class="step-card reveal">
+        <h3>Initial Consultation</h3>
+        <p>A complimentary, no-obligation conversation to understand your operation and where support is needed.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-node" aria-hidden="true"><span>2</span></div>
+      <div class="step-card reveal">
+        <h3>Review &amp; Gap Assessment</h3>
+        <p>A close look at your sites, systems and how work really happens — measured against what's required.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-node" aria-hidden="true"><span>3</span></div>
+      <div class="step-card reveal">
+        <h3>Practical Action Plan</h3>
+        <p>Prioritised, plain-English actions across critical risks, quick wins and longer-term improvements.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-node" aria-hidden="true"><span>4</span></div>
+      <div class="step-card reveal">
+        <h3>Implementation &amp; Support</h3>
+        <p>Building or refining the systems, training and controls you need, delivered in sensible stages.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-node" aria-hidden="true"><span>5</span></div>
+      <div class="step-card reveal">
+        <h3>Ongoing Partnership</h3>
+        <p>Staying on hand as your operation evolves, so safety keeps working long after handover.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="contact-topo" aria-hidden="true">
+    <svg viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice">
+      <g class="topo-drift" fill="none" stroke="rgba(255,255,255,.09)" stroke-width="1.5">
+        <path d="M-100,560 C200,480 380,620 640,540 C900,460 1080,600 1540,500"/>
+        <path d="M-100,470 C220,390 400,530 660,450 C920,370 1100,510 1540,410"/>
+        <path d="M-100,380 C240,300 420,440 680,360 C940,280 1120,420 1540,320"/>
+        <path d="M-100,290 C260,210 440,350 700,270 C960,190 1140,330 1540,230"/>
+      </g>
+    </svg>
+  </div>
+  <div class="contact-inner">
+    <p class="eyebrow eyebrow-light reveal"><span class="eyebrow-dot eyebrow-dot-orange"></span>Get in touch</p>
+    <h2 class="contact-title reveal">Let's <span class="serif-i">talk.</span></h2>
+    <p class="contact-sub reveal">Whether you're seeking support for a construction project, infrastructure works, or rural and agricultural operations, Greenline HSE would be glad to discuss how we can help. The first step is simple: get in touch for a complimentary, no-obligation conversation.</p>
+    <p class="contact-tag reveal">No obligation. Just a conversation.</p>
+    <div class="reveal">
+      <a class="btn btn-cream btn-big" href="mailto:catriona@greenlinehse.com.au" data-magnetic>Get in touch
+        <svg viewBox="0 0 24 24" class="btn-arrow" aria-hidden="true"><path d="M4 12h14m-6-7 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="contact-cards reveal">
+      <a class="c-card" href="mailto:catriona@greenlinehse.com.au">
+        <span class="c-k">Email</span>
+        <span class="c-v">catriona@greenlinehse.com.au</span>
+      </a>
+      <a class="c-card" href="tel:+61420883581">
+        <span class="c-k">Phone</span>
+        <span class="c-v">+61 420 883 581</span>
+      </a>
+      <div class="c-card">
+        <span class="c-k">Service area</span>
+        <span class="c-v">Australia-wide</span>
+      </div>
+      <div class="c-card">
+        <span class="c-k">ABN</span>
+        <span class="c-v">81 509 673 918</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <p class="footer-tag reveal"><span>Practical Solutions.</span> <span>Strong Relationships.</span> <span class="serif-i">Better Outcomes.</span></p>
+  <div class="footer-row">
+    <a class="nav-logo footer-logo" href="#top">
+      <svg viewBox="-4.05 -1.75 195 195" class="logo-mark" aria-hidden="true"><use href="#glLogo"/></svg>
+      <span>greenline<em>&nbsp;HSE</em></span>
+    </a>
+    <div class="footer-meta">
+      <span>ABN 81 509 673 918</span>
+      <span>Australia-wide</span>
+      <a href="mailto:catriona@greenlinehse.com.au">catriona@greenlinehse.com.au</a>
+    </div>
+  </div>
+  <p class="footer-fine">© 2026 Greenline HSE. Provided for general information; not legal or professional advice for any specific situation.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
