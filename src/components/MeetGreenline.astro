@@ -1,35 +1,40 @@
 ---
 // 4. MEET GREENLINE (§12.4) — credibility first: a mono spec-sheet ribbon
 // of credentials, then the Mayo-farm story and the boutique difference.
-// No headshot (low-profile launch). Copy verbatim from Part I §4.
+// No headshot (low-profile launch).
 import { Image } from 'astro:assets';
 import mayoFarmland from '../assets/images/meet-mayo-farmland.jpg';
 
 const ribbon = [
-  { key: 'EXPERIENCE', lines: ['20+ years · Ireland & Australia'] },
+  {
+    key: 'EXPERIENCE',
+    lines: [
+      '20+ years · Ireland & Australia',
+      'Construction · Infrastructure · Health · Industrial · Agriculture',
+    ],
+  },
   {
     key: 'EDUCATION',
     lines: [
       'BSc (Hons) Health & Safety Systems',
       'Cert IV Environmental Management & Sustainability',
+      'Lead Auditor & various HSE qualifications',
     ],
   },
-  { key: 'SECTORS', lines: ['Construction · Infrastructure · Health · Industrial · Agriculture'] },
-  { key: 'ALSO', lines: ['Various HSE training & auditing qualifications'] },
 ];
 
 ---
 
-<section class="section section--grid" id="meet" aria-labelledby="meet-h">
+<section class="section band-sage" id="meet" aria-labelledby="meet-h">
   <div class="wrap">
     <p class="section-index">Who we are</p>
-    <h2 id="meet-h" class="meet-title" data-split>Meet Greenline HSE</h2>
+    <h2 id="meet-h" class="meet-title" data-split>Meet the Founder of Greenline HSE</h2>
 
     <div class="meet-grid">
       <div class="meet-story" data-reveal="up">
         <p class="meet-lead">
           Greenline runs on one belief: <strong
-            >safety advice is worthless unless it fits the way people actually work.</strong
+            >HSE advice is worthless unless it fits the way people actually work.</strong
           >
         </p>
         <p>
@@ -50,7 +55,7 @@ const ribbon = [
           decoding="async"
         />
         <figcaption>
-          “From a farm in Mayo to construction sites across Australia — the same belief: keep it
+          “From a farm in Mayo to construction sites across Australia, the same belief: keep it
           practical, keep it human.”
         </figcaption>
       </figure>
@@ -81,8 +86,6 @@ const ribbon = [
   /* Quiet supporting credentials strip — sits below the story, low-key */
   .ribbon-kicker {
     margin: var(--space-xl) 0 var(--space-s);
-    padding-top: var(--space-m);
-    border-top: 1px solid var(--sage);
     font-family: var(--font-mono);
     font-size: var(--step--1);
     letter-spacing: 0.16em;
@@ -91,7 +94,7 @@ const ribbon = [
   }
   .ribbon {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-m);
     margin: 0;
   }
@@ -173,12 +176,8 @@ const ribbon = [
       flex: none;
       aspect-ratio: 4 / 3;
     }
-    .ribbon {
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-m) var(--space-l);
-    }
   }
-  @media (max-width: 480px) {
+  @media (max-width: 600px) {
     .ribbon {
       grid-template-columns: 1fr;
     }

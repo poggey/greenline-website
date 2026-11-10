@@ -1,49 +1,40 @@
 ---
 // 8. CONTACT (§12.8) — calm, no pop-ups, no urgency, no form. One clear CTA
 // that opens the visitor's own email client (mailto), plus direct details and
-// an Australia-wide note. The closing grounding green band where the Line
-// completes (§8 CLOSING). Copy verbatim from Part I §8.
+// an Australia-wide note, on the closing green band (§8 CLOSING).
 const email = 'catriona@greenlinehse.com.au';
 const phone = '+61 420 883 581';
-const abn = '81 509 673 918';
-const subject = encodeURIComponent('Starting a conversation — Greenline HSE');
+const subject = encodeURIComponent('Starting a conversation with Greenline HSE');
 const body = encodeURIComponent(
   "Hi Catriona,\n\nI'd like to start a conversation about a project or site:\n\n• What you're working on:\n• Where (state / region):\n• What you'd like help with:\n\nThanks,\n"
 );
 const mailto = `mailto:${email}?subject=${subject}&body=${body}`;
-import LogoMark from './LogoMark.astro';
 ---
 
 <section class="contact" id="contact" aria-labelledby="contact-h" data-contact>
-  <!-- Closing GSAP moment (§8 / §10): the signature line draws across the top
-       of the section as you scroll in, and resolves into the Greenline mark. -->
-  <div class="wrap contact__resolve" aria-hidden="true">
-    <svg class="contact__resolve-line" viewBox="0 0 1000 2" preserveAspectRatio="none">
-      <line data-contact-draw x1="0" y1="1" x2="1000" y2="1" stroke-width="2"></line>
-    </svg>
-    <span class="contact__resolve-mark" data-contact-mark><LogoMark /></span>
-  </div>
-
   <div class="wrap contact__inner">
     <div class="contact__intro">
       <p class="section-index section-index--light">Get in touch</p>
       <h2 id="contact-h" class="contact__title" data-split>Let’s talk</h2>
       <p class="contact__lede">
-        Whether you’re seeking support for a construction project, infrastructure works, or rural
-        and agricultural operations, Greenline HSE would be glad to discuss how we can help.
+        Whether you need help with HSE documents, site support, training or practical Health,
+        Safety and Environmental (HSE) advice, I’d love to hear about your business and discuss how
+        I can help.
       </p>
       <p class="contact__copy contact__copy--strong">
-        The first step is simple: get in touch for a complimentary, no-obligation conversation.
+        It all starts with a free, no-obligation conversation.
       </p>
     </div>
 
     <!-- One calm CTA — opens the visitor's email client, pre-addressed -->
     <div class="contact__cta">
-      <p class="contact__cta-kicker">No obligation. Just a conversation.</p>
+      <p class="contact__cta-kicker">Ready to get started?</p>
       <a class="btn btn--hi contact__cta-btn" href={mailto} data-magnetic>
-        Get in touch <span class="btn__arrow" aria-hidden="true">→</span>
+        Let’s Talk <span class="btn__arrow" aria-hidden="true">→</span>
       </a>
-      <p class="contact__cta-note">Opens a pre-addressed email in your own mail app.</p>
+      <p class="contact__cta-note">
+        Free, no-obligation conversation about your business and how I can help.
+      </p>
 
       <ul class="contact__direct">
         <li>
@@ -57,10 +48,6 @@ import LogoMark from './LogoMark.astro';
         <li>
           <span class="contact__k">Service area</span>
           <span>Australia-wide</span>
-        </li>
-        <li>
-          <span class="contact__k">ABN</span>
-          <span>{abn}</span>
         </li>
       </ul>
     </div>
@@ -81,33 +68,6 @@ import LogoMark from './LogoMark.astro';
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     gap: var(--space-l);
     align-items: center;
-  }
-
-  /* Closing flourish at the top — line draws across and resolves into the mark */
-  .contact__resolve {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    margin-bottom: var(--space-xl);
-  }
-  .contact__resolve-line {
-    flex: 1;
-    height: 2px;
-    overflow: visible;
-  }
-  .contact__resolve-line line {
-    stroke: var(--hi-vis);
-  }
-  .contact__resolve-mark {
-    flex: 0 0 auto;
-    width: 2.75rem;
-    height: 2.75rem;
-    color: var(--paper-on-dark);
-  }
-  /* Hidden only when motion will animate it in; visible otherwise */
-  :global(.js-motion) .contact__resolve-mark {
-    opacity: 0;
-    transform: scale(0.6);
   }
 
   .section-index--light {

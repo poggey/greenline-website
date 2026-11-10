@@ -1,45 +1,40 @@
 ---
-// 7. HOW WE WORK — the client journey as five numbered cards that step down
+// 7. HOW IT WORKS — the client journey as four numbered cards that step down
 // the page in a staircase (echoing the "engagement model" reference), each with
 // a subtle hover lift. Replaces the old "Safety as a business advantage" band.
 // Numbered chips straddle the top-left of each card in the drawing-register
 // style; the Hi-Vis numeral ties them to the site's line motif.
 const steps = [
   {
-    title: 'Initial Consultation',
-    body: 'A complimentary, no-obligation conversation to understand your operation and where support is needed.',
+    title: 'Let’s talk',
+    body: 'We’ll have a free, no-obligation conversation about your business, the work you do and where you need help.',
   },
   {
-    title: 'Review & Gap Assessment',
-    body: 'A close look at your sites, systems and how work really happens — measured against what’s required.',
+    title: 'I’ll recommend the right solution',
+    body: 'Whether it’s safety documents, site visits, training or ongoing support, I’ll explain what I recommend in plain English and provide a clear, practical approach.',
   },
   {
-    title: 'Practical Action Plan',
-    body: 'Prioritised, plain-English actions across critical risks, quick wins and longer-term improvements.',
+    title: 'We put it into practice',
+    body: 'We’ll work together to develop practical documents, systems and solutions that fit the way your business operates, not just templates that sit on a shelf.',
   },
   {
-    title: 'Implementation & Support',
-    body: 'Building or refining the systems, training and controls you need, delivered in sensible stages.',
-  },
-  {
-    title: 'Ongoing Partnership',
-    body: 'Staying on hand as your operation evolves, so safety keeps working long after handover.',
+    title: 'Ongoing support when you need it',
+    body: 'Need to update documents, ask a question or get more help later? Just get in touch. I’m here to support you as your business grows and changes.',
   },
 ];
 ---
 
 <section class="section howwework" id="approach" aria-labelledby="howwework-h">
   <div class="wrap">
-    <p class="section-index">How we work</p>
-    <h2 id="howwework-h" class="howwework__title" data-split>
-      A clear path — from first conversation to lasting partnership.
-    </h2>
+    <p class="section-index">How it works</p>
+    <h2 id="howwework-h" class="howwework__title" data-split>Getting started is simple.</h2>
     <p class="lede" data-reveal="up">
-      Every engagement follows the same simple, senior-led path. No jargon, no surprises — just
-      practical steps that build safety into how your business actually runs.
+      Whether you need a single document, a site visit or ongoing Health, Safety and Environmental
+      (HSE) support, it all starts with a conversation. I’ll take the time to understand your
+      business and recommend practical solutions that work for you.
     </p>
 
-    <ol class="steps" aria-label="Our five-step client journey">
+    <ol class="steps" aria-label="Our four-step client journey">
       {
         steps.map((s, i) => (
           <li class="step" style={`--i:${i}`} data-reveal="up">
@@ -50,6 +45,12 @@ const steps = [
         ))
       }
     </ol>
+
+    <div class="howwework__cta" data-reveal="up">
+      <a class="btn" href="#contact" data-magnetic
+        >Let’s Talk <span class="btn__arrow" aria-hidden="true">→</span></a
+      >
+    </div>
   </div>
 </section>
 
@@ -117,14 +118,14 @@ const steps = [
     margin-bottom: var(--space-xl);
   }
 
-  /* Five columns that each step DOWN the page — the staircase. align-items:start
+  /* Four columns that each step DOWN the page — the staircase. align-items:start
      lets the per-card top offset (calc from --i) do the sloping. */
   .steps {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: clamp(0.75rem, 1.4vw, 1.5rem);
     align-items: start;
   }
@@ -178,7 +179,11 @@ const steps = [
     margin: 0;
   }
 
-  /* Below the 5-up staircase, drop to a 2-column layout, then a single column.
+  .howwework__cta {
+    margin-top: var(--space-xl);
+  }
+
+  /* Below the 4-up staircase, drop to a 2-column layout, then a single column.
      The staircase offset is removed so stacked cards align cleanly. */
   @media (max-width: 1024px) {
     .steps {

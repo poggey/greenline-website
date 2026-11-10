@@ -371,20 +371,6 @@ function initMotion() {
         );
       });
 
-      // --- closing flourish: the line draws across and resolves into the mark ---
-      const resolveLine = document.querySelector('[data-contact-draw]');
-      const resolveMark = document.querySelector('[data-contact-mark]');
-      if (resolveLine) {
-        setDash(resolveLine);
-        const tl = gsap.timeline({
-          scrollTrigger: { trigger: '[data-contact]', start: 'top 75%', end: 'top 30%', scrub: 0.8 },
-        });
-        tl.to(resolveLine, { strokeDashoffset: 0, ease: 'none' });
-        if (resolveMark) {
-          tl.to(resolveMark, { opacity: 1, scale: 1, ease: 'back.out(1.6)' }, '>-0.15');
-        }
-      }
-
       // --- 7. magnetic CTAs (desktop, fine pointer) ---
       if (isDesktop && window.matchMedia('(pointer: fine)').matches) {
         document.querySelectorAll('[data-magnetic]').forEach((btn) => {
@@ -419,10 +405,9 @@ function initMotion() {
   mm.add('(prefers-reduced-motion: reduce)', () => {
     document.documentElement.classList.remove('js-motion');
     // draw all lines instantly (no animation), reveal all content
-    document.querySelectorAll('[data-hero-path], [data-contact-draw]')
+    document.querySelectorAll('[data-hero-path]')
       .forEach((el) => gsap.set(el, { strokeDasharray: 'none', strokeDashoffset: 0 }));
-    // closing mark sits resolved; progress rail sits empty when motion is off
-    gsap.set('[data-contact-mark]', { opacity: 1, scale: 1 });
+    // progress rail sits empty when motion is off
     gsap.set('[data-reveal]', { opacity: 1, y: 0 });
     // fill in final stat values without counting
     document.querySelectorAll('[data-count]').forEach((el) => {

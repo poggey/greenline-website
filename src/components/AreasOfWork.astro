@@ -15,7 +15,10 @@ const sectorCards = [
     alt: 'A tower crane and steel frame against a clear blue sky',
     eyebrow: 'On site',
     title: 'Construction & Infrastructure',
-    body: 'Practical Health, Safety and Environmental support from planning through to project completion, helping manage critical risks, strengthen compliance and deliver better project outcomes.',
+    body: [
+      'From small projects through to major developments valued at over $1 billion, I’ve worked across construction and infrastructure projects in Ireland and Australia.',
+      'I understand the realities of construction and provide practical Health, Safety and Environmental advice that helps keep people safe, businesses compliant and projects moving.',
+    ],
     covers: [
       { icon: 'hospital', label: 'Healthcare' },
       { icon: 'train', label: 'Rail & transport' },
@@ -29,7 +32,10 @@ const sectorCards = [
     alt: 'An Australian farm paddock in golden-hour light',
     eyebrow: 'On the land',
     title: 'Agriculture & Rural',
-    body: 'Practical Health, Safety and Environmental solutions designed for farms, contractors and rural businesses, keeping compliance simple, practical and tailored to the way rural operations really work.',
+    body: [
+      'Growing up on a farm in Ireland gave me a practical understanding of rural businesses and the challenges they face.',
+      'I believe HSE should be practical, straightforward and fit around the way farms and rural businesses operate, not create unnecessary paperwork.',
+    ],
     covers: [
       { icon: 'tractor', label: 'Machinery' },
       { icon: 'sprout', label: 'Cropping' },
@@ -42,12 +48,16 @@ const sectorCards = [
 
 <section class="section" id="areas" aria-labelledby="areas-h">
   <div class="wrap">
-    <p class="section-index">Where we work</p>
+    <p class="section-index">Industries we support</p>
     <h2 id="areas-h" class="areas-title" data-split>Two sectors, one practical approach</h2>
     <p class="lede" data-reveal="up">
-      Greenline HSE works across two sectors — construction &amp; infrastructure, and agriculture
-      &amp; rural. Each gets the same senior, fit-for-purpose support, tailored to how the work is
-      actually done.
+      Construction and agriculture may be different industries, but they have one thing in
+      common: they need practical Health, Safety and Environmental advice that works in the real
+      world.
+    </p>
+    <p class="lede" data-reveal="up">
+      Greenline HSE provides practical HSE support that’s tailored to the way each industry
+      actually works.
     </p>
 
     <div class="areas-grid">
@@ -69,7 +79,9 @@ const sectorCards = [
                 <h3 class="sector__title">{s.title}</h3>
               </figcaption>
             </figure>
-            <p class="sector__body">{s.body}</p>
+            <div class="sector__body">
+              {s.body.map((para) => <p>{para}</p>)}
+            </div>
             <ul class="sector__covers">
               {s.covers.map((c) => (
                 <li>
@@ -90,6 +102,9 @@ const sectorCards = [
     font-size: var(--step-3);
     max-width: 20ch;
     margin-bottom: var(--space-m);
+  }
+  .lede + .lede {
+    margin-top: var(--space-s);
   }
 
   .areas-grid {
@@ -156,6 +171,9 @@ const sectorCards = [
   .sector__body {
     color: var(--bitumen);
     max-width: 48ch;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
   }
   /* the line-icon "covers" row — matching count, aligned at the card foot */
   .sector__covers {

@@ -1,82 +1,75 @@
 ---
-// 5. WHAT WE DO (§12.5) — the ten core services as line-icon cards.
+// 5. HOW CAN I HELP (§12.5) — the services as line-icon cards.
 // Pinned horizontal scroll (§11.4): the list becomes a journey along the line.
-// Copy verbatim from Part I §5.
 import LineIcon from './LineIcon.astro';
 
-// Bodies are kept to a similar, short length so every card reads neatly at
-// the same fixed height (see .service-card height in the styles below).
+// Each card's body is one or two short paragraphs; the track's single grid row
+// stretches every card to the tallest one, so they read neatly side by side.
 const services = [
   {
-    icon: 'system',
-    title: 'Health & Safety Management Systems',
-    body: 'Practical systems that support compliance — and actually get used.',
-  },
-  {
-    icon: 'risk',
-    title: 'Risk Assessments',
-    body: 'Identifying and managing workplace hazards through clear, usable processes.',
-  },
-  {
     icon: 'sop',
-    title: 'Standard Operating Procedures (SOPs)',
-    body: 'Easy-to-follow procedures for routine and high-risk tasks, in plain English.',
-  },
-  {
-    icon: 'audit',
-    title: 'Site Audits & Inspections',
-    body: 'Independent eyes on site to verify compliance and catch issues early.',
-  },
-  {
-    icon: 'contractor',
-    title: 'Contractor Management',
-    body: 'Prequalification, onboarding and ongoing management of subcontractors.',
-  },
-  {
-    icon: 'investigation',
-    title: 'Incident Investigations',
-    body: 'Genuine root cause, with corrective actions and lessons that stick.',
+    title: 'Get your safety documents sorted',
+    body: [
+      'Need safety plans, SWMS, SOPs, procedures, risk assessments or emergency plans?',
+      'I’ll prepare practical documents that are easy to understand and actually get used.',
+    ],
   },
   {
     icon: 'compliance',
-    title: 'Compliance Reviews',
-    body: 'Measuring your operation against legislation, standards and expectations.',
+    title: 'Stay compliant',
+    body: [
+      'Need to meet client requirements or understand what the legislation expects?',
+      'I’ll help you keep your business compliant without the jargon.',
+    ],
+  },
+  {
+    icon: 'audit',
+    title: 'Site visits',
+    body: [
+      'I’ll visit your workplace, identify practical improvements and provide straightforward advice to help keep your people safe and your business compliant.',
+    ],
   },
   {
     icon: 'training',
-    title: 'Training & Inductions',
-    body: 'Inductions, toolbox topics and engagement that land with the crew.',
+    title: 'Training',
+    body: [
+      'Once your documents and systems are in place, I’ll help your team understand how to use them with confidence.',
+    ],
   },
   {
-    icon: 'emergency',
-    title: 'Emergency Planning',
-    body: 'Response arrangements you can actually execute under pressure.',
-  },
-  {
-    icon: 'leadership',
-    title: 'Leadership & Safety Culture',
-    body: 'Building genuine safety cultures through leadership and engagement.',
-  },
-  {
-    icon: 'psychosocial',
-    title: 'Psychosocial Risk Management',
-    body: 'Identifying and managing psychosocial hazards for healthier workplaces.',
+    icon: 'investigation',
+    title: 'Incident support',
+    body: [
+      'If something goes wrong, I’ll help investigate what happened, identify the cause and recommend practical improvements to help prevent it happening again.',
+    ],
   },
   {
     icon: 'environment',
-    title: 'Environmental Management',
-    body: 'Environmental compliance, risk and sustainable solutions for your operations.',
+    title: 'Environmental support',
+    body: [
+      'Need help with environmental requirements, erosion and sediment controls, waste management or environmental documentation?',
+      'I’ll provide practical advice to help you meet your environmental obligations.',
+    ],
+  },
+  {
+    icon: 'advice',
+    title: 'Ongoing advice',
+    body: [
+      'Sometimes you just need someone to call.',
+      'Whether it’s a quick phone call, help with a project or advice on a health, safety or environmental issue, I’m here when you need me.',
+    ],
   },
 ];
 ---
 
-<section class="services" id="services" aria-labelledby="services-h" data-services>
+<section class="services band-sage" id="services" aria-labelledby="services-h" data-services>
   <div class="wrap services__head">
     <p class="section-index">Our services</p>
-    <h2 id="services-h" class="services-title" data-split>What we do</h2>
+    <h2 id="services-h" class="services-title" data-split>How can I help?</h2>
     <p class="lede" data-reveal="up">
-      Greenline HSE provides practical Health, Safety and Environmental support tailored to the
-      needs of each business — the full breadth of what a HSE function needs to cover.
+      Whether you’re starting from scratch or need some extra HSE support, I provide practical
+      Health, Safety and Environmental (HSE) advice that’s easy to understand and designed for
+      real workplaces.
     </p>
     <div class="services__controls" data-services-controls>
       <button class="services__arrow" type="button" data-services-prev aria-label="Previous services">
@@ -101,7 +94,7 @@ const services = [
           <li class="service-card">
             <LineIcon name={s.icon} />
             <h3>{s.title}</h3>
-            <p>{s.body}</p>
+            {s.body.map((para) => <p>{para}</p>)}
           </li>
         ))
       }
@@ -177,7 +170,7 @@ const services = [
     margin: 0;
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: minmax(260px, 320px);
+    grid-auto-columns: minmax(270px, 400px);
     gap: var(--space-m);
   }
   /* When motion is off / no JS, allow normal horizontal overflow scroll.
@@ -206,8 +199,9 @@ const services = [
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
-    /* sized to fit alongside the heading within one viewport */
-    height: clamp(220px, 38vh, 320px);
+    /* a floor so short cards keep their shape; the row stretches all cards
+       to the tallest so the longer copy never overflows */
+    min-height: clamp(240px, 34vh, 320px);
     position: relative;
   }
   .service-card h3 {
@@ -220,16 +214,38 @@ const services = [
     color: var(--bitumen);
   }
 
+  /* Short desktop screens: the pinned section must fit heading, intro and the
+     cards in one viewport below the fixed header, so tighten its spacing. */
+  @media (min-width: 901px) and (max-height: 860px) {
+    .services {
+      gap: var(--space-m);
+      padding-block: 5.5rem var(--space-s);
+    }
+    .services-title {
+      margin-bottom: var(--space-s);
+    }
+    .services__head .lede {
+      font-size: var(--step-0);
+    }
+    .services__controls {
+      margin-top: var(--space-s);
+    }
+    .service-card {
+      gap: 0.4rem;
+      padding: 1.25rem 1.4rem;
+    }
+    .service-card :global(.line-icon) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
   /* On narrow screens the section is a normal scroll-snap row, not pinned */
   @media (max-width: 900px) {
     .services {
       min-height: 0;
       justify-content: flex-start;
       padding-block: var(--space-xl);
-    }
-    .service-card {
-      /* fixed (not auto) so every card matches in the mobile scroll row too */
-      height: 260px;
     }
   }
 </style>

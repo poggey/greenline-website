@@ -1,0 +1,81 @@
+---
+// HOW WE HELP — a brief strip directly under the hero so visitors see what
+// Greenline does within the first few seconds. Six key services as line icons;
+// the full detail lives in the Services section further down.
+import LineIcon from './LineIcon.astro';
+
+const items = [
+  { icon: 'system', label: 'HSE Management Systems' },
+  { icon: 'audit', label: 'Site Audits & Compliance' },
+  { icon: 'risk', label: 'Risk Assessments' },
+  { icon: 'investigation', label: 'Incident Investigations' },
+  { icon: 'training', label: 'Training & Coaching' },
+  { icon: 'environment', label: 'Environmental Management' },
+];
+---
+
+<section class="help" id="help" aria-labelledby="help-h">
+  <div class="wrap">
+    <h2 id="help-h" class="section-index section-index--light">How we help:</h2>
+    <ul class="help__list">
+      {
+        items.map((item) => (
+          <li>
+            <LineIcon name={item.icon} />
+            <span>{item.label}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .help {
+    background: var(--field-green);
+    color: var(--paper-on-dark);
+    padding-block: var(--space-l);
+  }
+  .help .section-index {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    font-weight: 400;
+    margin-bottom: var(--space-m);
+  }
+  .section-index--light {
+    color: var(--hi-vis);
+  }
+  .help__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: var(--space-m);
+  }
+  .help__list li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-size: var(--step-0);
+    line-height: 1.3;
+  }
+  .help__list :global(.line-icon) {
+    width: 36px;
+    height: 36px;
+    color: var(--hi-vis);
+  }
+
+  @media (max-width: 1100px) {
+    .help__list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-m) var(--space-l);
+    }
+  }
+  @media (max-width: 600px) {
+    .help__list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-m);
+    }
+  }
+</style>

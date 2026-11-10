@@ -15,7 +15,7 @@ const { tag, desc, ratio = '16 / 9', dark = false } = Astro.props;
   class:list={['placeholder', { 'placeholder--dark': dark }]}
   style={`aspect-ratio:${ratio};`}
   role="img"
-  aria-label={`Image placeholder — ${desc}`}
+  aria-label={`Image placeholder: ${desc}`}
 >
   <span class="placeholder__tag"><strong>◇</strong> {tag}</span>
   <span class="placeholder__desc">{desc}</span>

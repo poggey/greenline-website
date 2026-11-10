@@ -7,16 +7,15 @@ import safetyReality from '../assets/images/safety-reality.jpg';
 import StatBand from './StatBand.astro';
 ---
 
-<section class="section section--grid" id="safety-reality" aria-labelledby="safety-reality-h">
+<section class="section" id="safety-reality" aria-labelledby="safety-reality-h">
   <div class="wrap safety-intro">
     <div class="safety-intro__text">
       <p class="section-index">The reality</p>
-      <h2 id="safety-reality-h" class="section-title" data-split>
-        The state of health &amp; safety in Australia
-      </h2>
+      <h2 id="safety-reality-h" class="section-title" data-split>Why good HSE matters</h2>
+      <p class="lede" data-reveal="up">Most businesses don’t need more paperwork.</p>
       <p class="lede" data-reveal="up">
-        The picture most safety documents skip past. Construction and agriculture sit among the
-        industries carrying the heaviest toll — and the numbers are the reason this work matters.
+        They need practical systems that protect people, keep projects moving and make compliance
+        straightforward.
       </p>
     </div>
     <Image
@@ -28,12 +27,26 @@ import StatBand from './StatBand.astro';
     />
   </div>
 
+  <div class="wrap">
+    <p class="safety-according">According to Safe Work Australia (2024):</p>
+  </div>
+
   <!-- The dark moment — full-bleed Bitumen data band (#DATA). The numerals carry
        the figures; their labels are the brief explanation. -->
   <StatBand />
 
   <div class="wrap">
     <p class="safety-source">Source: Safe Work Australia, Key Work Health &amp; Safety Statistics.</p>
+
+    <div class="safety-close" data-reveal="up">
+      <p class="safety-close__lead">Good HSE isn’t about creating paperwork.</p>
+      <p class="safety-close__copy">
+        It’s about helping people go home safely while keeping your business compliant.
+      </p>
+      <a class="btn" href="#services"
+        >View Services <span class="btn__arrow" aria-hidden="true">→</span></a
+      >
+    </div>
   </div>
 </section>
 
@@ -62,10 +75,42 @@ import StatBand from './StatBand.astro';
       grid-template-columns: 1fr;
     }
   }
+  .safety-intro .lede + .lede {
+    margin-top: var(--space-s);
+  }
+  .safety-according {
+    margin-top: var(--space-l);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--field-green);
+  }
   .safety-source {
     margin-top: var(--space-m);
     font-family: var(--font-mono);
     font-size: var(--step--1);
     color: var(--sage);
+  }
+  .safety-close {
+    margin-top: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-s);
+    max-width: 40ch;
+  }
+  .safety-close__lead {
+    font-family: var(--font-display);
+    font-size: var(--step-2);
+    line-height: 1.25;
+    color: var(--field-green);
+    letter-spacing: -0.01em;
+  }
+  .safety-close__copy {
+    font-size: var(--step-1);
+    line-height: 1.45;
+    color: var(--bitumen);
+    margin-bottom: var(--space-xs);
   }
 </style>
