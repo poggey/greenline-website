@@ -16,13 +16,13 @@ const sectorCards = [
     eyebrow: 'On site',
     title: 'Construction & Infrastructure',
     body: [
-      'From small projects through to major developments valued at over $1 billion, I’ve worked across construction and infrastructure projects in Ireland and Australia.',
-      'I understand the realities of construction and provide practical Health, Safety and Environmental advice that helps keep people safe, businesses compliant and projects moving.',
+      'From small projects through to major developments valued at over $1 billion, we’ve worked across construction and infrastructure projects in Ireland and Australia.',
+      'We understand the realities of construction and provide practical Health, Safety and Environmental advice that helps keep people safe, businesses compliant and projects moving.',
     ],
     covers: [
       { icon: 'hospital', label: 'Healthcare' },
-      { icon: 'train', label: 'Rail & transport' },
-      { icon: 'commercial', label: 'Commercial' },
+      { icon: 'truck', label: 'Transport' },
+      { icon: 'commercial', label: 'Commercial & residential' },
       { icon: 'factory', label: 'Industrial' },
     ],
   },
@@ -34,7 +34,7 @@ const sectorCards = [
     title: 'Agriculture & Rural',
     body: [
       'Growing up on a farm in Ireland gave me a practical understanding of rural businesses and the challenges they face.',
-      'I believe HSE should be practical, straightforward and fit around the way farms and rural businesses operate, not create unnecessary paperwork.',
+      'We believe HSE should be practical, straightforward and fit around the way farms and rural businesses operate, not create unnecessary paperwork.',
     ],
     covers: [
       { icon: 'tractor', label: 'Machinery' },
@@ -203,6 +203,8 @@ const sectorCards = [
     text-transform: uppercase;
     color: var(--bitumen);
     line-height: 1.3;
+    /* room for a two-line label, so both cards' rows sit at the same height */
+    min-height: 2.6em;
   }
 
   @media (max-width: 900px) {
@@ -212,6 +214,9 @@ const sectorCards = [
     /* stacked: full width, so let long titles wrap if they must */
     .sector__title {
       white-space: normal;
+    }
+    .sector__covers span {
+      min-height: 0;
     }
   }
 </style>
